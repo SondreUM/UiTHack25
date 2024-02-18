@@ -2,11 +2,16 @@
 
 Repository for the yearly CTF challenge by UiT students
 
-### Motivation and vision
+## Motivation and vision
 
 > We want to create more interest and enthusiasm for security and related problems for students. For this, a noob-friendly Capture-the-flag competition is perfect! The idea is to expose people to gradually more challenging tasks, starting with very simple ones and moving to more complex ones. None should be too hard and some help will be given for those in need.
 
+### Flag format
+
+The flag format will be `UiTHack25{flag}`
+
 ### CTF theme
+
 > TBD
 
 ## Challenges
@@ -14,15 +19,17 @@ Repository for the yearly CTF challenge by UiT students
 Add emoji!
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
 
 ## Participants
+
+Participants can submit their writeups by creating a pull request. The writeup should preferably be in markdown format, but other formats are also accepted if it is easy to read.
 
 ## Developer guidelines
 
@@ -50,7 +57,7 @@ It will be served on `uithack.no` ---DNS---> `uithack.td.org.uit.no`
 
 ## Previous UiTHacks
 
-[UiTHack24 - Aliens](https://github.com/Loevland/UiTHack24)
+[UiTHack24 - Space](https://github.com/Loevland/UiTHack24)
 
 [UiTHack23 - Nostalgi](https://github.com/td-org-uit-no/UiTHack23)
 
