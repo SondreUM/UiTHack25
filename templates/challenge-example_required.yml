@@ -1,0 +1,88 @@
+name: "{{cookiecutter.name}}"
+author: "author"
+category: web/crypto/pwn/rev/misc/noob/forensics/irl
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    This is a sample description
+
+
+flags:
+    # A static case sensitive flag
+    - flag{3xampl3}
+    # A static case sensitive flag created with a dictionary
+    - {
+        type: "static",
+        content: "flag{wat}",
+    }
+    # A static case insensitive flag
+    - {
+        type: "static",
+        content: "flag{wat}",
+        data: "case_insensitive",
+    }
+    # A regex case insensitive flag
+    - {
+        type: "regex",
+        content: "(.*)STUFF(.*)",
+        data: "case_insensitive",
+    }
+
+
+
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - information disclosure
+    - buffer overflow
+    - memory forensics
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+# Accepts strings
+tags:
+    - easy/medium/hard
+    - XSS
+    - js
+
+# Optional settings #
+# remove if unused
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - src/source.py
+
+# If you have a Dockerfile set to .
+image: null
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+connection_info: nc hostname 12345
+
+
+# Can be removed if unused
+# Accepts dictionaries or strings
+hints:
+    - {
+        content: "This hint costs points",
+        cost: 10
+    }
+    - This hint is free
+
+# Requirements are used to make a challenge require another challenge to be
+# solved before being available.
+# Can be removed if unused
+# Accepts challenge names as strings or challenge IDs as integers
+requirements:
+    - "Warmup"
+    - "Are you alive"
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+version: "0.1"
