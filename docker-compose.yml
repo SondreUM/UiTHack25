@@ -1,0 +1,13 @@
+services:
+  # example
+  # challenge_name:
+  #  build: ./web/challenge_name/src
+  #  ports:
+  #    - "9000:9000"
+  #  restart: on-failure
+  # networks:
+  #    - nginx_network
+
+networks:
+  nginx_network:
+    external: true
