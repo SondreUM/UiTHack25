@@ -35,10 +35,12 @@ Scripts and other files can be placed in the same directory, look at the example
 ├── README.md
 ├── rev📂
 |    └── challenge1📂
-|         ├── dockerfile
 |         ├── challenge.yml
-|         ├── app.exe📦
+|         ├── dockerfile
 |         ├── README.md
+|         ├── src📂
+|         |    ├── app.exe📦
+|         |    └── app.py📦
 |         └── writeup📂
 |              ├── README.md            # UiTHack organizer writeup
 |              └── my-awesome-team📂    # team directory
@@ -71,6 +73,9 @@ However it is not a requirement.
 4. When task is created, commit it `git add *` `git commit -m "Insert description and alot of emojies like this :rocket: :fire:"`.
 5. Push branch `git push --set-upstream origin issueName`.
 6. Add README for task, filename should be `README.md`.
+Set up the directory structure as illustrated above.
+All code should be contained in a subdirectory called `src`.
+If complex commands are needed to build the project, add a Makefile or a build script.
 7. Copy the `challenge-example_required.yml` template and fill in the required fields.
 Add some topics that explains the exploit/vulnaribility/solution (only visible for admins).
 Example: -SQL-injection, -Buffer overflow, etc.
@@ -82,7 +87,7 @@ Include sources and references if relevant.
 11. Test the challenge. You should be able to solve it with the information given in writeup.
 12. Create a pull request, the pull request should be linked to a issue.
 Another team member should review and test the challenge before approving.
-The branch can then be added to main by squash merge.
+The branch can then be added to main with a squash merge.
 
 ### CTFd app
 
