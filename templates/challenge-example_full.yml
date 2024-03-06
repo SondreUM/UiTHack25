@@ -55,22 +55,22 @@ attempts: 5
 # Accepts strings or dictionaries of CTFd API data
 flags:
     # A static case sensitive flag
-    - flag{3xampl3}
+    - UiTHack25{3xampl3}
     # A static case sensitive flag created with a dictionary
     - {
         type: "static",
-        content: "flag{wat}",
+        content: "UiTHack25{wat}",
     }
     # A static case insensitive flag
     - {
         type: "static",
-        content: "flag{wat}",
+        content: "UiTHack25{wat}",
         data: "case_insensitive",
     }
     # A regex case insensitive flag
     - {
         type: "regex",
-        content: "(.*)STUFF(.*)",
+        content: "UiTHack25\{(.*)STUFF(.*)\}",
         data: "case_insensitive",
     }
 

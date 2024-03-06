@@ -13,8 +13,10 @@ You can connect to the mp3 player with netcat
 nc motherload.td.org.uit.no 8006
 ```
 
-Hint 1. Maybe there is a way to call the function printing the flag
+**Hint 1**:
+Maybe there is a way to call the function printing the flag
 
-Hint 2. Ever heard of a buffer overflow?
+**Hint 2**:
+Ever heard of a buffer overflow?
 
 [Writeup](writeup/writeup.md)
