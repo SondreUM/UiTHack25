@@ -1,5 +1,5 @@
 name: "{{cookiecutter.name}}"
-author: "author"
+author: "name"
 category: web/crypto/pwn/rev/misc/noob/forensics/irl
 value: 500
 type: dynamic
@@ -12,23 +12,24 @@ description: >
 
 
 flags:
+    # multiple flags can be provided
     # A static case sensitive flag
-    - flag{3xampl3}
+    - UiTHack25{3xampl3}
     # A static case sensitive flag created with a dictionary
     - {
         type: "static",
-        content: "flag{wat}",
+        content: "UiTHack25{3xampl3}",
     }
     # A static case insensitive flag
     - {
         type: "static",
-        content: "flag{wat}",
+        content: "UiTHack25{3xampl3}",
         data: "case_insensitive",
     }
     # A regex case insensitive flag
     - {
         type: "regex",
-        content: "(.*)STUFF(.*)",
+        content: "UiTHack25\{(.*)STUFF(.*)\}",
         data: "case_insensitive",
     }
 
@@ -44,12 +45,14 @@ topics:
     - memory forensics
 
 # Tags are used to provide additional public tagging to a challenge
-# Can be removed if unused
 # Accepts strings
 tags:
+    # set difficulty
     - easy/medium/hard
-    - XSS
-    - js
+    # hint at the type of challenge or language used
+    # should not give away too much, only guide the player when choosing a challenge 
+    - js/python/etc.
+    
 
 # Optional settings #
 # remove if unused
@@ -68,21 +71,13 @@ connection_info: nc hostname 12345
 # Can be removed if unused
 # Accepts dictionaries or strings
 hints:
+    - This hint is free
     - {
         content: "This hint costs points",
         cost: 10
     }
-    - This hint is free
-
-# Requirements are used to make a challenge require another challenge to be
-# solved before being available.
-# Can be removed if unused
-# Accepts challenge names as strings or challenge IDs as integers
-requirements:
-    - "Warmup"
-    - "Are you alive"
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.
-state: hidden
+state: visible
 version: "0.1"
