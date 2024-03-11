@@ -1,0 +1,24 @@
+name: "Caesarian Dilemma"
+author: "Lorentzen"
+category: crypto
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    Decrypt the flag
+
+tags:
+    - easy
+
+flags:
+    - UiTHack25{Salad_of_choice}
+
+files:
+    - src/flag.txt.enc
+
+state: visible
+version: "0.1"
