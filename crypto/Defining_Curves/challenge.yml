@@ -1,0 +1,25 @@
+name: "Defining Curves"
+author: "Lorentzen"
+category: crypto
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    Find the missing constant b in the curve, and use it do decrypt the flag.
+
+tags:
+    - easy
+
+flags:
+    - UiTHack25{Curves_worth_dying_for}
+
+files:
+    - src/handout.txt
+    - src/decrypt.py
+
+state: visible
+version: "0.1"
