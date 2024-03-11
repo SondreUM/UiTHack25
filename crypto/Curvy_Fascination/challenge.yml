@@ -1,0 +1,28 @@
+name: "Curvy Fascination"
+author: "Lorentzen"
+category: crypto
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    Find the key N to decrypt the flag.
+
+tags:
+    - Hard
+
+flags:
+    - UiTHack25{B1gB34ut1fulNumb3r5}
+
+files:
+    - src/handout.txt
+    - src/decrypt.py
+    
+requirements:
+    - "Defining Curves"
+
+state: visible
+version: "0.1"
