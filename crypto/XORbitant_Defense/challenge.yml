@@ -1,0 +1,25 @@
+name: "XORbitant Defense"
+author: "Lorentzen"
+category: crypto
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    Decrypt the flag
+
+tags:
+    - easy
+
+flags:
+    - UiTHack25{bin4ry_c0mp13xity}
+
+files:
+    - src/flag.txt.enc
+    - src/encrypt.py
+
+state: visible
+version: "0.1"
