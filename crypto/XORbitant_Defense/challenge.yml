@@ -7,19 +7,42 @@ extra:
     initial: 500
     decay: 50
     minimum: 100
-
+    
 description: >
     Decrypt the flag
 
-tags:
-    - easy
-
 flags:
+    # multiple flags can be provided
+    # A static case sensitive flag
     - UiTHack25{bin4ry_c0mp13xity}
 
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - bitwise operations
+    - XOR
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+tags:
+    # set difficulty
+    - easy
+
+    # hint at the type of challenge or language used
+    # should not give away too much, only guide the player when choosing a challenge 
+    - Go
+
+# Optional settings #
+# remove if unused
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
 files:
     - src/flag.txt.enc
-    - src/encrypt.py
+    - src/encrypt.go
 
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
 state: visible
 version: "0.1"
