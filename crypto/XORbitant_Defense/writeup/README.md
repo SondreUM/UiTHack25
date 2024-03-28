@@ -16,6 +16,12 @@ the flag into a string of bytes that are then written to the file in binary form
 As can be seen in the suggested writeup [decrypt.go](decrypt.go) all that needs
 to be done is to flip all the bits and convert each byte back to ascii.
 
+```txt
+10101010 10010110 10101011 10110111 10011110 10011100 10010100 11001101 11001010 10000100 10011101 10010110 10010001 11001011 10001101 10000110 10100000 10011100 11001111 10010010 10001111 11001110 11001100 10000111 10010110 10001011 10000110 10000010
+-->
+UiTHack25{bin4ry_c0mp13xity}
+```
+
 ## Resources
 
 Include links to the original challenge, writeups, vulnerabilities, tools, etc. here
