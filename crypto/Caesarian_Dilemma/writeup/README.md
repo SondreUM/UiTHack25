@@ -16,6 +16,10 @@ If you go right/up you will conclude with 11 in shift distance, or 15 if you
 go left/down. At that point all that is left is to decrypt with either a script
 like done here [decrypt.go](decrypt.go) or do it by hand.
 
+```txt
+JxIWprz25{Hpaps_du_rwdxrt} --> UiTHack25{Salad_of_choice}
+```
+
 ## Resources
 
 Include links to the original challenge, writeups, vulnerabilities, tools, etc. here
