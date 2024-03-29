@@ -22,7 +22,7 @@ To find b we rearrange the equation to leave b alone on one side.
 
 $y^2 \mod p = (x^3 + ax + b) \mod p$
 
-$y^2(x^3 + ax) \mod p = b \mod p$
+$(y^2 - (x^3 + ax)) \mod p = b \mod p$
 
 We then insert the values for a and p, and insert the x and y value from the point P.
 This can be seen in the python example [calculate.py](calculate.py), and we reach the conclusion:
