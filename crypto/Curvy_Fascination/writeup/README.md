@@ -12,7 +12,11 @@ for the inspiration to make the challenge, and github user "pwang00" for his exc
 writeup of the challenge. His writeup can be found online [here](https://github.com/hgarrereyn/Th3g3ntl3man-CTF-Writeups/tree/master/2017/picoCTF_2017/problems/cryptography/ECC2/ECC2.md) or locally in a touched up version [here](ECC2.md)
 
 I will try to explain the solution myself, but if the explanation falls short feel
-free to look up the writeup mentioned before as the it is truly an exceptional one.
+free to look up the writeup mentioned before as it is truly an exceptional one.
+
+To recap what our objective is: we need to find the scalar N that makes
+
+$Q = N * P$
 
 Now, given that we have already calculated b for the curve (in Defining Curves) we can add it to the information we know
 
@@ -46,7 +50,8 @@ of explore() in [solution.sage](solution.sage) we used a condition of the prime 
 for a computationally viable curve for the challenge. Important to note for sagemath, the ^ operator means exponentiation.
 
 Skipping over the heavy details of the Pohlig-Hellman algorithm, which can be found in the resources listed at the bottom, we can summarize
-our next steps as
+our next steps as solving the discrete logarithm problem for each prime power factor of $E$ before solving that system of congruences using the
+chinese remainder theorem (CRT).
 
 ## Resources
 
