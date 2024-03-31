@@ -47,7 +47,7 @@ def exploring():
     print(f"N = {N}")
     print(f"Q = {Q}")
     print(f"p > ord(E) is {p > E.order()}")
-    
+
     # verify that cardinality of subgroup does not exceeed the curve order
     if not p > E.order():
         return False
@@ -105,7 +105,7 @@ def ECDLP(E, P, Q):
         print(f"factor (modulo): {fac}, Discrete Log: {zi}")
 
     # Solve the system of congruences using the Chinese Remainder Theorem
-    l = crt(dlogs[:count],primes[:count])
+    l = crt(dlogs,primes)
 
     print(P*l == Q)
     print(l)
@@ -119,8 +119,8 @@ def ECDLP(E, P, Q):
     return True
 
 if __name__ == "__main__":
-    seed(time.time())
-    ret = exploring()
-    while ret != True:
-        ret = exploring()
-    #verify()
+    #seed(time.time())
+    #ret = exploring()
+    #while ret != True:
+    #    ret = exploring()
+    verify()
