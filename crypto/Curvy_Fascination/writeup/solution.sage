@@ -110,7 +110,7 @@ def ECDLP(E, P, Q):
     print(P*l == Q)
     print(l)
 
-    # check that solution is valid, and not trivial
+    # check that solution is valid, and also not trivial
     for dlog in dlogs:
         if dlog*P == Q:
             return False

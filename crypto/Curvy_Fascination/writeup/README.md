@@ -41,12 +41,12 @@ The way to confirm that this attack is viable is to check the size of the prime 
 then the Pohlig-Hellman attack is viable.
 
 ```sage
-
+2^3 * 127 * 173 * 178001 * 366701 * 4035299 * 51456901 * 67804453
 ```
 
 They are indeed relatively small. "What is small?" you might say. There's not really a perfect number for that, but generally
 10 or less digits should be computationally viable on a consumer computer. If you check the conditions at the bottom
-of explore() in [solution.sage](solution.sage) we used a condition of the prime factors being 8 digits or smaller when searching
+of explore() in [solution.sage](solution.sage) we used a condition of the prime factors being 9 digits or smaller when searching
 for a computationally viable curve for the challenge. Important to note for sagemath, the ^ operator means exponentiation.
 
 Skipping over the heavy details of the Pohlig-Hellman algorithm, which can be found in the resources listed at the bottom, we can summarize
