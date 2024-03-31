@@ -1,0 +1,41 @@
+name: "{{Excessive Greetings}}"
+author: "Lorentzen"
+category: irl
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    We need a way into the network of Evilcorp. We know the accesspoint is around here somewhere. 
+    Get us the password.
+    
+    Flag will be in the form "UiTHack25{*insert_password_here*}
+
+flags:
+    # multiple flags can be provided
+    # A static case sensitive flag
+    - UiTHack25{ladycaty}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - Wireless
+    - WPA cracking
+    - Aircrack-ng
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+tags:
+    # set difficulty
+    - medium
+    # hint at the type of challenge or language used
+    # should not give away too much, only guide the player when choosing a challenge 
+    - js/python/etc.
+    
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
