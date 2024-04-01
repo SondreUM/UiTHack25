@@ -1,11 +1,9 @@
-# Defining Curves
+# Crypto - Defining Curves
 
-> Crypto - 500pts
+> Crypto - easy
 
-Find the constant b and use it to decrypt the flag.
+Find the missing constant b in the curve, and use it do decrypt the flag.
 
-Files:
-- [handout.txt](src/handout.txt)
-- [decrypt.py](src/decrypt.py)
+Files: [handout.txt](src/handout.txt), [decrypt.py](src/decrypt.py)
 
 [writeup](writeup/README.md)
