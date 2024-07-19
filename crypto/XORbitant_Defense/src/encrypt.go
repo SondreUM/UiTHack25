@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	byteflag, err := os.ReadFile("flag.txt")
+	thing, err := os.ReadFile("thingthing.txt")
 
 	// check for error
 	if err != nil {
@@ -16,15 +16,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	flag := make([]byte, len(byteflag))
-	for i := 0; i < len(byteflag); i++ {
-		flag[i] = byteflag[i] ^ 0xff
+	thingthing := make([]byte, len(thing))
+	for i := 0; i < len(thing); i++ {
+		thingthing[i] = thing[i] ^ 0xff
 	}
-	var bitstringlist = make([]string, len(flag))
-	for i := 0; i < len(flag); i++ {
-		bitstringlist[i] = strconv.FormatUint(uint64(flag[i]), 2)
+	var something = make([]string, len(thingthing))
+	for i := 0; i < len(thingthing); i++ {
+		something[i] = strconv.FormatUint(uint64(thingthing[i]), 2)
 	}
-	bitstring := strings.Join(bitstringlist, " ")
+	result := strings.Join(something, " ")
 
-	err = os.WriteFile("flag.txt.enc", []byte(bitstring), 0644)
+	err = os.WriteFile("thingthing.txt.enc", []byte(result), 0644)
 }
