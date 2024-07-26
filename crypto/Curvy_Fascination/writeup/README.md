@@ -3,7 +3,7 @@
 >
 > After monitoring the encrypted communication at EvilCorp, for a while, you finally have the information needed to crack their entire encryption scheme. And judging by the message you first choose to decrypt it would seem the inclinations of the IT guy will be on full display.
 >
-> Find the key N to decrypt the flag
+> Find the key N to decrypt the flag. (The upper bound of N is 34 digits)
 >
 
 ## Writeup
