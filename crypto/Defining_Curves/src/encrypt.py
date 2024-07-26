@@ -1,8 +1,7 @@
 from hashlib import sha256
 from Crypto.Cipher import AES
-from binascii import *
 
-key = "22679512306421273518746478180967858373".encode()
+key = "632783634760079068257481593728378909226796967090221149792".encode()
 flag = ""
 with open("flag.txt", "br") as f:
     flag = f.read().strip()
