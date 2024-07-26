@@ -47,11 +47,6 @@ def exploring():
 
     print(f"N = {N}")
     print(f"Q = {Q}")
-    # print(f"p > ord(E) is {p > E.order()}")
-
-    # verify that cardinality of subgroup does not exceeed the curve order
-    # if not p > E.order():
-    #     return False
 
     # Check that prime factors of the order of E are not too large
     print(factor(E.order()))
