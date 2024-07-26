@@ -52,9 +52,9 @@ sage: print(b)
 25255205054024371783896605039267101837972419055969636393425590261926131199030
 ```
 
-Solving for $$b$$, we obtain 25255205054024371783896605039267101837972419055969636393425590261926131199030.
+Solving for $b$, we obtain 25255205054024371783896605039267101837972419055969636393425590261926131199030.
 
-We now have all the necessary parameters for the elliptic curve.  Thus, our next step is to define the curve over a finite field of integers modulo $$M$$, and define the points $$P$$ and $$Q$$ to be on the curve:
+We now have all the necessary parameters for the elliptic curve.  Thus, our next step is to define the curve over a finite field of integers modulo $M$, and define the points $P$ and $Q$ to be on the curve:
 
 ```
 F = FiniteField(M)
@@ -63,12 +63,12 @@ P = E.point(P)
 Q = E.point(Q)
 ```
 
-Essentially, this challenge requires us to solve the Elliptic Curve Discrete Logarithm Problem (ECDLP): compute the scalar $$n$$ given the base point $$P$$ and the product point $$Q$$ where $$Q = nP$$.  There are a few known attacks against ECDLP, including the:
+Essentially, this challenge requires us to solve the Elliptic Curve Discrete Logarithm Problem (ECDLP): compute the scalar $n$ given the base point $P$ and the product point $Q$ where $Q = nP$.  There are a few known attacks against ECDLP, including the:
 1. MOV attack (involves finding linearly independent points and calculating Weil pairing to reduce ECDLP to over finite field instead of group of points on elliptic curve)
 2. Pohlig-Hellman (reduces discrete logarithm calculations to prime subgroups of the order of P and uses Chinese Remainder Theorem to solve system of congruences for discrete logarithm of the whole order )
 
 
-We can rule out the MOV attack, since it is infeasible given the size of the elliptic curve order. However, factoring the order of our elliptic curve $$E$$ reveals many small prime factors, indicating that Pohlig-Hellman could be feasible:
+We can rule out the MOV attack, since it is infeasible given the size of the elliptic curve order. However, factoring the order of our elliptic curve $E$ reveals many small prime factors, indicating that Pohlig-Hellman could be feasible:
 
 ```
 sage: factor(E.order())
@@ -77,27 +77,30 @@ sage: factor(E.order())
 
 The goal of Pohlig-Hellman and the mathematics leading to it is as follows:
 
-We are attempting to recreate a system of congruences to solve for the value of $$l$$ (referred to as $$n$$ in this problem):
+We are attempting to recreate a system of congruences to solve for the value of $l$ (referred to as $n$ in this problem):
 
 
 $$l \equiv l_1\pmod{p_1^{e_1}}\\l \equiv l_2\pmod{p_2^{e_2}}\\...\qquad\qquad\qquad\,\,\,\\l \equiv l_i\pmod{p_i^{e_i}}$$
 
-where $$l$$ denotes the discrete logarithm for the order of $$P$$, $$l_i$$ denotes discrete logarithm calculations for each of the smaller prime orders (factors) $$p$$ of $$P$$, and $$e_i$$ denotes the exponent of $$p$$.
+where $l$ denotes the discrete logarithm for the order of $P$,
 
-First, define an integer $$x$$ such that $$x = p_1^{e_1}p_2^{e_2}...p_{r}^{e_r}$$  (in other words, $$x$$ is equivalent to the order of $$P$$).
+$l_i$ denotes discrete logarithm calculations for each of the smaller prime orders (factors) $p$ of $P$,
 
-$$l_i$$ 
+and $e_i$ denotes the exponent of $p$.
 
-can be written in the form:
+First, define an integer $x$ such that $$x = p_1^{e_1}p_2^{e_2}...p_{r}^{e_r}$$  (in other words, $x$ is equivalent to the order of $P$).
+
+$l_i$ can be written in the form:
 
 $$l_i = z_0 + z_1\,p + z_2\,p_2 + ... + z_{e−1}p-1^{e-1}\\$$
-where $$z \in [0,\,p-1]$$.
+
+where $z \in [0,\,p-1]$.
 
 We then define the points $$P_i = \frac{x}{p_i}P$$, and $$Q_i = \frac{x}{p_i}Q$$.  
 
-Since we know that the order of $$P_i$$ is $$p_i$$, we can rewrite the equation as $$Q_i = lP_i = z_iP_i$$, we can now solve for every $$z_0...z_{e-1}$$ by finding a value for $$z_i$$ such that $$Q_i = z_i*P_i$$.
+Since we know that the order of $P_i$ is $p_i$, we can rewrite the equation as $$Q_i = lP_i = z_iP_i$$, we can now solve for every $$z_0...z_{e-1}$$ by finding a value for $z_i$ such that $Q_i = z_i*P_i$.
 
-This is comparable to brute force in that if the value of $$p$$ is small enough, it is feasible to try all the values of $$z$$ in range of $$e$$ until a value which satisfies the equation above is found.
+This is comparable to brute force in that if the value of $p$ is small enough, it is feasible to try all the values of $z$ in range of $e$ until a value which satisfies the equation above is found.
 
 In Sage, this can be done as follows:
 ```
