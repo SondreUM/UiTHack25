@@ -82,6 +82,7 @@ def verify():
 
     # everything needed to calculate N
     b = (P[1]^2 - P[0]^3 - a * P[0]) % p
+    print(f"b = {b}")
     E = EllipticCurve(F, [a, b])
     P = E.point(P)
     N = 8076851309726935292348958409867
@@ -101,6 +102,7 @@ def ECDLP(E, P, Q, N):
     # find all prime factors of the order of E
     order = E.order()
     factors = factor(order)
+    print(f"factors: {factors}")
     primes = [f^q for f, q in factors]
     dlogs = []
 
