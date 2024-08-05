@@ -21,7 +21,7 @@ $Q = N * P$
 
 With an upper bound on N that is 34 digits, but more accurately $log_{10}(N) < 35$.
 
-Now, given that we have already calculated b for the curve (in Defining Curves) we can add it to the information we know
+Now, given that we have already calculated $b$ for the curve (in Defining Curves) we can add it to the information we know
 
 $b = 632783634760079068257481593728378909226796967090221149792$
 
@@ -40,7 +40,7 @@ Q = E.point(Q)
 
 There exists multiple ways to attack elliptic curves. The one intended for this challenge is the Pohlig-Hellman attack.
 The way to confirm that this attack is viable is to check the size of the prime factors of E.
-If they are relatively small then the Pohlig-Hellman attack is viable.
+If most of them are relatively small then the Pohlig-Hellman attack is viable.
 
 ```sage
 43 * 2477 * 15559 * 251918963 * 583103869 * 584585929 * 19429296133822807718719
@@ -50,7 +50,7 @@ Most of them are indeed relatively small. "What is small?" you might say. There'
 Now, all the factors are not small. That last one is looking real nasty, but all we need is enough small factors that their product is larger than the upper bound of $N$.
 And indeed $log_{10}(43 * 2477 * 15559 * 251918963 * 583103869 * 584585929) > 35$. This means we should be able to disregard the large prime and still get the correct answer.
 
-Without going into into the heavy math details of the Pohlig-Hellman attack it can be seen as a way of incrementally expanding the size of $N$ that we can solve for.
+Without going into into the heavy math details of the Pohlig-Hellman attack, that attack itself can be seen as a way of incrementally expanding the size of $N$ that we can solve for.
 This way one is able to disregard the computational complexity of large primes as long as there are enough small ones.
 By solving the discrete logarithm for each smaller prime we are then able to use the CRT(Chinese Remainder Theorem) to solve the resulting system of congruencies and find $N$.
 In our case we are then left with

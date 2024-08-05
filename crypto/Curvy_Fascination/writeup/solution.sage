@@ -5,6 +5,7 @@ from sage.all import *
 
 # method for generating a weak prime for the curve
 # https://crypto-writeup-public.hatenablog.com/entry/Pohlig-Hellman%2520Attack
+# (When you realize at 2am that you're reading a japanese blogpost on crypto math you know rabbithole runs deep)
 def gen_weak_prime(size, smooth):
     """
     generate approximately size-bit prime p
@@ -106,22 +107,28 @@ def ECDLP(E, P, Q, N):
     primes = [f^q for f, q in factors]
     dlogs = []
 
+    # counter for computationally viable primes
+    num_primes = 0
+
     # calculate the discrete logarithm for each prime factor
-    for fac in primes:
-        # multiplying with (order // fac) helps distribute the
-        # computational complexity amongst the prime factors
+    for i, fac in enumerate(primes):
+        # stop calculation when it becomes too computationally expensive
+        if fac >= 10^10:
+            num_primes = i
+            break
+
+        # multiplying with (order // fac) stops the calculation from trying to solve the curve in one go
         Pi = (order // fac) * P
         Qi = (order // fac) * Q
         zi = discrete_log(Qi, Pi, operation="+")
         dlogs.append(zi)
         print(f"factor (modulo): {fac}, Discrete Log: {zi}")
 
-        # stop calculation when it gets too hard
-        if fac == 584585929:
-            break
-
     # Solve the system of congruences using the Chinese Remainder Theorem
-    l = crt(dlogs,primes[:6])
+    if num_primes > 0:
+        l = crt(dlogs,primes[:i])
+    else:
+        l = crt(dlogs,primes)
 
     print(P*l == Q)
     print(l)
