@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	thing, err := os.ReadFile("thingthing.txt")
+	thing, err := os.ReadFile("flag.txt")
 
 	// check for error
 	if err != nil {
@@ -26,5 +26,5 @@ func main() {
 	}
 	result := strings.Join(something, " ")
 
-	err = os.WriteFile("thingthing.txt.enc", []byte(result), 0644)
+	err = os.WriteFile("flag.txt.enc", []byte(result), 0644)
 }
