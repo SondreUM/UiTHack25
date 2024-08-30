@@ -14,10 +14,10 @@ None should be too hard and some help will be given for those in need.
 Add emoji!
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  |  | Defining Curves ➰ |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  | Pattern Recognition 📯 |  |  |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  |  | XORbitant defense ❌ |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
