@@ -144,6 +144,42 @@ UiTHack25{S3cur1ty_Thr0ugh_0bscur1tee}
 
 Capture the local network traffic with a tool like Wireshark.
 
+There are 2 things needed before we use wireshark.
+1. find the requirement for flag format on the input string for evasive_verify
+2. discover that there is being done communication with a server to verify validity of flag
+
+This tells us that there has to be at least parts of a flag being sent over the internet.
+
+Open up wireshark using sudo on Linux or as administrator on Windows.
+
+Choose your wifi network card/adapter as the one we will listen for packets on.
+
+Considering the fact that all flags in the CTF are of the same format we can start by using a display filter.
+
+The Option to add display filter is a small green + on the top right of the window.
+
+Give it a random label name of your choice.
+
+To look for the standard part of the flag we will add the following text tio the Filter field:
+
+```bash
+http contains "UiTHack"
+```
+
+and click the green ok button to the right.
+
+this should filter away all the packets that wireshark is detecting.
+
+Run the binary with an argument such as "UiTHack{test}.
+
+We should now see that some pakcets pop up in the wireshark.
+
+By clicking on any one of them you should see the flag down on the bottom left.
+
+```
+UiTHack25{S3cur1ty_Thr0ugh_0bscur1tee}
+```
+
 ### Debugging
 
 Use a debugger with breakpoints to capture the key during runtime comparison.
