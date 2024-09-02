@@ -22,4 +22,4 @@ JxIWprz25{Hpaps_du_rwdxrt} --> UiTHack25{Salad_of_choice}
 
 ## Resources
 
-Include links to the original challenge, writeups, vulnerabilities, tools, etc. here
+There are several online decoders available for simple ciphers, such as [cryptii](https://cryptii.com/pipes/caesar-cipher) or [CyberChef](https://gchq.github.io/CyberChef/)
