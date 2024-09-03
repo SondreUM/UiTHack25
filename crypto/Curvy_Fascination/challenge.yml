@@ -14,6 +14,8 @@ description: >
   And judging by the message you first choose to decrypt
   it would seem the inclinations of the IT guy will be on full display.
   Find the key N to decrypt the flag. (The upper bound of N is 34 digits)
+  If you are going to download sagemath we recommend you use conda on linux, and homebrew on Mac.
+  Downloading from source takes more time and is more prone to errors.
 
 flags:
   # multiple flags can be provided
