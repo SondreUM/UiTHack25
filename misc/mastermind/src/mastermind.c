@@ -3,6 +3,8 @@
 #include <signal.h>
 #include <unistd.h>
 #include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #define CODE_LENGTH 4
 #define MAX_GUESSES 15
@@ -52,6 +54,22 @@ void generate_code(int code[CODE_LENGTH]){
 
         code[i] = num;
     }
+}
+
+unsigned long generate_secure_seed() {
+    unsigned long seed;
+    int fd = open("/dev/urandom", O_RDONLY);
+    if (fd == -1) {
+        perror("open");
+        return 0; 
+    }
+    if (read(fd, &seed, sizeof(seed)) != sizeof(seed)) {
+        perror("read");
+        close(fd);
+        return 0;
+    }
+    close(fd);
+    return seed;
 }
 
 void mastermind_game() {
@@ -105,8 +123,8 @@ int main() {
     ignore_me();
     ignore_me_timeout();
 
-    unsigned long clock = time(NULL);
-    srand(clock);
+    unsigned long seed = generate_secure_seed();
+    srand(seed);
 
     printf("\nWelcome Mastermind!\n\n");
 

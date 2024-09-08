@@ -1,11 +1,10 @@
 # Misc - Mastermind
 
-
 > > Misc - medium
 > 
 > EvilCorp controls it all — your personal data, your freedom, and even your future. You have found a way to leak some data from their security systems, just enough to help you crack their security code. You have 15 attempts and 30 seconds to break their code. Fail, and the system will activate a kill switch, instantly notifying EvilCorp's security division.
 > 
-> Files: [mastermind](src/mastermind), [mastermind.c](src/mastermind.c)
+> Files: [mastermind](../src/mastermind), [mastermind.c](../src/mastermind.c)
 
 
 ## Writeup
@@ -23,6 +22,8 @@ You only have 15 guesses, so bruteforcing is infeasible and a optimal strategy m
 4. Otherwise, remove from $S$ any code that would not give that response.
 5. Choose a new guess from $S$.
 7. Repeat from step 3.
+
+Solve script: [solve.py](../src/solve.py)
 
 ## Resources
 [1] https://en.wikipedia.org/wiki/Mastermind_(board_game)

@@ -86,7 +86,7 @@ def crack_mastermind(host, port):
         print(output)
 
         if "ACCESS GRANTED" in output:
-            output = recv_line()
+            output = recv_data()
             print(output)
             break
 
