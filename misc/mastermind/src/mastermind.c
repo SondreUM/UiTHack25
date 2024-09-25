@@ -7,8 +7,8 @@
 #include <unistd.h>
 
 #define CODE_LENGTH 4
-#define MAX_GUESSES 15
-#define TIMEOUT 30
+#define MAX_GUESSES 7
+#define TIMEOUT 60
 
 void ignore_me(){
     setvbuf(stdin, NULL, _IONBF, 0);

@@ -122,6 +122,9 @@ if __name__ == "__main__":
             print("Invalid server format. Server in the format 'host:port'")
             exit(1)
 
-    print(f"Cracking mastermind on {host}:{port}")
+    if host == None or port == None:
+        print("Cracking mastermind locally")
+    else:
+        print(f"Cracking mastermind on {host}:{port}")
 
     crack_mastermind(host, port)
