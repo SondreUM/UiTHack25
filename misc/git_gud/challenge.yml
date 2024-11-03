@@ -1,0 +1,42 @@
+name: "{{cookiecutter.name}}"
+author: "SondreUM"
+category: misc
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    This is a sample description
+
+flags:
+    - UiTHack25{y0u_g0t_s0me_A1_HYPE?}
+    # A static case sensitive flag created with a dictionary
+    - { type: "static", content: "UiTHack25{3xampl3}" }
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - git
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+tags:
+    # set difficulty
+    - easy
+
+files:
+    - src/ai.py
+
+# Can be removed if unused
+# Accepts dictionaries or strings
+hints:
+    - This hint is free
+    - { content: "This hint costs points", cost: 10 }
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
