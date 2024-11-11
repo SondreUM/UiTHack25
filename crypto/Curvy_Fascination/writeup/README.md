@@ -3,9 +3,9 @@
 >
 > After monitoring the encrypted communication at EvilCorp, for a while, you finally have the information needed to crack their entire encryption scheme. And judging by the message you first choose to decrypt it would seem the inclinations of the IT guy will be on full display.
 >
-> Find the key N to decrypt the flag. (The upper bound of N is 34 digits, meaning $log_{10}(N) < 35$)
+> Find the key N, and use it to decrypt the flag. (The upper bound of N is 34 digits, meaning $log_{10}(N) < 34$)
 >
-> If you are going to download sagemath we recommend you use conda on linux, and homebrew on Mac.
+> If you are going to download sagemath we recommend you use conda on linux/wsl, and homebrew on Mac.
 > Downloading from source takes more time and is more prone to errors.
 >
 
@@ -22,7 +22,7 @@ To recap what our objective is: we need to find the scalar N that makes
 
 $Q = N * P$
 
-With an upper bound on N that is 34 digits, but more accurately $log_{10}(N) < 35$.
+With an upper bound on N that is 34 digits, but more accurately $log_{10}(N) < 34$.
 
 Now, given that we have already calculated $b$ for the curve (in Defining Curves) we can add it to the information we know
 
@@ -51,7 +51,7 @@ If most of them are relatively small then the Pohlig-Hellman attack is viable.
 
 Most of them are indeed relatively small. "What is small?" you might say. There's not really a perfect number for that, but generally 10 or less digits should be computationally viable on a consumer computer.
 Now, all the factors are not small. That last one is looking real nasty, but all we need is enough small factors that their product is larger than the upper bound of $N$.
-And indeed $log_{10}(43 * 2477 * 15559 * 251918963 * 583103869 * 584585929) > 35$. This means we should be able to disregard the large prime and still get the correct answer.
+And indeed $log_{10}(43 * 2477 * 15559 * 251918963 * 583103869 * 584585929) > 34$. This means we should be able to disregard the large prime and still get the correct answer.
 
 Without going into into the heavy math details of the Pohlig-Hellman attack, that attack itself can be seen as a way of incrementally expanding the size of $N$ that we can solve for.
 This way one is able to disregard the computational complexity of large primes as long as there are enough small ones.

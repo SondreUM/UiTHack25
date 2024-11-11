@@ -5,7 +5,7 @@ from sage.all import *
 
 # method for generating a weak prime for the curve
 # https://crypto-writeup-public.hatenablog.com/entry/Pohlig-Hellman%2520Attack
-# (When you realize at 2am that you're reading a japanese blogpost on crypto math you know rabbithole runs deep)
+# (When you realize at 2am that you're reading a japanese blogpost on crypto math you know the rabbithole runs deep)
 def gen_weak_prime(size, smooth):
     """
     generate approximately size-bit prime p
