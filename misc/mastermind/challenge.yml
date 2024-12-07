@@ -1,0 +1,38 @@
+name: "Mastermind"
+author: "@sdalv1k"
+category: misc
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    EvilCorp controls it all — your personal data, your freedom, and even your future.
+    You have found a way to leak some data from their security systems, just enough to help you crack their security code.
+    You have 7 attempts and 1 minute to break their code.
+    Fail, and the system will activate a kill switch, instantly notifying EvilCorp's security division.
+
+connection_info: nc uithack.td.org.uit.no 4444
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - misc
+    - logic puzzle
+    - server side
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - medium
+
+flags:
+    - UiTHack25{4cc355_gr4n73d_f0r_r007_u53r_m4573rm1nd}
+files:
+    - src/mastermind.c
+    - src/mastermind
+
+state: visible
+version: "0.1"
