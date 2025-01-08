@@ -15,8 +15,8 @@ Add emoji!
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
 |  |  |  |  |  | Defining Curves ➰ |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+|  |  |  |  |  | Pattern Recognition 📯 |  |  |
 |  |  |  |  |  | XORbitant defense ❌ |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
@@ -59,35 +59,35 @@ This years flag format: `UiTHack25{flag}`
 
 ### CTF theme
 
-> TBD
+> Cyberpunk
 
 Challenges should try to use the theme as much as possible, such as names, images, description text.
 However it is not a requirement.
 
 ### Challenge creation
 
-1. Create a new issue for a task. Use tags to indicate category and difficulty.
+1. Create a new issue for the challenge. Use tags to indicate category and difficulty. Use the issue description field to for a basic description of the challenge.
 2. Pull/fetch from main.
 3. Create a new branch for the specific task/issue `git checkout -b issueName` from main.
 (\*Remember do pull/fetch).
-4. When task is created, commit it `git add *` `git commit -m "Insert description and alot of emojies like this :rocket: :fire:"`.
+4. When challenge is created, perform a commit `git add *` and `git commit -m "Insert description and alot of emojies like this :rocket: :fire:"`.\
+Usage of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) are encouraged, but not required.
 5. Push branch `git push --set-upstream origin issueName`.
-6. Add README for task, filename should be `README.md`.
+6. Add README for challenge, filename should be `README.md`.
 Set up the directory structure as illustrated above.
 All code should be contained in a subdirectory called `src`.
 If complex commands are needed to build the project, add a Makefile or a build script.
 7. Copy the `challenge-example_required.yml` template and fill in the required fields.
-Add some topics that explains the exploit/vulnaribility/solution (only visible for admins).
-Example: -SQL-injection, -Buffer overflow, etc.
-8. If the challenge needs to run on a server, create a dockerfile (template available) for it.
+Add some topics that explains the exploit/vulnerability/solution (only visible for admins).
+Example: SQL-injection, Buffer overflow, etc.
+8. If the challenge needs to run on a server, create a dockerfile (template available) that contains everything needed to host the challenge.
 9. Add writeup in the `writeup` directory for the challenge, filename should be `README.md`.
 Additional solve scripts and files can also be added.
 Include sources and references if relevant.
 10. Update the main repository README with the new challenge.
 11. Test the challenge. You should be able to solve it with the information given in writeup.
-12. Create a pull request, the pull request should be linked to a issue.
+12. Create a pull request, the pull request should be linked to an issue.
 Another team member should review and test the challenge before approving.
-The branch can then be added to main with a squash merge.
 
 ### CTFd app
 

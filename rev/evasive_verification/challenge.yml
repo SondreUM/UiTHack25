@@ -1,0 +1,50 @@
+name: "evasive_verify"
+author: "@SondreUM"
+category: rev
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    EvilCorp has installed a new security system to verify subscriptions.
+    Can you bypass it?
+
+flags:
+    - UiTHack25{S3cur1ty_Thr0ugh_0bscur1tee}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - memory forensics (gdb)
+    - reverse engineering
+    - serverside
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - medium
+    - asm
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - src/evasive_verify
+    - src/evasive_verify.exe
+
+# If you have a Dockerfile set to .
+image: .
+
+hints:
+    - {
+          content:
+              "It seems like they found a way to verify the key without actually storing it in the binary executable.
+              Where could they have hidden it, while still being accessible?",
+          cost: 50,
+      }
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
