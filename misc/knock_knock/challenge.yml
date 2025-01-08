@@ -1,0 +1,58 @@
+name: "Knock Knock"
+author: "@Deki"
+category: misc
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+  In the rain-slick alleys of San Sequestro lies an underground safehouse where the city's most wanted netrunners hide. No retinal scans, no fingerprints - just an old-school precise knock sequence on a rusted steel door grants access to those who prove themselves worthy. Can you crack the sequence and access the secrets within?
+
+    Note: this challenge uses the HTTP protocol and can be done in a browser.
+
+flags:
+    - UiTHack25{Wh05_Th3r3?_N0t_Th3_f3d5}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - port knocking
+    - web
+    - networking
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - easy
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - 
+
+# If you have a Dockerfile set to .
+image: .
+
+hints:
+    - {
+          content:
+              "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service.",
+          cost: 0,
+      }
+    - {
+          content:
+              "Nmap is a popular tool that can enumerate open ports of a host.",
+          cost: 20,
+      }
+    - {
+          content:
+              "The first port is 4837.",
+          cost: 50,
+      }
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
