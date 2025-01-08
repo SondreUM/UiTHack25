@@ -2,7 +2,7 @@
 
 > > Misc - *points/solves*
 >
-> Surfing the internet you discover a file that is being circulated around. What makes it so special?
+> Surfing the internet you discover an archive that is being circulated around. What makes it so special?
 >
 > Files: [flag.rar](../src/flag.rar)
 
@@ -45,4 +45,4 @@ more < flag.txt:real_flag.txt
 
 ## Resources
 
-Include links to the original challenge, writeups, vulnerabilities, tools, etc. here
+[blog about NTFS ADS](https://blog.netwrix.com/2022/12/16/alternate_data_stream/)
