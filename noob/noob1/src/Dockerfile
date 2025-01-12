@@ -23,7 +23,7 @@ ADD flag.txt /home/noob1/flag.txt
 RUN chmod 644 /home/noob1/flag.txt
 
 # Permit root login via SSH
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+# RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Enable password authentication
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config

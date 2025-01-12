@@ -12,21 +12,31 @@ RUN userdel -r ubuntu
 
 # Create home directories for challenge user
 RUN mkdir /home/noob5
+RUN mkdir /home/mr_captain
 
 # Set read permissions for home directory
 RUN chmod 755 /home/noob5
+RUN chmod 755 /home/mr_captain
 
 # Create challenge users
 RUN useradd -d /home/noob5 -s /bin/bash noob5 && echo 'noob5:UiTHack25{D45h1ng_5ki11s}' | chpasswd
-RUN useradd -s /bin/bash noob5_2 && echo 'mr_captain:SuperUltraS3cretPWD' | chpasswd
+RUN useradd -d /home/mr_captain -s /bin/bash mr_captain && echo 'mr_captain:SuperUltraS3cretPWD' | chpasswd
+RUN passwd -d mr_captain
 
 # Disable ssh login for mr_captain
 RUN echo 'DenyUsers	mr_captain' >> /etc/ssh/sshd_config
 
-# noob5 flag
-USER mr_captain
+# create group for captain and root
+RUN sudo groupadd -g 1010 captain
+RUN sudo usermod -aG captain mr_captain
+RUN sudo usermod -aG captain root
+
+# Copy flag to noob5 home directory
 ADD flag.txt /home/noob5/flag.txt
-RUN chmod 644 /home/noob5/flag.txt
+
+# Set root as owner, and captain as group
+RUN chmod 640 /home/noob5/flag.txt
+RUN chown root:captain /home/noob5/flag.txt
 
 # Permit root login via SSH
 # RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
