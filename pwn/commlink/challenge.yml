@@ -1,0 +1,34 @@
+name: "Commlink"
+author: "@sdalv1k"
+category: pwn
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    You've intercepted a connection to a commlink terminal. 
+    The system looks secure at first glance, but perhaps its design isn't as "secure" as the company claims.
+
+connection_info: nc uithack.td.org.uit.no 9000
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - pwn
+    - format string vulnerability
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - easy
+
+flags:
+    - UiTHack25{cr17t1c4l_f0rm47_57r1n9_vu1n3r481ll17y_d15c0v3r3d}
+files:
+    - src/commlink
+
+state: visible
+version: "0.1"

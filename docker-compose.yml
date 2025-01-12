@@ -14,6 +14,12 @@ services:
       - "4444:4444"
     restart: on-failure
 
+  commlink:
+    build: ./pwn/commlink/src
+    ports:
+      - "9000:9000"
+    restart: on-failure
+
 networks:
   nginx_network:
     external: true
