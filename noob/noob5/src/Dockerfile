@@ -25,6 +25,7 @@ RUN passwd -d mr_captain
 
 # Disable ssh login for mr_captain
 RUN echo 'DenyUsers	mr_captain' >> /etc/ssh/sshd_config
+RUN user ALL=(mr_captain) NOPASSWD: /usr/bin/cat
 
 # create group for captain and root
 RUN sudo groupadd -g 1010 captain

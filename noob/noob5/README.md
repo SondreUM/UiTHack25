@@ -1,14 +1,12 @@
-# Noob - Noob1
+# Noob - Noob5
 
 > Noob - easy
 
-A rivaling gang stolen your flag. You need to get it back. Are you up for the challenge?
+One last time the flag has been stolen. This time they even had courage to invite us to take it back. This must mean they are confident in their countermeasures. We don't really have a choice though. Best of luck
 
-You can connect to their server with the following command `ssh noob1@uithack.td.org.uit.no -p 6000`
+You can connect to their server with the following command `ssh noob5@uithack.td.org.uit.no -p 6004`
 
-The password is `noobyPenguin`
-
-Read up on the "cat" command if you are not familiar with it.
+The password is the flag from the previous noob challenge.
 
 Use command `exit` to disconnect from the server when you are done.
 
