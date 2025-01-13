@@ -1,4 +1,4 @@
-name: "noob1"
+name: "noob2"
 author: "Lorentzen"
 category: noob
 value: 500
@@ -9,22 +9,22 @@ extra:
   minimum: 100
 
 description: >
-  A rivaling gang stolen your flag. You need to get it back. Are you up for the challenge?
+  The flag has been stolen once more. They learned from the mistake and they have now taken measures to hide it.
 
-  You can connect to their server with the following command `ssh noob1@uithack.td.org.uit.no -p 6000`
+  You can connect to their server with the following command `ssh noob2@uithack.td.org.uit.no -p 6001`
 
-  The password is `noobyPenguin`
+  The password is the flag from the previous noob challenge.
 
-  Read up on the "cat" command if you are not familiar with it.
+  Read up on the "ls" command if you are not familiar with it.
 
   Use command `exit` to disconnect from the server when you are done.
 
-connection_info: ssh noob1@uithack.td.org.uit.no -p 6000
+connection_info: ssh noob2@uithack.td.org.uit.no -p 6001
 
 flags:
   # multiple flags can be provided
   # A static case sensitive flag
-  - UiTHack25{C4t_W0rk5_W0nd3rs}
+  - UiTHack25{Hidd3n_but_c4n_b3_Cena}
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
@@ -32,6 +32,7 @@ flags:
 topics:
   - bash
   - cat
+  - hidden directory
 
 # Tags are used to provide additional public tagging to a challenge
 # Accepts strings
