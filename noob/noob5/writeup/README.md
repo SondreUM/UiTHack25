@@ -20,16 +20,16 @@ To check the permissions on it we can use `ls -l`.
 
 This shows us that the file belongs to the user `root`, and that the group `captain` has read permissions for it. That second group sounds interesting.
 
-To check who is member of that group we can user `grep '^captain:' /etc/group`. This shows us that there is another user called `mr_captain`.
+To check who is member of that group we can use `grep '^captain:' /etc/group`. This shows us that there is another user called `mr_captain`.
 
-Maybe maybe we could pretend to be that person. This is what the `sudo` command actually does. However most people just know it for running commands as `root` since that is the default user to run a command as with `sudo`. Using `sudo -l -U noob5` we can see if there are any commands we can run as other users.
+Maybe we could pretend to be that user? This is what the `sudo` command actually does. However most people just know it for running commands as `root` since that is the default user to run a command as with `sudo`. If we want to run a command as another user we simply use the argument `-u` to specify what user we wanna run the command as. Before this we could at leat check if we can run any commands as `mr_captain`. This can be done using the command `sudo -l -U noob5`. It will specify any commands we are allowed to run as other user, and even say if we need a password to do so!
 
 ```
 User noob5 may run the following commands on ************:
     (mr_captain) NOPASSWD: /usr/bin/cat
 ```
 
-This means we are allowed to run `cat` as if we were `mr_captain` without a password with the command `sudo -u mr_captain /usr/bin/cat /home/noob5/flag.txt`
+This means we are allowed to read the flag with `cat` as if we were `mr_captain`, without a password, using the command `sudo -u mr_captain /usr/bin/cat /home/noob5/flag.txt`
 
 ```
 UiTHack25{I_4M_D4_C4P74IN_N0W}
