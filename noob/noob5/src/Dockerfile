@@ -4,8 +4,8 @@ FROM ubuntu:latest
 # Install SSH server
 RUN apt-get update && apt-get install openssh-server sudo -y
 
-# Set the root password for the SSH server (CHANGE THIS PASSWORD!)
-RUN echo 'root:SuperDup3rH3mm31ig' | chpasswd
+# Set the root password for the SSH server
+RUN echo 'root:u6rrmEJORb!CH=oZg1#e' | chpasswd
 
 # Delete default user
 RUN userdel -r ubuntu
