@@ -29,7 +29,7 @@ flags:
 # Accepts strings
 topics:
   - bash
-  - cat
+  - linux command argument handling
 
 # Tags are used to provide additional public tagging to a challenge
 # Accepts strings
