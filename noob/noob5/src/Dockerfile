@@ -21,10 +21,11 @@ RUN chmod 755 /home/mr_captain
 # Create challenge users
 RUN useradd -d /home/noob5 -s /bin/bash noob5 && echo 'noob5:UiTHack25{D45h1ng_5ki11s}' | chpasswd
 RUN useradd -d /home/mr_captain -s /bin/bash mr_captain && echo 'mr_captain:SuperUltraS3cretPWD' | chpasswd
-# RUN passwd -d mr_captain
 
 # Disable ssh login for mr_captain
 RUN echo 'DenyUsers	mr_captain' >> /etc/ssh/sshd_config
+
+# Enable noob5 to execute cat as mr_captain
 RUN echo "noob5 ALL=(mr_captain) NOPASSWD: /usr/bin/cat" >> /etc/sudoers
 
 # create group for captain and root

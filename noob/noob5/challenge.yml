@@ -29,7 +29,7 @@ flags:
 # Accepts strings
 topics:
   - bash
-  - cat
+  - sudo
 
 # Tags are used to provide additional public tagging to a challenge
 # Accepts strings

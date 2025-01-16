@@ -31,7 +31,6 @@ flags:
 # Accepts strings
 topics:
   - bash
-  - cat
   - hidden directory
 
 # Tags are used to provide additional public tagging to a challenge
