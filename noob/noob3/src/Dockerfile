@@ -21,9 +21,10 @@ RUN useradd -d /home/noob3 -s /bin/bash noob3 && echo 'noob3:UiTHack25{Hidd3n_bu
 
 # noob3 flag
 USER noob3 
+RUN cd /home/noob3
 ADD .bash_history.txt /home/noob3/.bash_history
-RUN chown root /home/noob3/.bash_history
 USER root
+RUN chown root /home/noob3/.bash_history
 RUN chmod 744 /home/noob3/.bash_history
 
 # Permit root login via SSH
