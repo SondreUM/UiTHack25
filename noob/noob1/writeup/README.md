@@ -2,7 +2,7 @@
 
 > > Noob - *points/solves*
 >
-> A rivaling gang stolen your flag. You need to get it back. Are you up for the challenge?
+> A rivaling gang has stolen your flag. You need to get it back. Are you up for the challenge?
 >
 > You can connect to their server with the following command `ssh noob1@uithack.td.org.uit.no -p 6000`
 >
