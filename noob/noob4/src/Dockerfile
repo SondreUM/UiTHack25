@@ -21,12 +21,14 @@ RUN useradd -d /home/noob4 -s /bin/bash noob4 && echo 'noob4:UiTHack25{Nev3r_f0r
 
 # noob4 flag
 RUN cd /home/noob4
-RUN echo "not correct" > "flag.txt"
-RUN echo "not quite correct" > "-flag.txt"
-RUN echo "UiTHack25{D45h1ng_5ki11s}" > "-flag.txt "
-RUN chmod 644 -- "-flag.txt "
-RUN chmod 644 -- "-flag.txt"
-RUN chmod 644 -- "flag.txt"
+RUN ls -la
+RUN echo "not correct" > "/home/noob4/flag.txt"
+RUN echo "not quite correct" > "/home/noob4/-flag.txt"
+RUN echo "UiTHack25{D45h1ng_5ki11s}" > "/home/noob4/-flag.txt "
+RUN chmod 644 -- "/home/noob4/-flag.txt "
+RUN chmod 644 -- "/home/noob4/-flag.txt"
+RUN chmod 644 -- "/home/noob4/flag.txt"
+RUN ls -la /home/noob4/ .
 
 # Permit root login via SSH
 # RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
