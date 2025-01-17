@@ -26,14 +26,10 @@ tags:
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
 files:
-    - src/runner
+    - runner
 
 # If you have a Dockerfile set to .
 image: .
-
-hints:
-    - content: ""
-      cost: 50,
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.
