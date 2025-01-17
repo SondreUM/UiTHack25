@@ -1,7 +1,7 @@
 const std = @import("std");
 const builtin = @import("builtin");
+const obfuscate = @import("obfuscate.zig");
 
-const crypto = @import("crypto.zig");
 const mem = std.mem;
 const page_allocator = std.heap.page_allocator;
 
@@ -27,7 +27,8 @@ pub fn main() !void {
     };
 
     var shellcode: [SHELLCODE_ENCRYPTED.len]u8 = undefined;
-    crypto.decrypt(&shellcode, SHELLCODE_ENCRYPTED);
+    obfuscate.xor(&shellcode, SHELLCODE_ENCRYPTED);
+
     try execVerifier(&shellcode, flag_guess);
 }
 

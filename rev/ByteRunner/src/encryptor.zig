@@ -1,5 +1,5 @@
 const std = @import("std");
-const crypto = @import("crypto.zig");
+const obfuscate = @import("obfuscate.zig");
 
 const USAGE = "USAGE: ./encryptor <file> <key>\n";
 
@@ -21,11 +21,9 @@ pub fn main() !void {
     };
 
     const plaintext = try std.fs.cwd().readFileAlloc(alloc, in_path, 1024 * 8);
-    defer alloc.free(plaintext);
     const ciphertext = try alloc.alloc(u8, plaintext.len);
-    defer alloc.free(ciphertext);
 
-    crypto.encrypt(ciphertext, plaintext);
+    obfuscate.xor(ciphertext, plaintext);
     const out_file = try std.fs.cwd().createFile(out_path, .{});
     defer out_file.close();
     try out_file.writeAll(ciphertext);
