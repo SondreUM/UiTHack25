@@ -14,11 +14,11 @@ None should be too hard and some help will be given for those in need.
 Add emoji!
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-|  |  | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
-|  |  |  | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
-|  |  |  | Mastermind 🧠️ |  | Pattern Recognition 📯 |  |  |
-|  |  |  |  |  | XORbitant defense ❌ |  |  |
-|  |  |  |  |  |  |  |  |
+| Noob1🐱 |  | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
+| Noob2🍼 |  |  | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+| Noob3👶 |  |  | Mastermind 🧠️ |  | Pattern Recognition 📯 |  |  |
+| Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
+| Noob5🐉 |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 
