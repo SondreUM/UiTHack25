@@ -1,6 +1,6 @@
 # Pwn - Commlink
 
->> Pwn - easy
+>> Pwn - medium
 >
 >You've intercepted a connection to a commlink terminal. The system looks secure at first glance, but perhaps its design isn't as "secure" as the company claims.
 

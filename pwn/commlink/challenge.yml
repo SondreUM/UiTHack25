@@ -23,7 +23,7 @@ topics:
 # Tags are used to provide additional public tagging to a challenge
 # Can be removed if unused
 tags:
-    - easy
+    - medium
 
 flags:
     - UiTHack25{cr17t1c4l_f0rm47_57r1n9_vu1n3r481ll17y_d15c0v3r3d}
