@@ -12,9 +12,10 @@ None should be too hard and some help will be given for those in need.
 ## Challenges
 
 Add emoji!
+
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-| Noob1🐱 |  | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
+| Noob1🐱 | !big_picture 🔍 | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
 | Noob2🍼 |  |  | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
 | Noob3👶 |  |  | Mastermind 🧠️ |  | Pattern Recognition 📯 |  |  |
 | Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
