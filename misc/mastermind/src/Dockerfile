@@ -15,4 +15,4 @@ USER ctf
 CMD ./ynetd -p 4444 ./mastermind
 
 # docker build -t mastermind .
-# docker run -dp 4444:4444 -it mastermind
+# docker run -dp 10444:4444 -it mastermind

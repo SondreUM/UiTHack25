@@ -20,7 +20,7 @@ services:
   mastermind:
     build: ./misc/mastermind/src
     ports:
-      - "4444:4444"
+      - "10444:4444"
     restart: on-failure
 
   big_picture:
