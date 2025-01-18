@@ -1,0 +1,35 @@
+name: "SC0"
+author: "@sdalv1k"
+category: pwn
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    You're about to infilitrate the headquarters of EvilCorp, and you stumble upon an abondoned workstation. 
+    Is this an opportunity or a trap? 
+
+connection_info: nc uithack.td.org.uit.no 9001
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - pwn
+    - buffer overflow
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - easy
+
+flags:
+    - UiTHack25{c4n_7h3y_533_m3_n0w?}
+files:
+    - src/sc0
+    - src/sc0.c
+
+state: visible
+version: "0.1"

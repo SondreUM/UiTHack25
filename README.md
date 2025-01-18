@@ -15,7 +15,7 @@ Add emoji!
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
 | Noob1🐱 |  | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
-| Noob2🍼 |  |  | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+| Noob2🍼 |  | SC0 📹 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
 | Noob3👶 |  |  | Mastermind 🧠️ |  | Pattern Recognition 📯 |  |  |
 | Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  |  |  |  |
