@@ -5,7 +5,6 @@ LABEL category="rev"
 LABEL source="UiTHack25"
 LABEL version="1.0"
 LABEL description="Evasive Verification Challenge"
-LABEL author="@SondreUM"
 
 
 # Replace the default nginx configuration with our custom configuration
