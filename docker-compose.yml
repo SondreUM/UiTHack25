@@ -1,3 +1,12 @@
+
+# Port ranges:
+## rev: 5xxx
+## noob: 6xxx
+## crypto: 7xxx
+## web: 8xxx
+## pwn: 9xxx
+## misc: 10xxx
+
 services:
   # example
   # challenge_name:
