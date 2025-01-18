@@ -1,5 +1,8 @@
 FROM ubuntu:22.04
-LABEL Description="UiTHack25 SC0"
+LABEL description="SC0"
+LABEL category="pwn"
+LABEL source="UiTHack25"
+LABEL version="1.0"
 
 RUN useradd -d /home/ctf -m -p ctf -s /bin/bash ctf
 WORKDIR /home/ctf
