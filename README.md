@@ -1,6 +1,7 @@
-# UiTHack25
+# UiTHack25{CTF}
 
-Repository for the yearly CTF challenge by UiT students.
+Repository for the yearly CTF challenge by UiT students.\
+Official Discord server: <https://discord.gg/V5dWfyrCQ3>
 
 ## Motivation and vision
 
@@ -11,7 +12,7 @@ None should be too hard and some help will be given for those in need.
 
 ## Challenges
 
-Add emoji!
+📌Add emoji!
 
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
@@ -28,12 +29,12 @@ Add emoji!
 Participants can submit their writeups by creating a pull request.
 The writeup should preferably be in markdown format, but other formats are also accepted if it is easy to read.
 Place the writeup in the `writeup` directory for the challenge, with the teamname as the directory name.
-Scripts and other files can be placed in the same directory, look at the example structure below.
+Scripts and other files can be placed in the same directory. Take a look at the example structure below.
 
 ### Writeup file structure
 
 ```sh
-├── README.md
+├── README.md # <------------------------ You are here!
 ├── rev📂
 |    └── challenge1📂
 |         ├── challenge.yml
@@ -47,12 +48,19 @@ Scripts and other files can be placed in the same directory, look at the example
 |              └── my-awesome-team📂    # team directory
 |                   ├── solve.py        # solve script (optional)
 |                   ├── image-1.png     # images to show off your exploits (optional)
-|                   └── README.md       # your writeup
+|                   └── README.md       # your awesome writeup
 ```
 
 ---
 
 ## Developer guidelines
+
+### Contributors
+
+Huge thanks to all UiTHack organizers and contributors! 🎉\
+They make this event possible by dedicating their free time to create challenges and writeups.
+<!-- Will not function until after the repo goes public -->
+[![Contributors](https://contrib.rocks/image?repo=SondreUM/UiThack25)](https://github.com/sondreum/UiTHack25/graphs/contributors)
 
 ### Flag format
 
@@ -90,12 +98,16 @@ Include sources and references if relevant.
 12. Create a pull request, the pull request should be linked to an issue.
 Another team member should review and test the challenge before approving.
 
-### CTFd app
+### Infrastructure
 
-CTFd is the application we are using to host the challenges and keep track of contestants/teams and scoreboards.
+UitHack uses [CTFd](https://ctfd.io/) as the frontend application to host the challenges and keep track of contestants/teams and scoreboards.
 It will be served on `uithack.no` ---DNS---> `uithack.td.org.uit.no`
 
 ## Resources
+
+### Collaborators
+
+- [Tromsøstudentenes Dataforening](https://td-uit.no/about-us)
 
 ### Previous UiTHacks
 
