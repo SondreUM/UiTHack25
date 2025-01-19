@@ -73,6 +73,21 @@ This years flag format: `UiTHack25{flag}`
 Challenges should try to use the theme as much as possible, such as names, images, description text.
 However it is not a requirement.
 
+### Challenge difficulty
+
+- **Noob**: Challenges that are meant to familiarize the player with the CTF format.\
+*Note: These challenges are put into its own category, and the difficulty rating should not be used on other challenges.*
+- **Easy**: No prerequisites, should be solvable by everyone. A new player should be able to solve this in a couple of hours at most.\
+*Note: Easy challenges should not have purchasable hints (can be free), as these are provided for free if the player opens a ticket.*
+- **Medium**: Requires some knowledge of the subject, or a bit of google-fu.
+- **Hard**: Requires in-depth knowledge of the subject. Experienced players will find this challenging.
+- **Insane**: Only a few to none will be able to solve this. Requires a lot of knowledge and experience on the topic.\
+*Note: This difficulty should be used sparingly, as they require a lot of time to create and test.*
+
+Remember that making a challenge time-consuming does not make it harder, it just makes it more annoying.\
+The goal is to make the challenges fun and educational.
+To make a challenge easier leave breadcrumbs and hints in the challenge description or in the challenge itself. To make a challenge harder, increase the complexity by adding more steps or layers, but make sure that feedback is given to the player so they know they are on the right track.
+
 ### Challenge creation
 
 1. Create a new issue for the challenge. Use tags to indicate category and difficulty. Use the issue description field to for a basic description of the challenge.
