@@ -1,6 +1,7 @@
-# Pwn - Mp3 Player
+# Mp3 Player
 
-> Pwn - easy/medium/hard
+<!-- Replace difficulty with score after CTF -->
+> Pwn - easy/medium/hard <!-- *points/solves* -->
 
 We found an old mp3 player laying around and decided to connect it to the internet for everyone to listen to its good ol' hits.
 However, we might have messed up some of the instructions when setting it up...

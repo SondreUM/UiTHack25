@@ -1,4 +1,4 @@
-# Pwn - Mp3 Player
+# Mp3 Player
 
 > > Pwn - *points/solves*
 >
@@ -10,7 +10,7 @@
 > You can connect to the mp3 player with netcat
 >
 > ```bash
-> $ nc motherload.td.org.uit.no 8006
+> nc motherload.td.org.uit.no 8006
 > ```
 
 ## Writeup
