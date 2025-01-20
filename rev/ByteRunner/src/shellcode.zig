@@ -11,6 +11,7 @@ pub export fn _start(guess: [*]const u8, len: usize) callconv(.C) void {
     obfuscate.xor(&flag, FLAG);
 
     if (len != flag.len or !std.mem.eql(u8, guess[0..len], &flag)) {
+        std.crypto.utils.secureZero(u8, &flag);
         _ = std.os.linux.write(0, FAILURE, FAILURE.len);
         return;
     }
