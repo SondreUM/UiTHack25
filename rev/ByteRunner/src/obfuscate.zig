@@ -1,13 +1,3 @@
-pub fn obfuscate_bytes(comptime bytes: []const u8) [bytes.len]u8 {
-    var out: [bytes.len]u8 = undefined;
-
-    for (0..bytes.len) |i| {
-        out[i] = bytes[i] ^ @as(u8, @truncate(i + 0x45));
-    }
-
-    return out;
-}
-
 pub fn xorComptime(comptime bytes: []const u8) [bytes.len]u8 {
     var out: [bytes.len]u8 = undefined;
 
