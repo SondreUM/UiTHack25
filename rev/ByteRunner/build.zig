@@ -1,9 +1,6 @@
 const std = @import("std");
 const builtin = @import("builtin");
 
-
-const ZIG_VERSION = builtin.zig_version;
-
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
 
@@ -16,12 +13,12 @@ pub fn build(b: *std.Build) void {
         .single_threaded = true,
     });
 
-    const payload = b.addExecutable(.{
+    const shellcode_elf = b.addExecutable(.{
         .name = "shellcode",
         .target = b.resolveTargetQuery(.{
             .os_tag = .freestanding,
-            .cpu_arch = target.result.cpu.arch,
-            .abi = target.result.abi,
+            .cpu_arch = .x86_64,
+            .abi = .gnu,
         }),
         .optimize = .ReleaseSmall,
         .root_source_file = b.path("src/shellcode.zig"),
@@ -31,16 +28,16 @@ pub fn build(b: *std.Build) void {
         .error_tracing = false,
         .unwind_tables = false,
     });
-    payload.setLinkerScript(b.path("src/shellcode.ld"));
-    payload.build_id = .none;
+    shellcode_elf.setLinkerScript(b.path("src/shellcode.ld"));
+    shellcode_elf.build_id = .none;
 
-    const shellcode = b.addObjCopy(
-        payload.getEmittedBin(),
+    const shellcode_bin = b.addObjCopy(
+        shellcode_elf.getEmittedBin(),
         .{ .format = .bin },
     );
 
     const encrypt_step = b.addRunArtifact(encryptor);
-    encrypt_step.addFileArg(shellcode.getOutput());
+    encrypt_step.addFileArg(shellcode_bin.getOutput());
     const shellcode_encrypted = encrypt_step.addOutputFileArg("shellcode.encrypted");
 
     const runner = b.addExecutable(.{
