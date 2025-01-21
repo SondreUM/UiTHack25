@@ -16,8 +16,8 @@ None should be too hard and some help will be given for those in need.
 
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-| Noob1🐱 | !big_picture 🔍 | Commlink 🖧 |  |  | Defining Curves ➰ |  |  |
-| Noob2🍼 |  |  | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+| Noob1🐱 | !big_picture 🔍 | SC0 📹 |  |  | Defining Curves ➰ |  |  |
+| Noob2🍼 |  | Commlink 🖧 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
 | Noob3👶 |  |  | Mastermind 🧠️ |  | Pattern Recognition 📯 |  |  |
 | Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  |  |  |  |

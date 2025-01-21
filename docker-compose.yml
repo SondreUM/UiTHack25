@@ -65,6 +65,12 @@ services:
       - "9000:9000"
     restart: on-failure
 
+  sc0:
+    build: ./pwn/sc0/src
+    ports:
+      - "9001:9001"
+    restart: on-failure
+
 networks:
   nginx_network:
     external: true
