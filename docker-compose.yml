@@ -1,5 +1,6 @@
 
-# Port ranges:
+# Port 80 and 443 are reserved for the nginx container and should not be used for challenges.
+# Available port ranges:
 ## rev: 5xxx
 ## noob: 6xxx
 ## crypto: 7xxx
@@ -17,18 +18,10 @@ services:
   # networks:
   #    - nginx_network
 
-  mastermind:
-    build: ./misc/mastermind/src
-    ports:
-      - "10444:4444"
-    restart: on-failure
+  # rev 5xxx
 
-  big_picture:
-    build: ./web/big_picture/src
-    ports:
-      - "8001:8080"
-    restart: on-failure
-  
+
+  # noob 6xxx
   noob1:
     build: ./noob/noob1/src
     ports:
@@ -40,13 +33,13 @@ services:
     ports:
       - "6001:22"
     restart: on-failure
-  
+
   noob3:
     build: ./noob/noob3/src
     ports:
       - "6002:22"
     restart: on-failure
-  
+
   noob4:
     build: ./noob/noob4/src
     ports:
@@ -58,7 +51,20 @@ services:
     ports:
       - "6004:22"
     restart: on-failure
+  
+  # web 8xxx
+  # note web challenges requiring https should map ports,
+  # the ports must be mapped in the nginx.conf file
+  # use big_picture as an example
+  big_picture:
+    build: ./web/big_picture/src
+    # ports:
+      # - "8001:8080"
+    restart: on-failure
+    networks:
+      - nginx_network
 
+  # pwn 9xxx
   commlink:
     build: ./pwn/commlink/src
     ports:
