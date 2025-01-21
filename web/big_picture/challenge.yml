@@ -1,0 +1,37 @@
+name: "!big_picture"
+author: "@SondreUM"
+category: web
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    My "guy" told me that he had a really important message for me that he had to hide.
+    He told me that he would leave it in plain sight, but I can't seem to find it!
+    The only clue he gave me was that he would use a "big picture" to hide it.
+    Can you help me out?
+
+connection_info: https://uithack.td.org.uit.no:8001
+
+flags:
+    - UiTHack25{Ive_got_a_jar_of_dirt-Cpt.JS}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - mobile view
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - easy
+
+# If you have a Dockerfile set to .
+image: .
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
