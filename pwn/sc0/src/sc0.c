@@ -54,8 +54,8 @@ void disable_camera(){
 }
 
 void cam_control(){
-    char cam_label[16] = "SC0";
     char cam_data[48] = "enabled=true, resolution=1080p, fps=60";
+    char cam_label[16] = "SC0";
 
     printf("\n[ %s Data Memory ]\n", cam_label);
     visualize_stack(cam_data, sizeof(cam_data));
