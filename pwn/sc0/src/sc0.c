@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <signal.h>
 
-void setup(){
+void ignore_me(){
     setvbuf(stdin, NULL, _IONBF, 0);
     setvbuf(stdout, NULL, _IONBF, 0);
     setvbuf(stderr, NULL, _IONBF, 0);
@@ -17,7 +17,7 @@ void timeout(int signal){
     }
 }
 
-void enable_timeout(){
+void ignore_me_timeout(){
     signal(SIGALRM, timeout);
     alarm(60);
 }
@@ -74,8 +74,8 @@ void cam_control(){
 }
 
 int main(){
-    setup();
-    enable_timeout();
+    ignore_me();
+    ignore_me_timeout();
 
     cam_control();
     return 0;

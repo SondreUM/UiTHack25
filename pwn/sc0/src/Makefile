@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O2
+CFLAGS = -fno-stack-protector
 TARGET = sc0
 SRCS = sc0.c
 
