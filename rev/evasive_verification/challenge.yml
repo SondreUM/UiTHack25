@@ -31,7 +31,6 @@ tags:
 # Accepts strings
 files:
     - src/evasive_verify
-    - src/evasive_verify.exe
 
 # If you have a Dockerfile set to .
 image: .
