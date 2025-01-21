@@ -101,6 +101,14 @@ services:
       - "9001:9001"
     restart: on-failure
 
+  knock_knock:
+    build: ./misc/mastermind/src
+    ports:
+      - "10080:80"
+      - "4837:4837"
+      - "53254:53254"
+      - "1337:1337"
+    restart: on-failure
 networks:
     default:
     internal:
