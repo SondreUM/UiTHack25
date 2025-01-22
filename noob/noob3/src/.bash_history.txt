@@ -1,0 +1,43 @@
+hydra -l ubuntu -p xkTfqSsLVesmHh4 -M domains.txt ssh
+knockpy
+ls
+rm knockpy_report/
+rm -rf knockpy_report/
+zip2john backup.zip > hashes
+cat hashes
+john -wordlist=/usr/share/wordlists/rockyou.txt hashes
+UiTHack25{Nev3r_f0rg3771_ctrl_shift_del} > flag.txt
+nmap -sC -sV -v 10.129.98.20
+ping 10.129.98.20
+ifconfig
+ls
+cd ghidra
+./main
+chmod +x main
+./main
+ls
+code  main_func.c
+./main
+chmod +x main
+./main
+chmod +x main
+./main
+chmod +x main
+./main
+ghidra
+ls
+rm main.go
+rm main
+ls
+build main.go
+go build main.go
+./main
+go build main.go
+ls
+./main
+go build main.go
+ls
+gcc --help
+ls
+cd
+rm flag.txt

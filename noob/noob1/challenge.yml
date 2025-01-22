@@ -1,0 +1,57 @@
+name: "noob1"
+author: "Lorentzen"
+category: noob
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  A rivaling gang has stolen your flag. You need to get it back. Are you up for the challenge?
+
+  You can connect to their server with the following command `ssh noob1@uithack.td.org.uit.no -p 6000`
+
+  The password is `noobyPenguin`
+
+  Read up on the "cat" command if you are not familiar with it.
+
+  Use command `exit` to disconnect from the server when you are done.
+
+connection_info: ssh noob1@uithack.td.org.uit.no -p 6000
+
+flags:
+  # multiple flags can be provided
+  # A static case sensitive flag
+  - UiTHack25{C4t_W0rk5_W0nd3rs}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+  - bash
+  - cat
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+tags:
+  # set difficulty
+  - easy
+
+  # hint at the type of challenge or language used
+  # should not give away too much, only guide the player when choosing a challenge
+
+# Optional settings #
+# remove if unused
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+
+hints:
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"

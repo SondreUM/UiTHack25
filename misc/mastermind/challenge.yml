@@ -14,7 +14,7 @@ description: >
     You have 7 attempts and 1 minute to break their code.
     Fail, and the system will activate a kill switch, instantly notifying EvilCorp's security division.
 
-connection_info: nc uithack.td.org.uit.no 4444
+connection_info: nc uithack.td.org.uit.no 10444
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
