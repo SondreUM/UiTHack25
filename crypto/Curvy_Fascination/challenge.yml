@@ -34,7 +34,7 @@ topics:
 # Accepts strings
 tags:
   # set difficulty
-  - hard
+  - insane
 
   # hint at the type of challenge or language used
   # should not give away too much, only guide the player when choosing a challenge

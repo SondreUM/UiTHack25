@@ -1,6 +1,6 @@
 # Curvy Fascination
 
-> Crypto - 500pts
+> Crypto - insane <!-- *points/solves* -->
 
 After monitoring the encrypted communication at EvilCorp, for a while, you finally have the information needed to crack their entire encryption scheme. And judging by the message you first choose to decrypt it would seem the inclinations of the IT guy will soon be on full display.
 
@@ -10,6 +10,7 @@ If you are going to download sagemath we recommend you use conda on linux, and h
 Downloading from source takes more time and is more prone to errors.
 
 Files:
+
 - [handout.txt](src/handout.txt)
 - [decrypt.py](src/decrypt.py)
 
