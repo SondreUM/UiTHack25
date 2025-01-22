@@ -64,7 +64,7 @@ services:
     networks:
       - nginx_network
 
- mastermind:
+  mastermind:
     build: ./misc/mastermind/src
     ports:
       - "10444:4444"
