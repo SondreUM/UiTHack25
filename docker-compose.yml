@@ -18,6 +18,21 @@ services:
   # networks:
   #    - nginx_network
 
+  web:
+    image: docker.io/library/caddy:latest
+    restart: always
+    volumes:
+      - caddy_data:/data
+      - ./caddy_conf:/etc/caddy:ro
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+      - 8001:8001
+    networks:
+      - default
+      - web
+
   # rev 5xxx
   evasive_verify:
     build: ./rev/evasive_verification/src
@@ -55,7 +70,7 @@ services:
     ports:
       - "6004:22"
     restart: on-failure
-  
+
   # web 8xxx
   # note web challenges requiring https should map ports,
   # the ports must be mapped in the nginx.conf file
@@ -87,5 +102,11 @@ services:
     restart: on-failure
 
 networks:
-  nginx_network:
-    external: true
+    default:
+    internal:
+        internal: true
+    web:
+        external: true
+
+volumes:
+  caddy_data:
