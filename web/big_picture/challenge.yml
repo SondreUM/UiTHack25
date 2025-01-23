@@ -29,7 +29,7 @@ tags:
     - easy
 
 # If you have a Dockerfile set to .
-image: .
+image: ./src
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.

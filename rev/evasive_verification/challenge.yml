@@ -1,4 +1,4 @@
-name: "evasive_verify"
+name: "evasive_verification"
 author: "@SondreUM"
 category: rev
 value: 500
@@ -33,7 +33,7 @@ files:
     - src/evasive_verify
 
 # If you have a Dockerfile set to .
-image: .
+image: ./src
 
 hints:
     - {
