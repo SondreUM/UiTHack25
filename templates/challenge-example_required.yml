@@ -62,7 +62,8 @@ tags:
 files:
     - src/source.py
 
-# If you have a Dockerfile set to .
+# If you have a Dockerfile set the relative path to the Dockerfile
+# should be either . or ./src
 image: null
 # connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
 connection_info: nc hostname 12345

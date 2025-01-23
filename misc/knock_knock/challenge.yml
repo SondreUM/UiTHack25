@@ -29,7 +29,7 @@ tags:
 
 
 # If you have a Dockerfile set to .
-image: .
+image: ./src
 
 hints:
     - "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service.",
