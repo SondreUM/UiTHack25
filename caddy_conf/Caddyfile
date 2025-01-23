@@ -1,0 +1,25 @@
+{
+	email jkr070@uit.no
+	key_type rsa4096
+
+}
+
+(common) {
+	tls {
+		protocols tls1.3
+		curves x25519
+	}
+
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains"
+		-server
+	}
+
+	encode zstd gzip
+}
+
+uithack-2.td.org.uit.no:8001 {
+	import common
+
+	reverse_proxy http://big_picture:8080
+}
