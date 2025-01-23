@@ -19,7 +19,11 @@ services:
   #    - nginx_network
 
   # rev 5xxx
-
+  evasive_verify:
+    build: ./rev/evasive_verification/src
+    ports:
+      - "5000:8080"
+    restart: on-failure
 
   # noob 6xxx
   noob1:
