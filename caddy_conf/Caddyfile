@@ -10,6 +10,10 @@
 		curves x25519
 	}
 
+	request_body {
+        max_size 2MB
+	}
+
 	header {
 		Strict-Transport-Security "max-age=63072000; includeSubDomains"
 		-server
