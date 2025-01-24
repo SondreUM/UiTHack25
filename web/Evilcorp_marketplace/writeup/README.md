@@ -1,4 +1,4 @@
-# Prototype Paradise - Writeup
+# Evilcorp Marketplace - Writeup
 
 ## Challenge Description
 This challenge presents a simple web shop where users can purchase various items. Each user starts with $100, but the flag costs $1,000,000. The goal is to find a way to buy the flag despite having insufficient funds.
