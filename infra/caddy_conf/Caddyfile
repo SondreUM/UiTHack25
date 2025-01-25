@@ -27,3 +27,9 @@ uithack-2.td.org.uit.no:8001 {
 
 	reverse_proxy http://big_picture:8080
 }
+
+uithack-2.td.org.uit.no:8002 {
+	import common
+
+	reverse_proxy http://marketplace:8002
+}
