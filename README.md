@@ -118,6 +118,8 @@ Another team member should review and test the challenge before approving.
 UitHack uses [CTFd](https://ctfd.io/) as the frontend application to host the challenges and keep track of contestants/teams and scoreboards.
 It will be served on `uithack.no` ---DNS---> `uithack.td.org.uit.no`
 
+Challenges will be hosted on `uithack-2.td.org.uit.no`
+
 ## Resources
 
 ### Collaborators

@@ -13,7 +13,7 @@ description: >
     The only clue he gave me was that he would use a "big picture" to hide it.
     Can you help me out?
 
-connection_info: https://uithack.td.org.uit.no:8001
+connection_info: https://uithack-2.td.org.uit.no:8001
 
 flags:
     - UiTHack25{Ive_got_a_jar_of_dirt-Cpt.JS}

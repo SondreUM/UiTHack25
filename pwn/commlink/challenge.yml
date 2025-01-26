@@ -12,7 +12,7 @@ description: >
     You've intercepted a connection to a commlink terminal. 
     The system looks secure at first glance, but perhaps its design isn't as "secure" as the company claims.
 
-connection_info: nc uithack.td.org.uit.no 9000
+connection_info: nc uithack-2.td.org.uit.no 9000
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
