@@ -4,7 +4,7 @@
 >
 > One last time the flag has been stolen. This time they even had courage to invite us to take it back. This must mean they are confident in their countermeasures. We don't really have a choice though. Best of luck
 > 
-> You can connect to their server with the following command `ssh noob5@uithack.td.org.uit.no -p 6004`
+> You can connect to their server with the following command `ssh noob5@uithack-2.td.org.uit.no -p 6004`
 > 
 > The password is the flag from the previous noob challenge.
 > 
@@ -12,7 +12,7 @@
 
 ## Writeup
 
-Log into the server with the given command `ssh noob5@uithack.td.org.uit.no -p 6004` using `UiTHack25{D45h1ng_5ki11s}` as password.
+Log into the server with the given command `ssh noob5@uithack-2.td.org.uit.no -p 6004` using `UiTHack25{D45h1ng_5ki11s}` as password.
 
 We can see that there is a flag in the home directory using `ls`, but if we try to read it `cat flag.txt` we get an error saying we don't have permission to read it.
 

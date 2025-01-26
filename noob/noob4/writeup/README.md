@@ -4,7 +4,7 @@
 >
 > Shit! The constant back and forth with the flag has corrupted it. I'm trying to read it, but it just doesn't work!
 > 
-> You can connect to the server with the following command `ssh noob4@uithack.td.org.uit.no -p 6003`
+> You can connect to the server with the following command `ssh noob4@uithack-2.td.org.uit.no -p 6003`
 > 
 > The password is the flag from the previous noob challenge.
 > 
@@ -12,7 +12,7 @@
 
 ## Writeup
 
-Log into the server with the given command `ssh noob4@uithack.td.org.uit.no -p 6003` using `UiTHack25{Nev3r_f0rg3771_ctrl_shift_del}` as password.
+Log into the server with the given command `ssh noob4@uithack-2.td.org.uit.no -p 6003` using `UiTHack25{Nev3r_f0rg3771_ctrl_shift_del}` as password.
 
 There are multiple flags there, but the only one actually containing the flag is "-flag.txt ".
 
