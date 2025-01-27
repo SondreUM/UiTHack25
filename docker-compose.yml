@@ -23,7 +23,7 @@ services:
     restart: always
     volumes:
       - caddy_data:/data
-      - ./caddy_conf:/etc/caddy:ro
+      - ./infra/caddy_conf:/etc/caddy:ro
     ports:
       - 80:80
       - 443:443
