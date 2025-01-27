@@ -19,18 +19,20 @@ flags:
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
 topics:
-    - 
+    - node prototype pollution
+    - privilege escalation
 
 # Tags are used to provide additional public tagging to a challenge
 # Can be removed if unused
 tags:
     - Easy
+    - node
 
 # If you have a Dockerfile set to .
-image: .
+image: ./src
 
 files:
-    src.zip
+    - src.zip
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.
