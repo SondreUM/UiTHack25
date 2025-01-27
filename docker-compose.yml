@@ -81,7 +81,7 @@ services:
       # - "8001:8080"
     restart: on-failure
     networks:
-      - nginx_network
+      - web
 
   mastermind:
     build: ./misc/mastermind/src
