@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>WASM Image Demo</title>
+    </head>
+    <body>
+        <script type="module">
+            const wasmB64 = "{}";
+            const wasm = Uint8Array.fromBase64(wasmB64);
+            WebAssembly.instantiate(wasm).then((result) => {
+                const luigi = result.instance.exports;
+                const memory = luigi.memory.buffer;
+
+                const ptr = luigi.get_img_ptr();
+                const len = luigi.get_img_len();
+                const img_buffer = memory.slice(ptr, ptr + len);
+                const img_url = URL.createObjectURL(
+                    new Blob([img_buffer], { type: "image/jpeg" }),
+                );
+
+                const img = document.getElementById("image_container");
+                img.src = img_url;
+            });
+        </script>
+        <img id="image_container" />
+    </body>
+</html>

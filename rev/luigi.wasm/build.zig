@@ -1,19 +1,29 @@
 const std = @import("std");
 
-// Although this function looks imperative, note that its job is to
-// declaratively construct a build graph that will be executed by an external
-// runner.
 pub fn build(b: *std.Build) void {
-    const lib = b.addSharedLibrary(.{
+    const gen_html = b.addExecutable(.{
+        .name = "gen_html",
+        .root_source_file = b.path("src/gen_html.zig"),
+        .target = b.host,
+    });
+
+    const luigi = b.addExecutable(.{
         .name = "luigi",
         .root_source_file = b.path("src/luigi.zig"),
         .target = b.resolveTargetQuery(.{
             .cpu_arch = .wasm32,
-            .os_tag = .wasi,
+            .os_tag = .freestanding,
         }),
         .optimize = .ReleaseSmall,
-        .link_libc = false,
     });
+    luigi.entry = .disabled;
+    luigi.rdynamic = true;
 
-    b.installArtifact(lib);
+    const gen_html_step = b.addRunArtifact(gen_html);
+    gen_html_step.addFileArg(b.path("src/luigi.html"));
+    gen_html_step.addFileArg(luigi.getEmittedBin());
+    const html = gen_html_step.addOutputFileArg("luigi.html");
+    b.getInstallStep().dependOn(&b.addInstallFileWithDir(html, .prefix, "luigi.html").step);
+
+    b.installArtifact(luigi);
 }
