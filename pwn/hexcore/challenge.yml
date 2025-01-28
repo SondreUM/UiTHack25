@@ -1,0 +1,34 @@
+name: "Hexcore"
+author: "@sdalv1k"
+category: pwn
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    You've gained access to the secret HexCore Terminal. However, it seems to require a HexCore...
+
+connection_info: nc uithack.td.org.uit.no 9002
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - pwn
+    - shell injection
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - easy
+
+flags:
+    - UiTHack25{h3xc0r3_15_7h3_50urc3_f0r_c0d3_1nj3c710n}
+files:
+    - src/hexcore
+    - src/hexcore.c
+
+state: visible
+version: "0.1"

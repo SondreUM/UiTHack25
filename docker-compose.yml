@@ -88,18 +88,30 @@ services:
     ports:
       - "10444:4444"
     restart: on-failure
+
   # pwn 9xxx
   commlink:
     build: ./pwn/commlink/src
     ports:
       - "9000:9000"
     restart: on-failure
-
   sc0:
     build: ./pwn/sc0/src
     ports:
       - "9001:9001"
     restart: on-failure
+
+  hexcore:
+    build: ./pwn/hexcore/src
+    ports:
+      - "9002:9002"
+    restart: on-failure
+    deploy:
+      resources:
+        limits:
+          cpus: '0.015'
+          memory: 50M
+
 
   knock_knock:
     build: ./misc/mastermind/src
@@ -109,6 +121,7 @@ services:
       - "53254:53254"
       - "1337:1337"
     restart: on-failure
+
 networks:
     default:
     internal:
