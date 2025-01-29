@@ -6,7 +6,14 @@
     <body>
         <script type="module">
             const wasmB64 = "{}";
-            const wasm = Uint8Array.fromBase64(wasmB64);
+            const wasm_str = atob(wasmB64);
+            const length = wasm_str.length;
+            const wasm = new Uint8Array(length);
+
+            for (let i = 0; i < length; i++) {
+                wasm[i] = wasm_str.charCodeAt(i);
+            }
+
             const luigi = await WebAssembly.instantiate(wasm).then((result) => {
                 return result.instance.exports;
             });
