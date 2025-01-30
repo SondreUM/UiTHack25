@@ -29,6 +29,7 @@ services:
       - 443:443
       - 443:443/udp
       - 8001:8001
+      - 8002:8002
     networks:
       - default
       - web
@@ -82,6 +83,16 @@ services:
     restart: on-failure
     networks:
       - web
+
+  marketplace:
+    build: ./web/Evilcorp_marketplace/src
+    # ports:
+      # - "8002:8002"
+    restart: on-failure
+    networks:
+      - web
+    environment:
+      - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
 
   mastermind:
     build: ./misc/mastermind/src

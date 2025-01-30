@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvilCorp Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">EvilCorp Marketplace</h1>
+            <p id="balance" class="text-xl text-gray-600">Balance: $100</p>
+        </div>
+
+        <div id="itemsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Items will be populated here -->
+        </div>
+
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Your Inventory</h2>
+            <div id="inventory" class="grid grid-cols-1 gap-4">
+                <!-- Inventory items will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let userId;
+        let userBalance = 100;
+
+        async function initUser() {
+            const response = await fetch('/api/init', {
+                method: 'POST'
+            });
+            const data = await response.json();
+            userId = data.userId;
+            userBalance = data.balance;
+            updateBalance();
+            loadShopItems();
+        }
+
+        async function loadShopItems() {
+            const response = await fetch('/api/shop');
+            const items = await response.json();
+            
+            const container = document.getElementById('itemsContainer');
+            container.innerHTML = items.map(item => `
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
+                    <p class="text-gray-600 mb-4">${item.description}</p>
+                    <p class="text-lg font-bold mb-4">$${item.price}</p>
+                    <button onclick="purchaseItem(${item.id})" 
+                            class="w-full bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600">
+                        Purchase
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        async function purchaseItem(itemId) {
+            try {
+                const response = await fetch('/api/purchase', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userId, itemId })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    userBalance = data.balance;
+                    updateBalance();
+                    if (data.flag) {
+                        alert(`Congratulations! Here's your flag: ${data.flag}`);
+                    } else {
+                        alert('Purchase successful!');
+                    }
+                    updateInventory();
+                } else {
+                    alert(data.error || 'Purchase failed');
+                }
+            } catch (error) {
+                alert('Error making purchase');
+            }
+        }
+
+        async function updateInventory() {
+            const response = await fetch(`/api/user/${userId}`);
+            const data = await response.json();
+            
+            const inventory = document.getElementById('inventory');
+            inventory.innerHTML = data.inventory.map(item => `
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="font-semibold">${item.name}</h3>
+                    <p class="text-gray-600">${item.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function updateBalance() {
+            document.getElementById('balance').textContent = `Balance: $${userBalance}`;
+        }
+
+        // Initialize the shop
+        initUser();
+    </script>
+</body>
+</html>
