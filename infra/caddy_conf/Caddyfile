@@ -37,7 +37,13 @@ uithack-2.td.org.uit.no:8002 {
 uithack-2.td.org.uit.no {
 	import common
 
-	handle_path /hope-nobody-guesses-this {
-		reverse_proxy http://dinosaur_tech:8803
+	handle_path /hope-nobody-guesses-this/* {
+		reverse_proxy http://dinosaur_tech:3000
+	}
+	@resources {
+		path *.css *.js *.woff2 favicon.ico
+	}
+	handle @resources {
+		reverse_proxy http://dinosaur_tech:3000
 	}
 }
