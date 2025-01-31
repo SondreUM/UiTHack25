@@ -117,6 +117,11 @@ services:
     ports:
       - "9002:9002"
     restart: on-failure
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    cap_add:
+      - ALL
     deploy:
       resources:
         limits:
