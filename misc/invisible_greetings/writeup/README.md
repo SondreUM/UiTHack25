@@ -8,10 +8,17 @@
 > 
 > Flag will be in the format UiTHack25{*insert password*}
 > 
-> Files: [dump.pcap](src/dump.pcap)
+> Files: [dump.pcapng](src/dump.pcapng)
 
 ## Writeup
 
+convert .pcapng to workable hash for netcat
+`hcxpcapngtool -o hash.txt dump.pcapng`
 
+order hashcat to crack it
+`hashcat -a 3 -w4 -m 22000 hash.txt 10k-most-common.txt -o cracked_pmkid.txt`
+
+this will use the wordlist to search for the correct passphrase to the access point.
+when the passphrase is found you will see it in the terminal in addition to it being put in the `cracked_pmkid.txt`
 
 ## Resources

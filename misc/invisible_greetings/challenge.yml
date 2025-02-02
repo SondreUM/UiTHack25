@@ -18,7 +18,7 @@ description: >
 flags:
   # multiple flags can be provided
   # A static case sensitive flag
-  - UiTHack25{septembver}
+  - UiTHack25{highlander}
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
@@ -42,7 +42,7 @@ tags:
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
 files:
-  - src/dump.pcap
+  - src/dump.pcapng
 
 hints:
 
