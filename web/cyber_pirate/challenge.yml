@@ -4,9 +4,9 @@ category: web
 value: 500
 type: dynamic
 extra:
-    initial: 500
-    decay: 50
-    minimum: 100
+  initial: 500
+  decay: 50
+  minimum: 100
 
 description: >
   You have to inflitraite the admin area of this website to get the flag. But how do you access it?
@@ -15,7 +15,7 @@ connection_info: "https://uithack.td.org.uit.no:3000"
 tags:
   - easy
 flags:
-  - UiTHack24{SqL_1nj3ct10n_1s_4m4z1ng}
+  - UiTHack24{DaTaBaseS_Expl0it4t10n}
 
 state: visible
 version: "0.1"

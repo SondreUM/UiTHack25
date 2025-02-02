@@ -1,4 +1,3 @@
-
 # Port ranges:
 ## rev: 5xxx
 ## noob: 6xxx
@@ -28,7 +27,7 @@ services:
     ports:
       - "8001:8080"
     restart: on-failure
-  
+
   noob1:
     build: ./noob/noob1/src
     ports:
@@ -40,13 +39,13 @@ services:
     ports:
       - "6001:22"
     restart: on-failure
-  
+
   noob3:
     build: ./noob/noob3/src
     ports:
       - "6002:22"
     restart: on-failure
-  
+
   noob4:
     build: ./noob/noob4/src
     ports:
@@ -70,6 +69,22 @@ services:
     ports:
       - "9001:9001"
     restart: on-failure
+
+  cyber_pirate_frontend:
+    build: ./Web/cyber_pirate/src/frontend
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    networks:
+      - nginx_network
+
+  cyber_pirate_backend:
+    build: ./Web/cyber_pirate/src/backend
+    ports:
+      - "5001:5001"
+    restart: on-failure
+    networks:
+      - nginx_network
 
 networks:
   nginx_network:

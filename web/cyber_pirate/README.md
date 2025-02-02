@@ -1,6 +1,6 @@
-# Admin Access
+# Cyber Pirate
 > Web - 337pts/33 solves
 
-You have to inflitraite the admin area of this website to get the flag. But how do you access it?
+Only the bravest cyber pirates will find a way to steal the highly secured treasure, but whats the key to opening it?
 
 [Writeup](writeup/README.md)

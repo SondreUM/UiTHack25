@@ -49,7 +49,7 @@ COPY database.sqlite /app/
 # Install Flask and its dependencies
 RUN pip3 install --no-cache-dir Flask flask-cors
 
-# Expose port 5000 for the Flask server
+# Expose port 5001 for the Flask server
 EXPOSE 5001
 
 # Run the server.py script using Python 3 when the container launches
