@@ -8,6 +8,6 @@ Time to switch things up and show the middle finger to those guys.
 
 Flag will be in the format UiTHack25{*insert password*}
 
-Files: [dump.pcapng](src/dump.pcapng)
+Files: [dump.pcapng](src/dump.pcapng), [10k-most-common.txt](src/10k-most-common.txt)
 
 [writeup](writeup/README.md)
