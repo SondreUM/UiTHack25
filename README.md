@@ -19,7 +19,7 @@ None should be too hard and some help will be given for those in need.
 | Noob1🐱 | !big_picture 🔍 | SC0 📹 |  |  | Defining Curves ➰ |  |  |
 | Noob2🍼 |  | Commlink 🖧 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
 | Noob3👶 |  |  | Mastermind 🧠️ | ByteRunner 🌆 | Pattern Recognition 📯 |  |  |
-| Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
+| Noob4🐊 |  |  | Metro Brutes 💪 |  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  | Curvy fascination 💀 |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
