@@ -29,7 +29,7 @@ def crack_key():
                     flag = flag.read()
                     print(flag)
             except:
-                print(i)
+                print(key)
                 continue
             exit()
 

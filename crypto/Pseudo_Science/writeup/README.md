@@ -21,10 +21,12 @@ All we need to do is generate all the possible keys from seed 20050 to 20150 by 
 From here on we mainly have 3 choices when it comes to finding the correct one.
 
 ### Manual testing
-There is 100 passwords that could be the correct one. get to work and test them one by one with `gpg flag.txt.gpg` and pasting in the passwords one by one.
+There is 100 passwords that could be the correct one. get to work and test them one by one with `gpg flag.txt.gpg` and pasting in the passwords one by one. Eventually you will find the correct one an receive an un-encrypted `flag.txt` which contains the flag.
 
 ### Use gnupg python library
 a quick `pip install python-gnupg` will allow us to automate the testing by reading each password in python and testing if it creates the desired file when using the gpg.decrypt() function.
+
+A proposed solution using this method can be found in [solution.py](solution.py). It will print the flag when the correct password is found.
 
 ### Use John the Ripper
 A bit more complicated, but using john the ripper jumbo we can do a quick `gpg2john flag.txt.gpg > hash` to create a hash file for the password of the file. We can then `john --wordlist=wordlist.txt --rules hash` to have it spit out the password.
