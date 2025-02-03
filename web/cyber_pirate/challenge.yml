@@ -1,5 +1,5 @@
-name: "Admin Access"
-author: "IlyaTTT"
+name: "!cyber_pirate"
+author: "@IlyaTTT"
 category: web
 value: 500
 type: dynamic
@@ -11,11 +11,18 @@ extra:
 description: >
   You have to inflitraite the admin area of this website to get the flag. But how do you access it?
 
-connection_info: "https://uithack.td.org.uit.no:3000"
-tags:
-  - easy
+connection_info: "https://uithack-2.td.org.uit.no:8005"
+
 flags:
   - UiTHack24{DaTaBaseS_Expl0it4t10n}
+
+topics:
+  - SQL injection
+
+tags:
+  - easy
+
+image: ./src
 
 state: visible
 version: "0.1"

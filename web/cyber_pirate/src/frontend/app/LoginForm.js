@@ -13,7 +13,7 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://uithack.td.org.uit.no:5001/api/login", {
+      const response = await fetch("https://uithack-2.td.org.uit.no:8006/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
