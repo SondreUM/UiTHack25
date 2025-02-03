@@ -1,0 +1,64 @@
+name: "Curvy Fascination"
+author: "Lorentzen"
+category: crypto
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  After monitoring the encrypted communication at EvilCorp, for a while,
+  you finally have the information needed to crack their entire encryption scheme.
+  And judging by the message you first choose to decrypt
+  it would seem the inclinations of the IT guy will be on full display.
+  Find the key N to decrypt the flag. (The upper bound of N is 34 digits)
+  If you are going to download sagemath we recommend you use conda on linux, and homebrew on Mac.
+  Downloading from source takes more time and is more prone to errors.
+
+flags:
+  # multiple flags can be provided
+  # A static case sensitive flag
+  - UiTHack25{B1gB34ut1fulNumb3r5}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+  - Elliptic Curves
+  - Discrete Logarithm Problem
+  - Pohlig-Hellman Algorithm
+
+# Tags are used to provide additional public tagging to a challenge
+# Accepts strings
+tags:
+  # set difficulty
+  - insane
+
+  # hint at the type of challenge or language used
+  # should not give away too much, only guide the player when choosing a challenge
+  - Math
+  - Sagemath/Maple/Mathematica
+  - Python
+
+# Optional settings #
+# remove if unused
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+  - src/handout.txt
+  - src/decrypt.py
+
+# Requirements are used to make a challenge require another challenge to be
+# solved before being available.
+# Can be removed if unused
+# Accepts challenge names as strings or challenge IDs as integers
+requirements:
+  - "Defining Curves"
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"

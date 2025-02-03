@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build: 
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}

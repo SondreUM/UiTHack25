@@ -7,6 +7,6 @@
     The only clue he gave me was that he would use a "big picture" to hide it.
     Can you help me out?
 
-URL: <https://uithack.td.org.uit.no:8001>
+URL: <https://uithack-2.td.org.uit.no:8001>
 
 [Writeup](writeup/README.md)

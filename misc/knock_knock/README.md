@@ -1,6 +1,6 @@
-# Misc - Knock Knock
+# Knock Knock
 
-> Misc - easy
+> Misc - easy/medium
 
 In the rain-slick alleys of San Sequestro lies an underground safehouse where the city's most wanted netrunners hide. No retinal scans, no fingerprints - just an old-school precise knock sequence on a rusted steel door grants access to those who prove themselves worthy. Can you crack the sequence and access the secrets within?
 

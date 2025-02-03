@@ -1,4 +1,6 @@
-# Port ranges:
+
+# Port 80 and 443 are reserved for the nginx container and should not be used for challenges.
+# Available port ranges:
 ## rev: 5xxx
 ## noob: 6xxx
 ## crypto: 7xxx
@@ -16,18 +18,30 @@ services:
   # networks:
   #    - nginx_network
 
-  mastermind:
-    build: ./misc/mastermind/src
+  web:
+    image: docker.io/library/caddy:latest
+    restart: always
+    volumes:
+      - caddy_data:/data
+      - ./infra/caddy_conf:/etc/caddy:ro
     ports:
-      - "10444:4444"
+      - 80:80
+      - 443:443
+      - 443:443/udp
+      - 8001:8001
+      - 8002:8002
+    networks:
+      - default
+      - web
+
+  # rev 5xxx
+  evasive_verify:
+    build: ./rev/evasive_verification/src
+    ports:
+      - "5005:8080"
     restart: on-failure
 
-  big_picture:
-    build: ./web/big_picture/src
-    ports:
-      - "8001:8080"
-    restart: on-failure
-
+  # noob 6xxx
   noob1:
     build: ./noob/noob1/src
     ports:
@@ -58,12 +72,40 @@ services:
       - "6004:22"
     restart: on-failure
 
+  # web 8xxx
+  # note web challenges requiring https should map ports,
+  # the ports must be mapped in the nginx.conf file
+  # use big_picture as an example
+  big_picture:
+    build: ./web/big_picture/src
+    # ports:
+      # - "8001:8080"
+    restart: on-failure
+    networks:
+      - web
+
+  marketplace:
+    build: ./web/Evilcorp_marketplace/src
+    # ports:
+      # - "8002:8002"
+    restart: on-failure
+    networks:
+      - web
+    environment:
+      - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
+
+  mastermind:
+    build: ./misc/mastermind/src
+    ports:
+      - "10444:4444"
+    restart: on-failure
+
+  # pwn 9xxx
   commlink:
     build: ./pwn/commlink/src
     ports:
       - "9000:9000"
     restart: on-failure
-
   sc0:
     build: ./pwn/sc0/src
     ports:
@@ -85,7 +127,38 @@ services:
     restart: on-failure
     networks:
       - nginx_network
+  hexcore:
+    build: ./pwn/hexcore/src
+    ports:
+      - "9002:9002"
+    restart: on-failure
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    cap_add:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: '0.015'
+          memory: 50M
+
+
+  knock_knock:
+    build: ./misc/mastermind/src
+    ports:
+      - "10080:80"
+      - "4837:4837"
+      - "53254:53254"
+      - "1337:1337"
+    restart: on-failure
 
 networks:
-  nginx_network:
-    external: true
+    default:
+    internal:
+        internal: true
+    web:
+        external: true
+
+volumes:
+  caddy_data:

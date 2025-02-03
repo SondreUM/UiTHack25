@@ -4,7 +4,7 @@
 >
 > The flag has been stolen once more. They learned from the mistake and they have now taken measures to hide it.
 > 
-> You can connect to their server with the following command `ssh noob2@uithack.td.org.uit.no -p 6001`
+> You can connect to their server with the following command `ssh noob2@uithack-2.td.org.uit.no -p 6001`
 > 
 > The password is the flag from the previous noob challenge.
 > 
@@ -14,7 +14,7 @@
 
 ## Writeup
 
-Log into the server with the given command `ssh noob2@uithack.td.org.uit.no -p 6001` using `UiTHack25{C4t_W0rk5_W0nd3rs}` as password.
+Log into the server with the given command `ssh noob2@uithack-2.td.org.uit.no -p 6001` using `UiTHack25{C4t_W0rk5_W0nd3rs}` as password.
 
 Using `ls -al` we can see that there is a hidden directory called `.secret`.
 

@@ -20,7 +20,8 @@ type: standard
 
 # Settings used for Dockerfile deployment
 # If not used, remove or set to null
-# If you have a Dockerfile set to .
+# If you have a Dockerfile set the relative path to the Dockerfile
+# should be either . or ./src
 # If you have an imaged hosted on Docker set to the image url (e.g. python/3.8:latest, registry.gitlab.com/python/3.8:latest)
 # Follow Docker best practices and assign a tag
 image: null

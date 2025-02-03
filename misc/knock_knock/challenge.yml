@@ -26,21 +26,15 @@ topics:
 # Can be removed if unused
 tags:
     - easy
+    - medium
+    - network
 
-# Provide paths to files from the same directory that this file is in
-# Accepts strings
-files:
-    - 
 
 # If you have a Dockerfile set to .
-image: .
+image: ./src
 
 hints:
-    - {
-          content:
-              "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service.",
-          cost: 0,
-      }
+    - "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service."
     - {
           content:
               "Nmap is a popular tool that can enumerate open ports of a host.",
