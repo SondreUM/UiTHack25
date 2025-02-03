@@ -21,7 +21,7 @@ None should be too hard and some help will be given for those in need.
 | Noob3👶 |  | Commlink 🖧 | Mastermind 🧠️ | ByteRunner 🌆 | Pattern Recognition 📯 |  |  |
 | Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  | Curvy fascination 💀 |  |  |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  |  | Pseudo Science 🖥️ |  |  |
 |  |  |  |  |  |  |  |  |
 
 ## Participants
