@@ -113,20 +113,23 @@ services:
     restart: on-failure
 
   cyber_pirate_frontend:
-    build: ./Web/cyber_pirate/src/frontend
-    ports:
-      - "3000:3000"
+    build: ./web/cyber_pirate/src/frontend
+    # ports:
+    #   - "8005:8005"
     restart: on-failure
     networks:
-      - nginx_network
+      - web
+      - internal
 
   cyber_pirate_backend:
-    build: ./Web/cyber_pirate/src/backend
-    ports:
-      - "5001:5001"
+    build: ./web/cyber_pirate/src/backend
+    # ports:
+    #   - "8006:8006"
     restart: on-failure
     networks:
-      - nginx_network
+      - internal
+
+
   hexcore:
     build: ./pwn/hexcore/src
     ports:

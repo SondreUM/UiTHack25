@@ -43,8 +43,3 @@ uithack-2.td.org.uit.no:8005 {
 
 
 
-uithack-2.td.org.uit.no:8006 {
-	import common
-
-	reverse_proxy http://cyber_pirate:8006
-}
