@@ -1,4 +1,4 @@
-name: "!cyber_pirate"
+name: "cyber_pirate"
 author: "@IlyaTTT"
 category: web
 value: 500
@@ -9,9 +9,9 @@ extra:
   minimum: 100
 
 description: >
-  You have to inflitraite the admin area of this website to get the flag. But how do you access it?
+  Only the bravest cyber pirates will find a way to steal the highly secured treasure, but whats the key to opening it?
 
-connection_info: "https://uithack-2.td.org.uit.no:8005"
+connection_info: https://uithack-2.td.org.uit.no:8005
 
 flags:
   - UiTHack24{DaTaBaseS_Expl0it4t10n}
