@@ -22,7 +22,5 @@ topics:
 tags:
   - easy
 
-image: ./src
-
 state: visible
 version: "0.1"
