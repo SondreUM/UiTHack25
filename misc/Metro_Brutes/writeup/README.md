@@ -13,7 +13,7 @@
 
 ## Challenge inspiration
 
-The exploit this challenge is based on is a real one and is called a PMKID attack, first published on the [hascat forums](https://hashcat.net/forum/thread-7717.html). It is a way to crack WPA/WPA2 passwords by capturing the authentication handshake between a device and an access point. The new approach suggested by **atom** in the forum post, exploits the new roaming protocols (802.11i/p/q/r) to make it *clientless*. The PMKID is constructed by a PMK, SSID, AP MAC and Client MAC. Since the only unknown value is the PMK, which is a hash derived from only the passphrase and SSID, it can be brute-forced efficiently. I would higly recommend reading the original forum post and the [CyberArk](https://www.cyberark.com/resources/threat-research-blog/cracking-wifi-at-scale-with-one-simple-trick) blog post for a more in-depth explanation.
+The exploit this challenge is based on is a real one and is called a PMKID attack, first published on the [hashcat forums](https://hashcat.net/forum/thread-7717.html). It is a way to crack WPA/WPA2 passwords by capturing the authentication handshake between a device and an access point. The new approach suggested by **atom** in the forum post, exploits the new roaming protocols (802.11i/p/q/r) to make it *clientless*. The PMKID is constructed by a PMK, SSID, AP MAC and Client MAC. Since the only unknown value is the PMK, which is a hash derived from only the passphrase and SSID, it can be brute-forced efficiently. I would higly recommend reading the original forum post and the [CyberArk](https://www.cyberark.com/resources/threat-research-blog/cracking-wifi-at-scale-with-one-simple-trick) blog post for a more in-depth explanation.
 
 **Take away lesson from this challenge, use long passwords/passphrases.**\
 *SondreUM*
@@ -46,6 +46,11 @@ hashcat -a 3 -w4 -m 22000 hash.txt 10k-most-common.txt -o cracked_pmkid.txt
 
 This will use the wordlist to search for the correct passphrase to the access point.
 When the passphrase is found you will see it in the terminal in addition to it being put in the `cracked_pmkid.txt`
+
+One point worth mentioning is that for larger wordlists it is often worth filtering out invalid password/passphrases.
+Since we are working with WPA we know that the minimum size of a valid password is 8 characters.
+This means we could have eliminated all shorter passwords shorter than 8 characters for more efficiency.
+Due to the relatevly small size of the wordlist given in the challenge this isn't as important here, and we will be fine without doing it.
 
 Looking at the output we see that the passphrase is `highlander` and network SSID is `Ecorp-Metro`.
 
