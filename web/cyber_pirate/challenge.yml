@@ -14,7 +14,7 @@ description: >
 connection_info: https://uithack-2.td.org.uit.no:8005
 
 flags:
-  - UiTHack24{DaTaBaseS_Expl0it4t10n}
+  - UiTHack25{DaTaBaseS_Expl0it4t10n}
 
 topics:
   - SQL injection
