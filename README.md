@@ -18,8 +18,8 @@ None should be too hard and some help will be given for those in need.
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
 | Noob1🐱 | !big_picture 🔍 | SC0 📹 | Knock Knock 🚪 |  | Defining Curves ➰ |  |  |
 | Noob2🍼 | Evilcorp Marketplace 🏬 | HexCore 🐚 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
-| Noob3👶 |  | Commlink 🖧 | Mastermind 🧠️ | ByteRunner 🌆 | Pattern Recognition 📯 |  |  |
-| Noob4🐊 |  |  |  |  | XORbitant defense ❌ |  |  |
+| Noob3👶 |  | Commlink 🖧 | Mastermind 🧠️ | luigi.wasm 👨‍🔧 | Pattern Recognition 📯 |  |  |
+| Noob4🐊 |  |  |  | ByteRunner 🌆  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  | Curvy fascination 💀 |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
