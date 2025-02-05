@@ -30,6 +30,7 @@ services:
       - 443:443/udp
       - 8001:8001
       - 8002:8002
+      - 8005:8005
     networks:
       - default
       - web
@@ -119,7 +120,6 @@ services:
     restart: on-failure
     networks:
       - web
-      - internal
 
   cyber_pirate_backend:
     build: ./web/cyber_pirate/src/backend
@@ -127,8 +127,7 @@ services:
     #   - "8006:8006"
     restart: on-failure
     networks:
-      - internal
-
+      - web
 
   hexcore:
     build: ./pwn/hexcore/src
