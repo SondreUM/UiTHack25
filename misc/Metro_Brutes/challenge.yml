@@ -1,0 +1,37 @@
+name: "Metro Brutes"
+author: "Lorentzen"
+category: misc
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  The daily trips on the train downtown has been even more boring than usual after recent changes.
+  Especially since reception down there is atrocious.
+  Time to switch things up and show the middle finger to those guys.
+  Luckily for us there was a guy on the dark web willing to sell us a list of commonly used passwords at Evilcorp subsidiaries.
+
+  Flag will be in the format UiTHack25{*insert password*}
+
+flags:
+  - UiTHack25{highlander}
+  - UiTHack25{Ecorp-Metro:highlander}
+
+topics:
+  - PMKID
+  - WPA2
+
+tags:
+  - Medium
+
+files:
+  - src/dump.pcapng
+  - src/10k-most-common.txt
+
+hints:
+  - { content: "Ever heard of PMKID and its brother PMK?", cost: 50 }
+state: visible
+version: "0.1"
