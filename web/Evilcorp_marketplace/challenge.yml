@@ -10,8 +10,7 @@ extra:
 description: >
     EvilCorp's new digital marketplace has a to expensive price for their products. Can you find a way to get the products?
 
-
-connection_info: https://uithack.td.org.uit.no:8002
+connection_info: https://uithack-2.td.org.uit.no:8002
 
 flags:
     - UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
