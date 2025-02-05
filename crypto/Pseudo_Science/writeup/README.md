@@ -5,13 +5,13 @@
 > We've managed to nab some important file off one of the computers at EvilCorp.
 > There's only one small problem, it's encrypted, and we don't know the key.
 > On the bright side we do have the key generation script, but it doesn't help much.
-> We don't know when exactly it was done this year.
+> We don't know when exactly it was used this year to create the key.
 >
 > Files: [flag.txt.gpg](../src/flag.txt.gpg), [gen_key.py](src/gen_key.py)
 
 ## Writeup
 
-By looking at the [key generation file](src/gen_key.py) we can see that the seed for the key generation is always divided by 86 400.
+By looking at the [key generation file](src/gen_key.py) we can see that the seed for the key generation is always time.time() divided by 86 400.
 This is the amount of seconds in a day, meaning that the seed only changes daily.
 The challenge mentions that the key was created this year which means that we only have around 100 seeds to try.
 This is something we can brute force.
