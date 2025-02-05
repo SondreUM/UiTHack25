@@ -30,6 +30,7 @@ services:
       - 443:443/udp
       - 8001:8001
       - 8002:8002
+      - 8005:8005
     networks:
       - default
       - web
@@ -119,6 +120,22 @@ services:
     ports:
       - "9001:9001"
     restart: on-failure
+
+  cyber_pirate_frontend:
+    build: ./web/cyber_pirate/src/frontend
+    # ports:
+    #   - "8005:8005"
+    restart: on-failure
+    networks:
+      - web
+
+  cyber_pirate_backend:
+    build: ./web/cyber_pirate/src/backend
+    # ports:
+    #   - "8006:8006"
+    restart: on-failure
+    networks:
+      - web
 
   hexcore:
     build: ./pwn/hexcore/src

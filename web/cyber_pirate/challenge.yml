@@ -1,0 +1,28 @@
+name: "cyber_pirate"
+author: "@IlyaTTT"
+category: web
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  Only the bravest cyber pirates will find a way to steal the highly secured treasure, but whats the key to opening it?
+
+connection_info: https://uithack-2.td.org.uit.no:8005
+
+flags:
+  - UiTHack25{DaTaBaseS_Expl0it4t10n}
+
+topics:
+  - SQL injection
+
+tags:
+  - easy
+
+image: ./src
+
+state: visible
+version: "0.1"

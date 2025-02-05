@@ -34,6 +34,20 @@ uithack-2.td.org.uit.no:8002 {
 	reverse_proxy http://marketplace:8002
 }
 
+
+uithack-2.td.org.uit.no:8005 {
+	import common
+	
+	handle /api/* {
+	    reverse_proxy http://cyber_pirate_backend:8080
+	}
+	handle  {
+	    reverse_proxy http://cyber_pirate_frontend:3000
+      
+	}
+}
+
+
 uithack-2.td.org.uit.no {
 	import common
 
