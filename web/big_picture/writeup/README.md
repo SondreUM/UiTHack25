@@ -7,7 +7,7 @@
 > The only clue he gave me was that he would use a "big picture" to hide it.
 > Can you help me out?
 >
-> URL: <https://uithack.td.org.uit.no:8001>
+> URL: <https://uithack-2.td.org.uit.no:8001>
 >
 > [Writeup](writeup/README.md)
 
@@ -37,7 +37,7 @@ Continuing with the mobile theme, try checking for responsive design which is mo
 The next logical step is to change the user agent to a mobile device, which will reveal the flag. This can be performed by using the developer tools in the browser, or by a CLI tool like curl.
 
 ```sh
-curl -A "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Mobile Safari/537.36" https://uithack.td.org.uit.no:8001
+curl -A "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Mobile Safari/537.36" https://uithack-2.td.org.uit.no:8001
 ```
 
 Returns the flag:

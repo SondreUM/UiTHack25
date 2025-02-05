@@ -26,14 +26,15 @@ topics:
 # Can be removed if unused
 tags:
     - easy
+    - medium
+    - network
 
 
 # If you have a Dockerfile set to .
 image: ./src
 
 hints:
-    - "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service.",
-
+    - "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service."
     - {
           content:
               "Nmap is a popular tool that can enumerate open ports of a host.",

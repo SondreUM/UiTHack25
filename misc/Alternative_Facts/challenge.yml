@@ -31,7 +31,7 @@ tags:
 
   # hint at the type of challenge or language used
   # should not give away too much, only guide the player when choosing a challenge
-  - Windows 
+  - Windows
 
 # Optional settings #
 # remove if unused
@@ -42,21 +42,8 @@ files:
   - src/flag.rar
 
 hints:
-  - {
-      content:
-        "Why would it be a .rar and not .zip?",
-      cost: 20,
-    }
-  - {
-      content:
-        "Is there some way to hide files on Windows?",
-      cost: 30,
-    }
-  - {
-      content:
-        "Have you ever heard of NTFS ADS?",
-      cost: 50,
-    }
+  - { content: "Why would it be a .rar and not .zip?", cost: 20 }
+  - { content: "Have you ever heard of NTFS ADS?", cost: 50 }
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.

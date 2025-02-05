@@ -1,0 +1,63 @@
+{
+	email jkr070@uit.no
+	key_type rsa4096
+
+}
+
+(common) {
+	tls {
+		protocols tls1.3
+		curves x25519
+	}
+
+	request_body {
+        max_size 2MB
+	}
+
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains"
+		-server
+	}
+
+	encode zstd gzip
+}
+
+uithack-2.td.org.uit.no:8001 {
+	import common
+
+	reverse_proxy http://big_picture:8080
+}
+
+uithack-2.td.org.uit.no:8002 {
+	import common
+
+	reverse_proxy http://marketplace:8002
+}
+
+
+uithack-2.td.org.uit.no:8005 {
+	import common
+	
+	handle /api/* {
+	    reverse_proxy http://cyber_pirate_backend:8080
+	}
+	handle  {
+	    reverse_proxy http://cyber_pirate_frontend:3000
+      
+	}
+}
+
+
+uithack-2.td.org.uit.no {
+	import common
+
+	handle_path /hope-nobody-guesses-this/* {
+		reverse_proxy http://dinosaur_tech:3000
+	}
+	@resources {
+		path *.css *.js *.woff2 favicon.ico
+	}
+	handle @resources {
+		reverse_proxy http://dinosaur_tech:3000
+	}
+}

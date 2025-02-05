@@ -12,7 +12,7 @@ description: >
     You're about to infilitrate the headquarters of EvilCorp, and you stumble upon an abondoned workstation. 
     Is this an opportunity or a trap? 
 
-connection_info: nc uithack.td.org.uit.no 9001
+connection_info: nc uithack-2.td.org.uit.no 9001
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins

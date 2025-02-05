@@ -6,7 +6,7 @@
 > 
 > It should be too late, but who says `history` can't be changed?
 > 
-> You can connect to their server with the following command `ssh noob3@uithack.td.org.uit.no -p 6002`
+> You can connect to their server with the following command `ssh noob3@uithack-2.td.org.uit.no -p 6002`
 > 
 > The password is the flag in the previous noob challenge.
 > 
@@ -14,7 +14,7 @@
 
 ## Writeup
 
-Log into the server with the given command `ssh noob3@uithack.td.org.uit.no -p 6002` using `UiTHack25{Hidd3n_but_c4n_b3_Cena}` as password.
+Log into the server with the given command `ssh noob3@uithack-2.td.org.uit.no -p 6002` using `UiTHack25{Hidd3n_but_c4n_b3_Cena}` as password.
 
 Running the `history` command we can see all commands that they have run on the machine.
 

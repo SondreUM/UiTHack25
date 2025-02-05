@@ -1,0 +1,38 @@
+name: "Dinosaur tech"
+author: "@SondreUM"
+category: misc
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  I found some old media in the attic and would like to know what it says.
+  Luckily I also found a display at my grandparents that seems to be able to read the media.
+  It seems to be some kind of message from the ancient times.
+  Can you help me decode it?
+
+  Find the old display in _room_ and decode the message for me.
+
+flags:
+  # multiple flags can be provided
+  # A static case sensitive flag
+  - UITHACK2515M0R5357111U53D
+  - UiTHack25 15 M0R53 57111 U53D
+  - UiTHack25{15 M0R53 57111 U53D}
+  - UiTHack25{15-M0R53-57111-U53D}
+  - UiTHack25{15_M0R53_57111_U53D}
+
+topics:
+  - morse
+
+tags:
+  - easy
+  - medium
+
+hints:
+
+state: visible
+version: "0.1"

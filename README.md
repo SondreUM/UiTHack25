@@ -16,10 +16,10 @@ None should be too hard and some help will be given for those in need.
 
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
-| Noob1🐱 | !big_picture 🔍 | SC0 📹 |  |  | Defining Curves ➰ |  |  |
-| Noob2🍼 |  | Commlink 🖧 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
-| Noob3👶 |  |  | Mastermind 🧠️ | ByteRunner 🌆 | Pattern Recognition 📯 |  |  |
-| Noob4🐊 |  |  | Metro Brutes 💪 |  | XORbitant defense ❌ |  |  |
+| Noob1🐱 | !big_picture 🔍 | SC0 📹 | Knock Knock 🚪 |  | Defining Curves ➰ |  | Dinosaur tech 💾 |
+| Noob2🍼 | Evilcorp Marketplace 🏬 | HexCore 🐚 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+| Noob3👶 |  | Commlink 🖧 | Mastermind 🧠️ | luigi.wasm 👨‍🔧 | Pattern Recognition 📯 |  |  |
+| Noob4🐊 |  |  | Metro Brutes 💪 | ByteRunner 🌆  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  | Curvy fascination 💀 |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
@@ -117,6 +117,8 @@ Another team member should review and test the challenge before approving.
 
 UitHack uses [CTFd](https://ctfd.io/) as the frontend application to host the challenges and keep track of contestants/teams and scoreboards.
 It will be served on `uithack.no` ---DNS---> `uithack.td.org.uit.no`
+
+Challenges will be hosted on `uithack-2.td.org.uit.no`
 
 ## Resources
 

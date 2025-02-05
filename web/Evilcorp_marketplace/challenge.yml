@@ -1,0 +1,39 @@
+name: "EvilCorp Marketplace"
+author: "@sdragset"
+category: web
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    EvilCorp's new digital marketplace has a to expensive price for their products. Can you find a way to get the products?
+
+connection_info: https://uithack-2.td.org.uit.no:8002
+
+flags:
+    - UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - node prototype pollution
+    - privilege escalation
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - Easy
+    - node
+
+# If you have a Dockerfile set to .
+image: ./src
+
+files:
+    - src.zip
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"

@@ -64,7 +64,7 @@ def home():
 
 @app.route('/giokcTgkl1yXuw0bkVXDLUyA87pL3HHN')
 def first_port():
-    return f'Hello there... your next port is <b>53254</b>. Be quick, you only have {MAX_TIME} seconds!'
+    return f'<p>Hello there... your next port is <b>53254</b>. Be quick, you only have {MAX_TIME} seconds!</p><p>Also, take this cookie. It will let us identify you later on.</p>'
 
 
 @app.route('/LNZInlBVjVSeXs1js3kycd85v58MfRHY')

@@ -23,12 +23,14 @@ services:
     restart: always
     volumes:
       - caddy_data:/data
-      - ./caddy_conf:/etc/caddy:ro
+      - ./infra/caddy_conf:/etc/caddy:ro
     ports:
       - 80:80
       - 443:443
       - 443:443/udp
       - 8001:8001
+      - 8002:8002
+      - 8005:8005
     networks:
       - default
       - web
@@ -37,7 +39,7 @@ services:
   evasive_verify:
     build: ./rev/evasive_verification/src
     ports:
-      - "5000:8080"
+      - "5005:8080"
     restart: on-failure
 
   # noob 6xxx
@@ -81,24 +83,84 @@ services:
       # - "8001:8080"
     restart: on-failure
     networks:
-      - nginx_network
+      - web
+
+  marketplace:
+    build: ./web/Evilcorp_marketplace/src
+    # ports:
+      # - "8002:8002"
+    restart: on-failure
+    networks:
+      - web
+    environment:
+      - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
+
+  dinosaur_tech:
+    build: ./irl/dinosaur_tech/src
+    # ports:
+      # - "8803:3000"
+    restart: on-failure
+    networks:
+      - web
 
   mastermind:
     build: ./misc/mastermind/src
     ports:
       - "10444:4444"
     restart: on-failure
+
   # pwn 9xxx
   commlink:
     build: ./pwn/commlink/src
     ports:
       - "9000:9000"
     restart: on-failure
-
   sc0:
     build: ./pwn/sc0/src
     ports:
       - "9001:9001"
+    restart: on-failure
+
+  cyber_pirate_frontend:
+    build: ./web/cyber_pirate/src/frontend
+    # ports:
+    #   - "8005:8005"
+    restart: on-failure
+    networks:
+      - web
+
+  cyber_pirate_backend:
+    build: ./web/cyber_pirate/src/backend
+    # ports:
+    #   - "8006:8006"
+    restart: on-failure
+    networks:
+      - web
+
+  hexcore:
+    build: ./pwn/hexcore/src
+    ports:
+      - "9002:9002"
+    restart: on-failure
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    cap_add:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: '0.015'
+          memory: 50M
+
+
+  knock_knock:
+    build: ./misc/mastermind/src
+    ports:
+      - "10080:80"
+      - "4837:4837"
+      - "53254:53254"
+      - "1337:1337"
     restart: on-failure
 
 networks:
