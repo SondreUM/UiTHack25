@@ -27,6 +27,5 @@ COPY --from=builder /app/package.json ./package.json
 
 EXPOSE 8006
 
-CMD ["npm", "run", "build"]
 
 CMD ["npm", "start"]
