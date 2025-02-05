@@ -11,7 +11,7 @@ extra:
 description: >
     You've gained access to the secret HexCore Terminal. However, it seems to require a HexCore...
 
-connection_info: nc uithack.td.org.uit.no 9002
+connection_info: nc uithack-2.td.org.uit.no 9002
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins

@@ -30,6 +30,7 @@ services:
       - 443:443/udp
       - 8001:8001
       - 8002:8002
+      - 8005:8005
     networks:
       - default
       - web
@@ -94,6 +95,14 @@ services:
     environment:
       - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
 
+  dinosaur_tech:
+    build: ./irl/dinosaur_tech/src
+    # ports:
+      # - "8803:3000"
+    restart: on-failure
+    networks:
+      - web
+
   mastermind:
     build: ./misc/mastermind/src
     ports:
@@ -111,6 +120,22 @@ services:
     ports:
       - "9001:9001"
     restart: on-failure
+
+  cyber_pirate_frontend:
+    build: ./web/cyber_pirate/src/frontend
+    # ports:
+    #   - "8005:8005"
+    restart: on-failure
+    networks:
+      - web
+
+  cyber_pirate_backend:
+    build: ./web/cyber_pirate/src/backend
+    # ports:
+    #   - "8006:8006"
+    restart: on-failure
+    networks:
+      - web
 
   hexcore:
     build: ./pwn/hexcore/src
