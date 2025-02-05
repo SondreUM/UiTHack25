@@ -39,10 +39,11 @@ uithack-2.td.org.uit.no:8005 {
 	import common
 	
 	handle /api/* {
-	    reverse_proxy http://cyber_pirate_backend:8006
+	    reverse_proxy http://cyber_pirate_backend:8080
 	}
 	handle  {
-	    reverse_proxy http://cyber_pirate_frontend:8005
+	    reverse_proxy http://cyber_pirate_frontend:3000
+      
 	}
 }
 

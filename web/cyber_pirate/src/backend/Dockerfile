@@ -50,7 +50,7 @@ COPY database.sqlite /app/
 RUN pip3 install --no-cache-dir Flask flask-cors
 
 # Expose port 5001 for the Flask server
-EXPOSE 8006
+EXPOSE 8080
 
 # Run the server.py script using Python 3 when the container launches
 CMD ["python3", "server.py"]
