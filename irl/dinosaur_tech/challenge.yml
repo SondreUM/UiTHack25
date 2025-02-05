@@ -19,6 +19,7 @@ description: >
 flags:
   # multiple flags can be provided
   # A static case sensitive flag
+  - UITHACK2515M0R5357111U53D
   - UiTHack25 15 M0R53 57111 U53D
   - UiTHack25{15 M0R53 57111 U53D}
   - UiTHack25{15-M0R53-57111-U53D}
