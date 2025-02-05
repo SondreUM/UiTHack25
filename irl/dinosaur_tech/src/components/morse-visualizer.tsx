@@ -58,6 +58,10 @@ const MorseBinaryVisualizer = () => {
 
     const generatePaddedText = () => {
         let padded = '';
+        // Add random chars at the beginning, to make sure the start of the flag is visible
+        for (let i = 0; i < 5; i++) {
+            padded += generateRandomChar();
+        }
         for (let i = 0; i < originalText.length; i++) {
             padded += originalText[i];
             // 60% chance to add random char
