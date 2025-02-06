@@ -8,14 +8,6 @@
 ## misc: 10xxx
 
 services:
-  # example
-  # challenge_name:
-  #  build: ./web/challenge_name/src
-  #  ports:
-  #    - "9000:9000"
-  #  restart: on-failure
-  # networks:
-  #    - nginx_network
 
   web:
     image: docker.io/library/caddy:latest
@@ -24,6 +16,7 @@ services:
       - caddy_data:/data
       - ./infra/caddy_conf:/etc/caddy:ro
     ports:
+    # add port if using https
       - 80:80
       - 443:443
       - 443:443/udp
@@ -116,28 +109,10 @@ services:
     networks:
       - web
 
-  mastermind:
-    build: ./misc/mastermind/src
-    ports:
-      - "10444:4444"
-    restart: on-failure
-
-  # pwn 9xxx
-  commlink:
-    build: ./pwn/commlink/src
-    ports:
-      - "9000:9000"
-    restart: on-failure
-  sc0:
-    build: ./pwn/sc0/src
-    ports:
-      - "9001:9001"
-    restart: on-failure
-
   cyber_pirate_frontend:
     build: ./web/cyber_pirate/src/frontend
     # ports:
-    #   - "8005:8005"
+    #   - "8005:3000"
     restart: on-failure
     networks:
       - web
@@ -145,10 +120,23 @@ services:
   cyber_pirate_backend:
     build: ./web/cyber_pirate/src/backend
     # ports:
-    #   - "8006:8006"
+    #   - "8005:8080"
     restart: on-failure
     networks:
       - web
+
+  # pwn 9xxx
+  commlink:
+    build: ./pwn/commlink/src
+    ports:
+      - "9000:9000"
+    restart: on-failure
+
+  sc0:
+    build: ./pwn/sc0/src
+    ports:
+      - "9001:9001"
+    restart: on-failure
 
   hexcore:
     build: ./pwn/hexcore/src
@@ -165,6 +153,13 @@ services:
         limits:
           cpus: "0.015"
           memory: 50M
+
+  # misc 10xxx
+  mastermind:
+    build: ./misc/mastermind/src
+    ports:
+      - "10444:4444"
+    restart: on-failure
 
   knock_knock:
     build: ./misc/knock_knock/src
