@@ -1,0 +1,32 @@
+name: "The little cyborg that could"
+author: "@SondreUM & Lorentzen"
+category: pwn
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    TBD
+
+connection_info:
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+    - pwn
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+    - hard
+
+flags:
+    - UiTHack25{}
+files:
+    - 
+
+state: visible
+version: "0.1"
