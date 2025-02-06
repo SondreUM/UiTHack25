@@ -9,24 +9,21 @@ extra:
     minimum: 100
 
 description: >
-    TBD
+    Some punks have been messing with the Citizen tracking servers.
+    They keep getting in and messing with the data.
 
-connection_info:
+    Find how out how they keep getting in, if not you are fired!
 
-# Topics are used to help tell what techniques/information a challenge involves
-# They are generally only visible to admins
+connection_info: uithack-2.td.org.uit.no
+
 topics:
-    - pwn
+    - web-shell
 
-# Tags are used to provide additional public tagging to a challenge
-# Can be removed if unused
 tags:
     - hard
 
 flags:
-    - UiTHack25{}
-files:
-    - 
+    - UiTHack25{placeholder}
 
 state: visible
 version: "0.1"
