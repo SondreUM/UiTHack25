@@ -1,4 +1,4 @@
-# Pwn - The little cyborg that could
+# The little cyborg that could
 
 > Pwn - hard
 

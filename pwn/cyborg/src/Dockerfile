@@ -26,6 +26,7 @@ RUN service ssh start
 
 # SSH port (optional, change if needed)
 EXPOSE 22
+EXPOSE 443
 
 # Start SSH service
 CMD ["/usr/sbin/sshd", "-D"]

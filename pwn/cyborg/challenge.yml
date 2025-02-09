@@ -14,16 +14,17 @@ description: >
 
     Find how out how they keep getting in, if not you are fired!
 
-connection_info: uithack-2.td.org.uit.no
+connection_info: uithack-2.td.org.uit.no:9003
 
 topics:
     - web-shell
+    - php
 
 tags:
     - hard
 
 flags:
-    - UiTHack25{placeholder}
+    - UiTHack25{02_quota_revoked_please_submit_for_disposal}
 
 state: visible
 version: "0.1"
