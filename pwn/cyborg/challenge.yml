@@ -14,7 +14,7 @@ description: >
 
     Find how out how they keep getting in, if not you are fired!
 
-connection_info: uithack-2.td.org.uit.no:9003
+connection_info: https://uithack-2.td.org.uit.no:9003/index.html
 
 topics:
     - web-shell

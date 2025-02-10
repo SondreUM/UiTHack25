@@ -2,8 +2,11 @@
 
 > Pwn - hard
 
-TBD
+Some punks have been messing with the Citizen tracking servers.
+They keep getting in and messing with the data.
 
-Files: 
+Find how out how they keep getting in, if not you are fired!
+
+URL: <https://uithack-2.td.org.uit.no:9003/index.html>
 
 [Writeup](writeup/README.md)

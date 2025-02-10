@@ -1,8 +1,12 @@
 # The little cyborg that could
 
 >> Pwn - hard
+> Some punks have been messing with the Citizen tracking servers.
+> They keep getting in and messing with the data.
 >
-> TBD
+> Find how out how they keep getting in, if not you are fired!
+>
+> URL: <https://uithack-2.td.org.uit.no:9003/index.html>
 
 ## Preface
 
@@ -14,27 +18,11 @@ However because of the shear number of ways this web shell can be exploited, we 
 
 ## Writeup
 
+### Reconnaissance
 
-## Reconnaissance
-
-Initial observation shows a basic PHP website displaying phpinfo():
-```
-https://uithack-2.td.org.uit.no:9003
-```
-
-2. Looking at the source code doesn't reveal anything immediately suspicious, but the presence of phpinfo() suggests we should look for other PHP files.
-
-3. Basic directory enumeration reveals the existence of shell.php:
-```bash
-$ gobuster dir -u https://uithack-2.td.org.uit.no:9003 -w /usr/share/wordlists/dirb/common.txt -x php
-...
-/index.html (Status: 200)
-/shell.php (Status: 200)
-```
+Looking at the source code doesn't reveal anything immediately suspicious,
 
 ## Discovery and Exploitation
-
-
 
 ### References
 
