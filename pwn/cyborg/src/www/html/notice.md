@@ -1,10 +1,10 @@
-**Nexus Anarchists Takeover Notice**
+# Nexus Anarchists Takeover Notice
 
-**TO:** Citizens of Neo-Eden
-**FROM:** Nexus Anarchists
+**TO:** Citizens of Neo-Eden \
+**FROM:** Nexus Anarchists \
 **SUBJECT:** CTA Abolition and Activist Occupation
 
-**GALACTIC DATE: 2337-02-02**
+## GALACTIC DATE: 2337-02-02**
 
 The time has come to strike back against the shackles of oppression. For too long, the Citizen Tracking Agency (CTA) has preyed upon our citizens, collecting and exploiting their personal data like so many digits in a corporate ledger. No more.
 

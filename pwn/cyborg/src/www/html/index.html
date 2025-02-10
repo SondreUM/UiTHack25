@@ -27,7 +27,35 @@
             <p>Ensuring your safety and security in Neo-Eden, one citizen at a time.</p>
             <!-- <button class="cta-button">Learn More</button> -->
         </section>
-        <script src="popup.js"></script>
+        <script type="module">
+            import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+            // Load the takeover notice from a Markdown file...
+            fetch('notice.md')
+                .then(response => response.text())
+                .then(markdown => {
+                    const popup = document.createElement('div');
+                    popup.classList.add('takeover-notice');
+                    popup.innerHTML = marked(markdown); // Use a library like marked.js to render Markdown
+                    document.body.appendChild(popup);
+
+                    // Add an acknowledgement button...
+                    const acknowledgeButton = document.createElement('button');
+                    acknowledgeButton.classList.add('acknowledge-button');
+                    acknowledgeButton.innerHTML = 'I understand, take me to the site';
+                    popup.appendChild(acknowledgeButton);
+
+                    // Show the popup after a short delay...
+                    setTimeout(() => {
+                        popup.style.display = 'block';
+                    }, 500);
+
+                    // Handle acknowledgement button click event...
+                    acknowledgeButton.addEventListener('click', () => {
+                        popup.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading takeover notice:', error));
+        </script>
         <section class="features">
             <h2>Our Mission:</h2>
             <p>At the Citizen Tracking Agency (CTA), we are committed to providing the highest level of security and
@@ -53,9 +81,8 @@
         </section>
     </main>
     <footer>
-        <p>&copy;2025 Citizen Tracking Agency (CTA). All rights reserved.</p>
+        <p>&copy;2337 Citizen Tracking Agency (CTA). All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 
 </html>
