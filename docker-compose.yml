@@ -16,7 +16,7 @@ services:
       - caddy_data:/data
       - ./infra/caddy_conf:/etc/caddy:ro
     ports:
-    # add port if using https
+      # add port if using https
       - 80:80
       - 443:443
       - 443:443/udp
@@ -154,6 +154,16 @@ services:
           cpus: "0.015"
           memory: 50M
 
+  cyborg:
+    build: ./pwn/cyborg/src
+    # ports:
+    #   - "9003:80"
+    restart: on-failure
+    networks:
+      - web
+    security_opt:
+      - no-new-privileges:true
+
   # misc 10xxx
   mastermind:
     build: ./misc/mastermind/src
@@ -175,6 +185,7 @@ networks:
   internal:
     internal: true
   web:
+    # use if you need https
     external: true
 
 volumes:
