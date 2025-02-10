@@ -56,6 +56,7 @@ RUN cp /etc/os-release /var/www/admin/ \
 COPY www /var/www
 COPY www/html /var/www/html
 COPY www/admin /var/www/admin
+COPY uithack.conf /var/www/admin/
 RUN cd html && ln -s -d ../admin \
     && ln -s ../admin/flag.txt
 # change creation time of web shell to original time
@@ -71,9 +72,6 @@ RUN chown -R root:root /var/www \
 COPY uithack.conf /etc/apache2/sites-available/000-default.conf
 RUN a2ensite 000-default.conf
 
-
-
-RUN ls -lahR /var/www
 
 # Expose port 80
 EXPOSE 80
