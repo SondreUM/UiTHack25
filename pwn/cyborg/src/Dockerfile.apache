@@ -1,3 +1,5 @@
+# Disclaimer: This container is intentianally vulnerable and SHOULD NOT be used as a reference implementation.
+
 # Use the official PHP Apache base image
 # https://github.com/docker-library/php/blob/d9293b8297781e4e5d81a580df61acc71649eec3/8.4/bookworm/apache/Dockerfile
 FROM php:8.4-apache
@@ -11,10 +13,13 @@ RUN echo "memory_limit = 256M" >> $PHP_INI_DIR/php.ini \
     && echo "post_max_size = 64M" >> $PHP_INI_DIR/php.ini \
     && echo "max_execution_time = 600" >> $PHP_INI_DIR/php.ini \
     && echo "date.timezone = UTC" >> $PHP_INI_DIR/php.ini \
-    && echo "disable_functions = exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source,dl,mail,get_cfg_var" >> $PHP_INI_DIR/conf.d/security.ini
+    # conveniently "forget" to disable some really dangerous functions
+    # exec,passthru,shell_exec,system
+    && echo "disable_functions = proc_close,proc_open,dl,popen,show_source,posix_kill,posix_mkfifo,posix_getpwuid,posix_setpgid,posix_setsid,posix_setuid,posix_setgid,posix_seteuid,posix_setegid,posix_uname" >> $PHP_INI_DIR/conf.d/security.ini
 
-RUN sed -i 's/allow_url_fopen = On/allow_url_fopen = Off/' $PHP_INI_DIR/php.ini \
-    && sed -i 's/allow_url_include = On/allow_url_include = Off/' $PHP_INI_DIR/php.ini
+
+RUN sed -i 's/allow_url_fopen = On/allow_url_fopen = Off/' ${PHP_INI_DIR}/php.ini \
+    && sed -i 's/allow_url_include = On/allow_url_include = Off/' ${PHP_INI_DIR}/php.ini
 RUN sed -i 's/ServerName localhost/ServerName uithack-2.td.org.uit.no/' "${APACHE_CONFDIR}/apache2.conf"
 
 # Allow and configure indexes
@@ -53,7 +58,7 @@ COPY www/html /var/www/html
 COPY www/admin /var/www/admin
 RUN cd html && ln -s -d ../admin \
     && ln -s ../admin/flag.txt
-# change creation time of web shell
+# change creation time of web shell to original time
 RUN touch -t 201306061201 /var/www/admin/323d09c08a72717bbec71f172e5f6532.php
 
 
