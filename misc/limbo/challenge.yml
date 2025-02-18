@@ -33,10 +33,6 @@ tags:
 files:
   - src/program.ll
 
-hints:
-#  - { content: "Why would it be a .rar and not .zip?", cost: 20 }
-#  - { content: "Have you ever heard of NTFS ADS?", cost: 50 }
-
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.
 state: visible
