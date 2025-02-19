@@ -26,7 +26,5 @@ tags:
     - easy
     - git
 
-hints:
-
 state: visible
 version: "0.1"

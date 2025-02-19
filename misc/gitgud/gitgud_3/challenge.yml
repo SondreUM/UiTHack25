@@ -29,7 +29,7 @@ tags:
 hints:
     - {
           content: "Apparently the AI worked from home that day, if only we had a way to sync the files...",
-          cost: 40,
+          cost: 20,
       }
 
 state: visible

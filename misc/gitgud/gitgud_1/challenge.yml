@@ -28,9 +28,7 @@ tags:
     - git
 
 files:
-    - ../src/ai.zip
-
-hints:
+    - ../ai.zip
 
 state: visible
 version: "0.1"

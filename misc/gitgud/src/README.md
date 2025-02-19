@@ -1,9 +1,8 @@
-Lorem ipsum odor amet, consectetuer adipiscing elit. Nec dictum fames inceptos per rutrum. Nisi vulputate faucibus faucibus nostra velit interdum. Accumsan dui class volutpat malesuada bibendum posuere viverra. Sem lobortis penatibus senectus himenaeos ut dapibus at laoreet. Imperdiet erat euismod, commodo interdum eu ornare sed. Magnis curabitur eu erat vulputate facilisi semper finibus.
+# Building challenge
 
-Cubilia integer est eu iaculis nostra ex. Torquent consequat consectetur efficitur mus vestibulum molestie platea magnis? Hendrerit condimentum conubia lorem natoque nulla dapibus lobortis justo elementum. Nibh curabitur interdum nam ligula magnis rhoncus. Imperdiet purus nostra eu libero consectetur. Metus dis per fusce iaculis habitant urna. Ornare suscipit bibendum feugiat natoque pretium. Natoque fermentum suspendisse donec feugiat enim cras mi. Eleifend morbi ultrices; montes consectetur vulputate natoque.
+To build the challenge, do the following:
 
-Risus hendrerit accumsan interdum porta eu. Sit eu penatibus quis rhoncus cursus aenean duis nam sodales. Senectus consequat parturient curabitur ut et potenti. Pharetra eu neque platea neque, aliquet porta vel. Interdum nulla interdum porttitor natoque maximus auctor condimentum sem neque. Felis proin dis blandit suspendisse posuere sit pulvinar elementum posuere.
-
-Hac habitant conubia tincidunt; conubia auctor volutpat gravida ridiculus. Habitasse at condimentum lacus non ut tellus sapien. Elit metus integer vestibulum natoque at semper. Dolor suspendisse inceptos quam parturient libero libero, quis nulla. Ullamcorper fermentum commodo lectus odio augue fusce facilisis justo. Dictumst ante magna arcu risus ad habitant curabitur vitae. Curabitur turpis quam ullamcorper imperdiet adipiscing molestie.
-
-Nam dapibus ultricies posuere montes feugiat facilisi enim cursus cursus. Risus porta netus facilisi; sollicitudin dapibus luctus sem dapibus. Dis purus auctor morbi nam primis. Nascetur venenatis mattis felis euismod vehicula a? Volutpat tristique arcu sodales lobortis mattis. Consequat suscipit lorem turpis accumsan urna euismod phasellus commodo. Lectus et eros bibendum eros tristique aliquet. Dis habitant sem volutpat fringilla magna massa imperdiet per. Vulputate dictum luctus aptent; mauris adipiscing fermentum morbi nam finibus.
+1. Extract the ssh keys stored `gh_keys.zip`, ask @SondreUM for the password. The keys can only be used for this challenge's repository and will be revoked after the competition.
+2. Build the docker image: `docker build -t gitgud .`
+3. Run the docker container: `docker run -it --rm -v $(pwd)/output:/challenge/output:rw gitgud`
+4. The challenge files will be written as a zip archive to the `output` directory.
