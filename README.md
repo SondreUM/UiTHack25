@@ -17,7 +17,7 @@ None should be too hard and some help will be given for those in need.
 | Noob | Web | Pwn | Misc | Rev_Eng | Crypto | Forensic | IRL |
 | ------------------- | ------------------------------- | --------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- | ---- | --- |
 | Noob1🐱 | !big_picture 🔍 | SC0 📹 | Knock Knock 🚪 |  | Defining Curves ➰ |  | Dinosaur tech 💾 |
-| Noob2🍼 | Evilcorp Marketplace 🏬 | HexCore 🐚 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  |  |
+| Noob2🍼 | Evilcorp Marketplace 🏬 | HexCore 🐚 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 |  | Social Security 👨‍🔬|
 | Noob3👶 |  | Commlink 🖧 | Mastermind 🧠️ | luigi.wasm 👨‍🔧 | Pattern Recognition 📯 |  |  |
 | Noob4🐊 |  |  | Metro Brutes 💪 | ByteRunner 🌆  | XORbitant defense ❌ |  |  |
 | Noob5🐉 |  |  |  |  | Curvy fascination 💀 |  |  |
