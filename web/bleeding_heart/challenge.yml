@@ -10,7 +10,7 @@ extra:
 description: >
   We have identified a server that contains secret information and that is is known to have a security flaw. According to trusted sources thev have hired some people from the OpenSSL team that is coming over to fix it tomorrow.
 
-connection_info: https://uithack-2.td.org.uit.no:8400
+connection_info: http://uithack-2.td.org.uit.no:8003
 
 flags:
   - UiTHack25{ReadingOutsideTheBox}

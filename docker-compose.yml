@@ -1,4 +1,3 @@
-
 # Port 80 and 443 are reserved for the nginx container and should not be used for challenges.
 # Available port ranges:
 ## rev: 5xxx
@@ -80,7 +79,7 @@ services:
   big_picture:
     build: ./web/big_picture/src
     # ports:
-      # - "8001:8080"
+    # - "8001:8080"
     restart: on-failure
     networks:
       - web
@@ -88,17 +87,25 @@ services:
   marketplace:
     build: ./web/Evilcorp_marketplace/src
     # ports:
-      # - "8002:8002"
+    # - "8002:8002"
     restart: on-failure
     networks:
       - web
     environment:
       - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
 
+  bleeding_heart:
+    build: ./web/bleeding_heart/
+    ports:
+      - "8003:8080"
+    restart: on-failure
+    networks:
+      - web
+
   dinosaur_tech:
     build: ./irl/dinosaur_tech/src
     # ports:
-      # - "8803:3000"
+    # - "8803:3000"
     restart: on-failure
     networks:
       - web
@@ -150,9 +157,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.015'
+          cpus: "0.015"
           memory: 50M
-
 
   knock_knock:
     build: ./misc/knock_knock/src
@@ -164,11 +170,11 @@ services:
     restart: on-failure
 
 networks:
-    default:
-    internal:
-        internal: true
-    web:
-        external: true
+  default:
+  internal:
+    internal: true
+  web:
+    external: true
 
 volumes:
   caddy_data:
