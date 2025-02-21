@@ -8,7 +8,9 @@ extra:
     decay: 50
     minimum: 100
 description: >
-  In the rain-slick alleys of San Sequestro lies an underground safehouse where the city's most wanted netrunners hide. No retinal scans, no fingerprints - just an old-school precise knock sequence on a rusted steel door grants access to those who prove themselves worthy. Can you crack the sequence and access the secrets within?
+    In the rain-slick alleys of San Sequestro lies an underground safehouse where the city's most wanted netrunners hide. No retinal scans, no fingerprints - just an old-school precise knock sequence on a rusted steel door grants access to those who prove themselves worthy. 
+
+    A stranger hands you a note with the following number: 4837.
 
     Note: this challenge uses the HTTP protocol and can be done in a browser.
 
@@ -26,25 +28,10 @@ topics:
 # Can be removed if unused
 tags:
     - easy
-    - medium
     - network
-
 
 # If you have a Dockerfile set to .
 image: ./src
-
-hints:
-    - "Port knocking is a network security technique that uses a specific sequence of connection attempts to certain ports as a secret key to grant access to a system or service."
-    - {
-          content:
-              "Nmap is a popular tool that can enumerate open ports of a host.",
-          cost: 20,
-      }
-    - {
-          content:
-              "The first port is 4837.",
-          cost: 50,
-      }
 
 # If the field is omitted, the challenge is visible by default.
 # If provided, the field can take one of two values: hidden, visible.
