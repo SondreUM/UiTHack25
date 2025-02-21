@@ -1,0 +1,30 @@
+name: "gitgud_2"
+author: "SondreUM"
+category: git
+value: 300
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+description: >
+    Our AI has been acting up lately. Apparently, it has been inserting wierd symbols and leaking secrets all over the codebase.
+    And of course, our unpaid interns are unable to find them, kids these days *sigh*.
+    Can you help us find all the secrets? You might have to clean them up a bit before you can extract them.
+    PS: pls dont tell the boss, he loves that AI and will blame us for everything.
+
+    *Note: All flags can be found in the same repo. You can download the repo from gitgud_1.*
+    *There is a dedicated flag for each gitgud challenge, the last number in the flag is the challenge number.*
+
+flags:
+    - UiTHack25{1f_y0U_c4n7_S33_17_7h3n_175_G0n3_2}
+
+topics:
+    - git
+
+tags:
+    - easy
+    - git
+
+state: visible
+version: "0.1"
