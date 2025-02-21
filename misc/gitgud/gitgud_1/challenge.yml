@@ -4,12 +4,11 @@ category: git
 value: 200
 type: dynamic
 extra:
-    initial: 200
+    initial: 300
     decay: 50
     minimum: 100
 description: >
     Our AI has been acting up lately. Apparently, it has been inserting wierd symbols and leaking secrets all over the codebase.
-    Our AI has been acting up lately. Apparently, it has been including wierd symbols everywhere and leaking secrets all over the codebase.
     And of course, our unpaid interns are unable to find them, kids these days *sigh*.
     Can you help us find all the secrets? You might have to clean them up a bit before you can extract them.
     PS: pls dont tell the boss, he loves that AI and will blame us for everything.

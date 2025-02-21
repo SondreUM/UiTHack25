@@ -17,6 +17,6 @@ PS: pls dont tell the boss, he loves that AI and will blame us for everything.
 3. UiTHack25{L0v3_wh3n_4_pl4n_c0m3s_t0g3th3r_3}
 4. UiTHack25{1f_y0u_4r3_r34d1ng_th1s_y0u_4r3_4_g1t_g0d_4}
 
-Files: [Source code](src/ai.zip)
+Files: [Source code](ai.zip)
 
 [Writeup](writeup/README.md)

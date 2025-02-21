@@ -4,7 +4,7 @@ category: git
 value: 300
 type: dynamic
 extra:
-    initial: 300
+    initial: 500
     decay: 50
     minimum: 100
 description: >
