@@ -1,0 +1,34 @@
+name: "Bleeding Heart"
+author: "Victor Zimmer"
+category: web
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+description: >
+  We have identified a server that contains secret information and that is is known to have a security flaw. According to trusted sources thev have hired some people from the OpenSSL team that is coming over to fix it tomorrow.
+
+connection_info: https://uithack-2.td.org.uit.no:8400
+
+flags:
+  - UiTHack25{ReadingOutsideTheBox}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+  - heartbleed
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+  - medium
+
+# If you have a Dockerfile set to .
+image: .
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
