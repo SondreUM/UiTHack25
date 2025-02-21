@@ -155,7 +155,7 @@ services:
 
 
   knock_knock:
-    build: ./misc/mastermind/src
+    build: ./misc/knock_knock/src
     ports:
       - "10080:80"
       - "4837:4837"
