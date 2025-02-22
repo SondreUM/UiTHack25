@@ -53,4 +53,3 @@ fn rocket() -> _ {
         .mount("/", routes![ping])
         .mount("/", FileServer::from(relative!("src/static")))
 }
-""
