@@ -8,12 +8,15 @@ extra:
   decay: 50
   minimum: 100
 description: >
-  We have identified a server that contains secret information and that is is known to have a security flaw. According to trusted sources they have hired some people from the OpenSSL team that is coming over to fix it tomorrow.
+  We have identified a server that contains secret information and that is is known to have a security flaw. Please get ahold of the information before it is fixed.
 
 connection_info: http://uithack-2.td.org.uit.no:8003
 
 flags:
   - UiTHack25{ReadingOutsideTheBox}
+
+hints:
+  - { content: "According to trusted sources they have hired some people from the OpenSSL team that is coming over to fix it tomorrow.", cost: 50 }
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
