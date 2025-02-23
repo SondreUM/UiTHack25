@@ -96,8 +96,8 @@ services:
 
   bleeding_heart:
     build: ./web/bleeding_heart/
-    ports:
-      - "8004:8080"
+    # ports:
+    #   - "8004:8080"
     restart: on-failure
     networks:
       - web
