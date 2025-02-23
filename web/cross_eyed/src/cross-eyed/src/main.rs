@@ -13,7 +13,7 @@ use std::time::Duration;
 #[macro_use]
 extern crate rocket;
 
-use rocket::fs::{relative, FileServer};
+use rocket::fs::FileServer;
 
 struct UserSession {
     session_id: u64,
@@ -156,5 +156,5 @@ fn rocket() -> _ {
             "/",
             routes![get_stream, get_new_stream, get_messages_json, post_message],
         )
-        .mount("/", FileServer::from(relative!("src/static")))
+        .mount("/", FileServer::from("/usr/src/app/static"))
 }
