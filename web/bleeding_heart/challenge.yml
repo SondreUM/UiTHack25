@@ -10,7 +10,7 @@ extra:
 description: >
   We have identified a server that contains secret information and that is is known to have a security flaw. Please get ahold of the information before it is fixed.
 
-connection_info: http://uithack-2.td.org.uit.no:8003
+connection_info: http://uithack-2.td.org.uit.no:8004
 
 flags:
   - UiTHack25{ReadingOutsideTheBox}
