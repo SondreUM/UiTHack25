@@ -1,0 +1,91 @@
+.flexRowContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#windowsContainer {
+    top: 4em;
+    position: relative;
+}
+
+div#filesWindow {
+    height: 100%;
+    width: 66%;
+}
+
+#fileList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.file img {
+    padding-top: 8px;
+    width: 2em;
+    height: auto;
+    margin-right: 1px;
+    align-content: center;
+}
+
+.file span {
+    font-size: 11px;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div#editorWindow {
+    position: absolute;
+    z-index: -1;
+    top: -5em;
+    right: 8em;
+    width: 5em;
+}
+
+div#chatWindow {
+    height: 100%;
+    min-height: 5em;
+    width: 33%;
+    flex-direction: column-reverse;
+}
+
+div#chatWindowPane {
+    max-height: 20em;
+}
+
+div#chatWindowPane * {
+    overflow-anchor: none;
+}
+
+#anchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
+
+.chat-message {
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-width: 20%;
+}
+
+.chat-sent {
+    background-color: grey;
+    color: white;
+    align-self: flex-end;
+    text-align: left;
+}
+
+.chat-received {
+    background-color: whitesmoke;
+    color: black;
+    align-self: flex-start;
+    text-align: right;
+}

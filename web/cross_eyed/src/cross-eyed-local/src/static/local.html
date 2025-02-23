@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Mainframe</title>
+        <link rel="stylesheet" href="/system.css" />
+        <link rel="stylesheet" href="/local.css" />
+    </head>
+    <body>
+        <div id="windowsContainer" class="flexRowContainer">
+            <div class="window" id="filesWindow">
+                <div class="title-bar">
+                    <button aria-label="Close" class="close"></button>
+                    <h1 class="title">Files</h1>
+                    <button aria-label="Resize" class="resize"></button>
+                </div>
+                <div class="details-bar">
+                    <button class="btn">Create File</button>
+                    <button class="btn" disabled>Delete File</button>
+                </div>
+
+                <div class="window-pane">
+                    <ul id="fileList">
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>Shopping.txt</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>passwords.txt</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>cat.png</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>uit-application.rtf</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>work.txt</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>script.sh</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>flag.txt</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>green.tiff</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>blue.tiff</span></li>
+                        <li class="file"><img src="icon/file.png" alt="File Icon" /><span>red.tiff</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="editorWindow" class="window">
+                <div class="title-bar">
+                    <button aria-label="Close" class="close"></button>
+                    <h1 class="title">Editing: flag.txt</h1>
+                    <button aria-label="Resize" class="resize"></button>
+                </div>
+                <div class="separator"></div>
+
+                <div class="window-pane">This is very secret information, please never share it with anyone. The flag is UitHack25{SaaM-Script_as_a_Message}</div>
+            </div>
+
+            <div class="window" id="chatWindow">
+                <div class="title-bar">
+                    <button aria-label="Close" class="close"></button>
+                    <h1 class="title">Chat</h1>
+                    <button aria-label="Resize" class="resize"></button>
+                </div>
+                <div class="separator"></div>
+
+                <div id="chatWindowPane" class="window-pane">
+                    <div id="chatMessages">
+                        <div class="chat-message chat-sent">
+                            <p>Hello!</p>
+                        </div>
+                        <div class="chat-message chat-received">
+                            <p>How are you?</p>
+                        </div>
+                        <div class="chat-message chat-sent">
+                            <p>I'm fine, thanks!</p>
+                        </div>
+                        <div class="chat-message chat-received">
+                            <p>Great!</p>
+                        </div>
+                        <div class="chat-message chat-sent">
+                            <p>How about you?</p>
+                        </div>
+                        <div class="chat-message chat-received">
+                            <p>I'm good too, thanks!</p>
+                        </div>
+                        <div class="chat-message chat-sent">
+                            <p>That's great!</p>
+                        </div>
+                        <div class="chat-message chat-received">
+                            <p>Great!</p>
+                        </div>
+                    </div>
+                    <div id="anchor"></div>
+
+                    <div class="flexRowContainer">
+                        <input aria-label="Example text box" type="text" placeholder="New message" />
+                        <button>Send</button>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    function executeScriptElements(containerElement) {
+                        const scriptElements = containerElement.querySelectorAll("script");
+
+                        Array.from(scriptElements).forEach((scriptElement) => {
+                            const clonedElement = document.createElement("script");
+
+                            Array.from(scriptElement.attributes).forEach((attribute) => {
+                                clonedElement.setAttribute(attribute.name, attribute.value);
+                            });
+
+                            clonedElement.text = scriptElement.text;
+
+                            scriptElement.parentNode.replaceChild(clonedElement, scriptElement);
+                        });
+                    }
+
+                    function displayMessages(messages) {
+                        document.getElementById("chatMessages").innerHTML = "";
+
+                        messages.forEach((message) => {
+                            const messageElement = document.createElement("div");
+                            messageElement.classList.add("chat-message", "chat-received");
+                            messageElement.innerHTML = message;
+                            document.getElementById("chatMessages").appendChild(messageElement);
+                        });
+
+                        executeScriptElements(document.getElementById("chatMessages"));
+                    }
+
+                    document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("anchor").scrollIntoView();
+                        var stream_id = window.location.search.split("=")[1];
+                        //loadMessages();
+                        var messages = ["Hello, world!"];
+                        displayMessages(messages);
+                    });
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
