@@ -1,4 +1,4 @@
-# Web - cyber_pirate
+# cyber_pirate
 
 > Web - easy
 

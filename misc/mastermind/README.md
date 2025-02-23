@@ -1,4 +1,4 @@
-# Misc - Mastermind
+# Mastermind
 
 > Misc - medium
 
