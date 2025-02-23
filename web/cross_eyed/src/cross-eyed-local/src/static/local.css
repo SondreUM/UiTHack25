@@ -54,7 +54,7 @@ div#chatWindow {
 }
 
 div#chatWindowPane {
-    max-height: 20em;
+    max-height: 15em;
 }
 
 div#chatWindowPane * {
