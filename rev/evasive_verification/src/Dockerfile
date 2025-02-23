@@ -19,7 +19,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY www /usr/share/nginx/static
 RUN chown -R nginx:nginx /usr/share/nginx/static
 
-EXPOSE 8080
+EXPOSE 5005
 
 CMD ["nginx", "-g", "daemon off;"]
 

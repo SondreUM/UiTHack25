@@ -1,4 +1,4 @@
-# Misc - Metro Brutes
+# Metro Brutes
 
 > Misc - medium
 

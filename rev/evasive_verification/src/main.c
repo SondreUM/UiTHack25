@@ -27,8 +27,8 @@
 // Since it is staticly defined, it will be visible with the strings command
 // Provides hint that the program will do network communication
 #define PORT 5005
-#define PORT_LOCAL 8080
-#define DOMAIN "uithack-2."
+#define PORT_LOCAL PORT
+#define DOMAIN "uithack-2.td.org.uit.no"
 #define DOMAIN_LOCAL "localhost"
 
 #define FLAG_FORMAT "UiTHack25{"
@@ -133,8 +133,6 @@ CURLcode http_get(const char *url, response_t *response) {
         curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, response);
         // Set the user agent, needed for some servers
         curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "hackerman/1.0");
-        // Allow redirection, needed for uithack.no -> uithack-2.td.org.uit.no
-        curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L);
         // Timeout the request after 5 seconds
         curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 5L);
 

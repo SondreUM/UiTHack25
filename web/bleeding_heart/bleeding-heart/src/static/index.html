@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Server Connection Tester</title>
+        <script type="application/javascript">
+            function handleServerResponse() {
+              console.log("Response from server", this.responseText)
+              document.getElementById("recvMessage").innerHTML = this.responseText;
+            }
+
+            function testConnection() {
+                const d = new Date();
+                let msg = {message: document.getElementById("testMessage").value, length: document.getElementById("testMessage").value.length, timestamp: d.getTime().toString()};
+
+                document.getElementById("sentMessage").innerHTML = msg.message;
+
+                const req = new XMLHttpRequest();
+                req.addEventListener("load", handleServerResponse);
+                req.open("POST", "/ping");
+                req.setRequestHeader('Content-type', 'application/json');
+                req.send(JSON.stringify(msg));
+                console.log("Sent to server", msg)
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Server Connection Tester</h1>
+        <input id="testMessage" type="text" value="test-message"></input>
+        <button onclick="testConnection()">Test Connection</button>
+        <p>Sent message:<span id="sentMessage"></span></p>
+        <p>Received message: <span id="recvMessage"></span></p>
+    </body>
+</html>
