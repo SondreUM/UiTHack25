@@ -24,7 +24,10 @@ This allows us to send chat messages to Bobby. We can also see an editor with a 
 
 If we have previous experience with XSS we might try inserting a h1 element into the chat. Attempting so proves
 that it works, the chat is not being sanitized. We can then attempt to inject a script tag that will execute our code.
-Trying something simple like changing the background color of the body element we discover that it works, the site is susceptible to XSS.
+Trying something simple like rewriting the body element we discover that it works, the site is susceptible to XSS.
+```html
+<script>document.body.innerHTML="XSS Worked!"</script>
+```
 
 From here there are many ways to get ahold of the flag, we could attempt to remove the chat window that is blocking the
 editor from view. We could also try to have a script send the entire page HTML to a remote server such as a Pastebin.
