@@ -33,7 +33,7 @@
             var frame_id = 0;
 
             async function getStreamId() {
-                const response = await fetch("http://localhost:8000/new-stream");
+                const response = await fetch("/new-stream");
                 if (!response.ok) {
                     throw new Error(`Response status: ${response.status}`);
                 }
@@ -41,7 +41,7 @@
             }
 
             async function getMessagesJson() {
-                const response = await fetch("http://localhost:8000/messages/" + stream_id + "/messages.json");
+                const response = await fetch("/messages/" + stream_id + "/messages.json");
                 if (!response.ok) {
                     throw new Error(`Response status: ${response.status}`);
                 }
@@ -66,7 +66,7 @@
                 const messageText = document.querySelector("input#chatInput").value;
                 document.querySelector("input#chatInput").value = "";
                 console.log("Sending message", messageText);
-                const response = await fetch("http://localhost:8000/messages/" + stream_id, {
+                const response = await fetch("/messages/" + stream_id, {
                     method: "POST",
                     headers: {
                         "Content-Type": "text/plain",
@@ -84,7 +84,7 @@
             getStreamId();
 
             setInterval(() => {
-                document.getElementById("lastVncFrame").src = "http://localhost:8000/stream/" + stream_id + "/" + frame_id + "/frame.png";
+                document.getElementById("lastVncFrame").src = "/stream/" + stream_id + "/" + frame_id + "/frame.png";
                 getMessagesJson();
                 frame_id++;
             }, 5000);
