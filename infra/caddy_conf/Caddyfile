@@ -1,7 +1,6 @@
 {
 	email jkr070@uit.no
 	key_type rsa4096
-
 }
 
 (common) {
@@ -11,7 +10,7 @@
 	}
 
 	request_body {
-        max_size 2MB
+		max_size 2MB
 	}
 
 	header {
@@ -23,30 +22,28 @@
 }
 
 http://uithack-2.td.org.uit.no:5005 {
-
-    @forbiddenPath path_regexp flag.*
-    respond @forbiddenPath "You think you can just waltz in here and grab the flag? Think again.\n" 403
+	@forbiddenPath path_regexp flag.*
+	respond @forbiddenPath "You think you can just waltz in here and grab the flag? Think again.\n" 403
 
 	@correct_path {
-        path /c2850b16-2c58-b061-c285-0b162c58b061
-    }
+		path /c2850b16-2c58-b061-c285-0b162c58b061
+	}
 
 	@correct_path_and_agent {
-        path /c2850b16-2c58-b061-c285-0b162c58b061
-        header User-Agent "hackerman/1.0"
-    }
+		path /c2850b16-2c58-b061-c285-0b162c58b061
+		header User-Agent "hackerman/1.0"
+	}
 
-    respond @correct_path 403
+	respond @correct_path 403
 
 	handle @correct_path_and_agent {
-        respond 200 {
-            body "UiTHack25{S3cur1ty_Thr0ugh_0bscur1tee}"
-        }
-    }
+		respond 200 {
+			body "UiTHack25{S3cur1ty_Thr0ugh_0bscur1tee}"
+		}
+	}
 
-    respond 404
+	respond 404
 }
-
 
 uithack-2.td.org.uit.no:8001 {
 	import common
@@ -66,19 +63,16 @@ uithack-2.td.org.uit.no:8004 {
 	reverse_proxy http://bleeding_heart:8080
 }
 
-
 uithack-2.td.org.uit.no:8005 {
 	import common
-	
+
 	handle /api/* {
-	    reverse_proxy http://cyber_pirate_backend:8080
+		reverse_proxy http://cyber_pirate_backend:8080
 	}
-	handle  {
-	    reverse_proxy http://cyber_pirate_frontend:3000
-      
+	handle {
+		reverse_proxy http://cyber_pirate_frontend:3000
 	}
 }
-
 
 uithack-2.td.org.uit.no {
 	import common
