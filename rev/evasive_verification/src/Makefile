@@ -15,7 +15,7 @@ OBJS = $(SRCS:.c=.o)
 TARGET = evasive_verify
 TARGET_WIN = $(TARGET).exe
 
-all: tux dock_build dock_run
+all: tux
 
 tux: $(OBJS)
 	$(CC_TUX) $(CFLAGS) $(LDFLAGS)  -o $(TARGET) $^ -mtune=generic $(LIBS)

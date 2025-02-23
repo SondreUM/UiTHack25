@@ -1,4 +1,4 @@
-# Noob - Noob4
+# Noob4
 
 > Noob - easy
 

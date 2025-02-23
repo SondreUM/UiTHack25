@@ -1,5 +1,5 @@
 ---
-auth_required: true
+auth_required: false
 draft: false
 hidden: false
 route: index
@@ -7,16 +7,33 @@ title: UiTHack25
 ---
 
 <div class="row">
-    <div class="col-md-12 offset-md-0">
-        <img class="w-100 mx-auto d-block" style="max-width: 500px;padding: 50px;padding-top: 10vh;" src="/files/77b00ef3ae7db01cf9bba1cbb7394359/4.svg" />
-        <h1 class="text-center">
-          <b>UiTHack25{CTF}</b>
-          <b><p id="countdown">starts in</p></b>
-        </h1>
-        <br>
-      <p class="text-center">{{ ctf_description }}</p>
-    </div>
+  <div class="col-md-12 offset-md-0">
+    <img class="w-100 mx-auto d-block" style="max-width: 800px;padding: 10px;padding-top: 5vh;"
+      src="/files/70d6d82a6c25153464e90a22ac742edf/vv.svg" />
+    <h1 class="text-center">
+      <b>UiTHack25{CTF}</b>
+    </h1>
+    <h1 class="text-center">
+      <b>
+        <p id="countdown">starts in</p>
+      </b>
+    </h1>
+    <br>
+    <p class="text-center">{{ ctf_description }}</p>
+  </div>
+  <div class="col-md-12 offset-md-0">
+    <p><br><br><br></p>
+    <h3 class="text-center">Sponsored by:</h3>
+    <p class="text-center">
+      <a href="https://ksat.no"><img class="mx-auto" style="max-width: 500px;padding: 50px;padding-top: 10px;"
+          src="/files/e4cee8e5b34d128708a2e94ded8ce033/KSAT-logo.png" /></a>
+      <a href="https://td-uit.no/about-us"><img class="mx-auto"
+          style="max-width: 500px;padding: 50px;padding-top: 10px;"
+          src="/files/a29b4c06eea82286c2bbb1ff6d8d4f99/td-full-logo.png" /></a>
+    </p>
+  </div>
 </div>
+
 
 <script>
   // Set the date we're counting down to
@@ -45,7 +62,7 @@ title: UiTHack25
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("countdown").innerHTML = "is live!";
+      document.getElementById("countdown").innerHTML = "Has started!";
     }
   }, 1000);
 </script>
