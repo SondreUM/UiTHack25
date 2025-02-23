@@ -101,8 +101,11 @@ services:
 
   cross_eyed:
     build: ./web/cross_eyed/
-    ports:
-      - "8010:8000"
+    # ports:
+    #   - "8010:8000"
+    restart: on-failure
+    networks:
+      - web
 
   dinosaur_tech:
     build: ./irl/dinosaur_tech/src
