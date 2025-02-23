@@ -40,3 +40,7 @@ USER app
 ENV ROCKET_ADDRESS="0.0.0.0"
 
 CMD ["sh", "./start.sh"]
+
+
+# docker build . -t cross-eyed
+# docker run -p 8000:8000 cross-eyed
