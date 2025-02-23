@@ -16,7 +16,10 @@ flags:
   - UiTHack25{ReadingOutsideTheBox}
 
 hints:
-  - { content: "According to trusted sources they have hired some people from the OpenSSL team that is coming over to fix it tomorrow.", cost: 50 }
+  - {
+      content: "According to trusted sources they have hired some people from the OpenSSL team that is coming over to fix it tomorrow.",
+      cost: 50,
+    }
 
 # Topics are used to help tell what techniques/information a challenge involves
 # They are generally only visible to admins
