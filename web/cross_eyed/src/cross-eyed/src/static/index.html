@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>UitHack25 Cross Eyed</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div id="windowContainer">
+            <div class="window">
+                <span>vnc@bobbys-imac.local</span>
+                <br />
+                <img id="lastVncFrame" src="connecting.png" alt="Last recieved frame" />
+            </div>
+            <div class="window">
+                <span>Chat with bobby@bobbys-imac.local</span>
+                <br />
+                <div id="chatWindow">
+                    <div id="anchor"></div>
+                </div>
+                <div id="chatInput">
+                    <input type="text" id="chatInput" placeholder="Type your message here..." />
+                    <button id="sendButton">Send</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+            const img = document.querySelector("img#lastVncFrame");
+
+            var stream_id;
+            var frame_id = 0;
+
+            async function getStreamId() {
+                const response = await fetch("http://localhost:8000/new-stream");
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                stream_id = await response.text();
+            }
+
+            async function getMessagesJson() {
+                const response = await fetch("http://localhost:8000/messages/" + stream_id + "/messages.json");
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                const messages = await response.json();
+                console.log(messages);
+
+                document.getElementById("chatWindow").innerHTML = "";
+
+                for (const message of messages) {
+                    const messageElement = document.createElement("div");
+                    messageElement.classList.add("message");
+                    messageElement.textContent = message;
+                    document.getElementById("chatWindow").appendChild(messageElement);
+                }
+                const anchorElement = document.createElement("div");
+                anchorElement.id = "anchor";
+                document.getElementById("chatWindow").appendChild(anchorElement);
+                document.getElementById("anchor").scrollIntoView();
+            }
+
+            async function sendMessage() {
+                const messageText = document.querySelector("input#chatInput").value;
+                document.querySelector("input#chatInput").value = "";
+                console.log("Sending message", messageText);
+                const response = await fetch("http://localhost:8000/messages/" + stream_id, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain",
+                    },
+                    body: messageText,
+                });
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+            }
+            document.getElementById("sendButton").addEventListener("click", function () {
+                sendMessage();
+            });
+
+            getStreamId();
+
+            setInterval(() => {
+                document.getElementById("lastVncFrame").src = "http://localhost:8000/stream/" + stream_id + "/" + frame_id + "/frame.png";
+                getMessagesJson();
+                frame_id++;
+            }, 5000);
+        });
+    </script>
+</html>
