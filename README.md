@@ -20,7 +20,7 @@ None should be too hard and some help will be given for those in need.
 | Noob2🍼 | Evilcorp Marketplace 🏬 | HexCore 🐚 | Alternative Facts 🪟 | Evasive Verification 🌐  | Caesarian Dilemma 👑 | The Great Hunt 👨‍🔬 |
 | Noob3👶 | Cyber Pirate 🚢 | Commlink 🖧 | Mastermind 🧠️ | luigi.wasm 👨‍🔧 | Pattern Recognition 📯 |  |
 | Noob4🐊 | Bleeding Heart 💗 |  | Metro Brutes 💪 | ByteRunner 🌆  | XORbitant defense ❌ |  |
-| Noob5🐉 |  |  | gitgud 👼 |  | Curvy fascination 💀 |  |
+| Noob5🐉 | Cross Eyed 👀 |  | gitgud 👼 |  | Curvy fascination 💀 |  |
 |  |  |  | limbo 💃 |  | Pseudo Science 🖥️ |  |
 |  |  |  |  |  |  |  |
 
