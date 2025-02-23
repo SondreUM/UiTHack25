@@ -1,4 +1,4 @@
-# Noob - Noob5
+# Noob5
 
 > Noob - easy
 

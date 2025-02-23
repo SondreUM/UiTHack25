@@ -1,4 +1,4 @@
-# Web - !big_picture 🔍
+# !big_picture 🔍
 
 > Web - easy
 
