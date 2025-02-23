@@ -1,46 +1,39 @@
 FROM rust:1.85 AS builder
 
-WORKDIR /home/
-RUN mkdir ./src/
-RUN mkdir ./src/cross-eyed
-RUN mkdir ./src/cross-eyed/src
-RUN mkdir ./src/cross-eyed-local
-RUN mkdir ./src/cross-eyed-local/src
+RUN mkdir -p /home/src/cross-eyed/src /home/src/cross-eyed-local/src
 
 WORKDIR /home/src/cross-eyed
-COPY ./src/cross-eyed/src/main.rs ./src/main.rs
-COPY ./src/cross-eyed/Cargo.toml ./Cargo.toml
+COPY ./src/cross-eyed .
 RUN cargo build --release
 
 WORKDIR /home/src/cross-eyed-local
-COPY ./src/cross-eyed-local/src/main.rs ./src/main.rs
-COPY ./src/cross-eyed-local/Cargo.toml ./Cargo.toml
+COPY ./src/cross-eyed-local .
 RUN cargo build --release
 
-
-
-
+# production image
 FROM debian:bookworm-slim
 
-RUN apt update
-RUN apt install -y chromium
+RUN apt-get update && apt-get install -y --no-install-recommends chromium && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
-COPY --from=builder /home/src/cross-eyed/target/release/cross-eyed ./
+COPY --from=builder /home/src/cross-eyed/target/release/cross-eyed \
+    /home/src/cross-eyed-local/target/release/cross-eyed-local ./
+
+# Copy static assets and startup script
 COPY ./src/cross-eyed/src/static ./static
-COPY --from=builder /home/src/cross-eyed-local/target/release/cross-eyed-local ./
 COPY ./src/cross-eyed-local/src/static ./static-local
+COPY ./src/start.sh .
 
-COPY ./src/start.sh ./start.sh
-RUN chmod +x ./start.sh
-
+RUN chmod a+x ./start.sh
 RUN useradd -ms /bin/bash app
 USER app
+
 ENV ROCKET_ADDRESS="0.0.0.0"
+EXPOSE 8000
 
-CMD ["sh", "./start.sh"]
-
+CMD ["bash", "./start.sh"]
 
 # docker build . -t cross-eyed
 # docker run -p 8000:8000 cross-eyed
