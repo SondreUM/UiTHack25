@@ -19,4 +19,20 @@ The user can also send messages to Bobby that will display on his computer, this
 
 
 ## Author solutions
-TODO
+Playing around with the webpage it is quickly appearent that the chats are linked together.
+This allows us to send chat messages to Bobby. We can also see an editor with a flag.txt file open.
+
+If we have previous experience with XSS we might try inserting a h1 element into the chat. Attempting so proves
+that it works, the chat is not being sanitized. We can then attempt to inject a script tag that will execute our code.
+Trying something simple like changing the background color of the body element we discover that it works, the site is susceptible to XSS.
+
+From here there are many ways to get ahold of the flag, we could attempt to remove the chat window that is blocking the
+editor from view. We could also try to have a script send the entire page HTML to a remote server such as a Pastebin.
+Alternatively a very simple solution, since we know the format of the flag, we can use a regular expression to extract it from the page.
+
+We send Bobby a message with the following content:
+```html
+<script>const re = /UiTHack25{.+}/; document.body.innerHTML=re.exec(document.body.innerHTML)</script>
+```
+
+And just like that the page body is replaced with the flag, the challenge has been solved.
