@@ -1,0 +1,81 @@
+div#windowContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div.window {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 31em;
+    height: 25em;
+    margin-left: 2em;
+}
+
+img#lastVncFrame {
+    width: 30em;
+}
+
+div#chatWindow {
+    max-height: 20em;
+    overflow-y: scroll;
+}
+
+div#chatWindow * {
+    overflow-anchor: none;
+}
+
+#anchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
+
+div.message {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30em;
+    min-height: 1em;
+    background-color: #f9f9f9;
+    margin-bottom: 0.5em;
+}
+
+div#chatInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30em;
+    height: 1em;
+    position: absolute;
+    bottom: 1em;
+}
+
+input#chatInput {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button#sendButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button#sendButton:hover {
+    background-color: #0056b3;
+}

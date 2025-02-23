@@ -74,6 +74,12 @@ uithack-2.td.org.uit.no:8005 {
 	}
 }
 
+uithack-2.td.org.uit.no:8010 {
+	import common
+
+	reverse_proxy http://cross_eyed:8000
+}
+
 uithack-2.td.org.uit.no {
 	import common
 

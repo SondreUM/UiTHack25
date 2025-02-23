@@ -1,0 +1,38 @@
+name: "Cross Eyed"
+author: "Victor Zimmer"
+category: web
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+description: >
+  We have acquired access to the screen of a user "Bobby" with the necessary privileges to view the codes to the factory.
+  Unfourtunately he seems to have left for the weekend and we need to access it before he returns.
+  We've managed to send him messages, but he's not there to read them.
+  The connection isn't all that great, but we're sure you can make do.
+
+connection_info: https://uithack-2.td.org.uit.no:8010
+
+flags:
+  - UiTHack25{SaaM-Script_as_a_Message}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+topics:
+  - XSS
+  - Cross Site Scripting
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+tags:
+  - hard
+
+# If you have a Dockerfile set to .
+image: ./src
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
