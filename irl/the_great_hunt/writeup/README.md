@@ -63,3 +63,7 @@ Where:
 
 
 Weight factor is the same as on wiki.
+
+## Resources
+
+Norwegian explanation of the math behind Norwegian SSN: http://www.fnrinfo.no/Teknisk/KontrollsifferSjekk.aspx
