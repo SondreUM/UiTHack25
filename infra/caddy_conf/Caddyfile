@@ -80,6 +80,12 @@ uithack-2.td.org.uit.no:8010 {
 	reverse_proxy http://cross_eyed:8000
 }
 
+uithack-2.td.org.uit.no:9003 {
+	import common
+
+	reverse_proxy http://cyborg:80
+}
+
 uithack-2.td.org.uit.no {
 	import common
 

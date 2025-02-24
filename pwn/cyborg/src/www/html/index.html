@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Tracking Agency (CTA)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <!-- <li><a href="/html/hello.html">Admin</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to the Citizen Tracking Agency (CTA)</h1>
+            <br>
+            <p>Ensuring your safety and security in Neo-Eden, one citizen at a time.</p>
+            <!-- <button class="cta-button">Learn More</button> -->
+        </section>
+        <script type="module">
+            import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+            // Load the takeover notice from a Markdown file...
+            fetch('notice.md')
+                .then(response => response.text())
+                .then(markdown => {
+                    const popup = document.createElement('div');
+                    popup.classList.add('takeover-notice');
+                    popup.innerHTML = marked(markdown); // Use a library like marked.js to render Markdown
+                    document.body.appendChild(popup);
+
+                    // Add an acknowledgement button...
+                    const acknowledgeButton = document.createElement('button');
+                    acknowledgeButton.classList.add('acknowledge-button');
+                    acknowledgeButton.innerHTML = 'I understand, take me to the site';
+                    popup.appendChild(acknowledgeButton);
+
+                    // Show the popup after a short delay...
+                    setTimeout(() => {
+                        popup.style.display = 'block';
+                    }, 500);
+
+                    // Handle acknowledgement button click event...
+                    acknowledgeButton.addEventListener('click', () => {
+                        popup.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading takeover notice:', error));
+        </script>
+        <section class="features">
+            <h2>Our Mission:</h2>
+            <p>At the Citizen Tracking Agency (CTA), we are committed to providing the highest level of security and
+                protection for all citizens of Neo-Eden. Our advanced tracking and monitoring systems are designed to
+                keep you safe and secure at all times, wherever you may be. With our state-of-the-art technology and
+                expert team of security professionals, you can rest assured that your safety is our top priority.</p>
+        </section>
+        <h2>Our Services:</h2>
+        <ul>
+            <li>
+                <i class="fas fa-lock"></i>
+                <span>Identity Verification and Authentication</span>
+            </li>
+            <li>
+                <i class="fas fa-camera"></i>
+                <span>Digital Facial Recognition and Surveillance</span>
+            </li>
+            <li>
+                <i class="fas fa-credit-card"></i>
+                <span>Credit Scoring and Financial Monitoring</span>
+            </li>
+        </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;2337 Citizen Tracking Agency (CTA). All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

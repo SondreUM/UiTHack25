@@ -1,0 +1,31 @@
+name: "The little cyborg that could"
+author: "@SondreUM & Lorentzen"
+category: pwn
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 50
+    minimum: 100
+
+description: >
+    Some punks have been messing with the Citizen tracking servers.
+    They keep getting in and messing with the data.
+
+    Find how out how they keep getting in, if not you are fired!
+
+connection_info: https://uithack-2.td.org.uit.no:9003/index.html
+
+topics:
+    - web-shell
+    - php
+
+tags:
+    - hard
+    - insane
+
+flags:
+    - UiTHack25{02_quota_revoked_please_submit_for_disposal}
+
+state: visible
+version: "0.1"
