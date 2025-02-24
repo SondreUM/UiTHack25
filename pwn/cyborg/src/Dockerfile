@@ -14,8 +14,8 @@ RUN echo "memory_limit = 256M" >> $PHP_INI_DIR/php.ini \
     && echo "max_execution_time = 600" >> $PHP_INI_DIR/php.ini \
     && echo "date.timezone = UTC" >> $PHP_INI_DIR/php.ini \
     # conveniently "forget" to disable some really dangerous functions
-    # exec,passthru,shell_exec,system
-    && echo "disable_functions = proc_close,proc_open,dl,popen,show_source,posix_kill,posix_mkfifo,posix_getpwuid,posix_setpgid,posix_setsid,posix_setuid,posix_setgid,posix_seteuid,posix_setegid,posix_uname" >> $PHP_INI_DIR/conf.d/security.ini
+    # exec,passthru,shell_exec,system,posix_getpwuid
+    && echo "disable_functions = proc_close,proc_open,dl,popen,show_source,posix_kill,posix_mkfifo,posix_setpgid,posix_setsid,posix_setuid,posix_setgid,posix_seteuid,posix_setegid,posix_uname" >> $PHP_INI_DIR/conf.d/security.ini
 
 
 RUN sed -i 's/allow_url_fopen = On/allow_url_fopen = Off/' ${PHP_INI_DIR}/php.ini \
@@ -36,9 +36,8 @@ RUN { \
     } | tee -a "$APACHE_CONFDIR/conf-available/docker-php.conf"
 
 # Lock down the system
-RUN apt-get update && apt-get remove -y \
-    wget \
-    curl \
+RUN apt-get update \
+    && apt-get remove -y wget curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -54,13 +53,11 @@ RUN cp /etc/os-release /var/www/admin/ \
 
 # Copy application files
 COPY www /var/www
-COPY www/html /var/www/html
-COPY www/admin /var/www/admin
 COPY uithack.conf /var/www/admin/
 RUN cd html && ln -s -d ../admin \
-    && ln -s ../admin/flag.txt
-# change creation time of web shell to original time
-RUN touch -t 201306061201 /var/www/admin/323d09c08a72717bbec71f172e5f6532.php
+    && ln -s ../admin/flag.txt \
+    # change creation time of web shell to original time
+    && touch -t 201306061201 /var/www/admin/323d09c08a72717bbec71f172e5f6532.php
 
 
 # Set permissions, prevent players from modifying/removing the files
@@ -83,4 +80,4 @@ USER www-data
 # CMD ["apache2-foreground"]
 
 # docker build -t cyborg .
-# docker run -p 8080:80 --cap-drop=ALL --security-opt=no-new-privileges cyborg
+# docker run -p 8080:80 --cap-drop=ALL --security-opt=no-new-privileges --rm cyborg
