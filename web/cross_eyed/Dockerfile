@@ -13,7 +13,7 @@ RUN cargo build --release
 # production image
 FROM debian:bookworm-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends chromium && \
+RUN apt-get update && apt-get install -y chromium && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
