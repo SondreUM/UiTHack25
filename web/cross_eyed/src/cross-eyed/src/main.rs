@@ -85,6 +85,8 @@ fn get_stream(session_id: u64, frame: u64, app_state: &State<AppState>) -> Optio
 
     let browser = Browser::new(LaunchOptions {
         args: vec![&OsStr::new("--disable-xss-auditor")],
+        port: Some(9967),
+        sandbox: false,
         ..Default::default()
     })
     .expect("Failed to launch browser");
