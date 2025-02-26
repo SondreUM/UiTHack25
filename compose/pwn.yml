@@ -4,19 +4,19 @@
 
 services:
   commlink:
-    build: ./pwn/commlink/src
+    build: ../pwn/commlink/src
     ports:
       - "9000:9000"
     restart: on-failure
 
   sc0:
-    build: ./pwn/sc0/src
+    build: ../pwn/sc0/src
     ports:
       - "9001:9001"
     restart: on-failure
 
   hexcore:
-    build: ./pwn/hexcore/src
+    build: ../pwn/hexcore/src
     ports:
       - "9002:9002"
     restart: on-failure
@@ -32,7 +32,7 @@ services:
           memory: 50M
 
   cyborg:
-    build: ./pwn/cyborg/src
+    build: ../pwn/cyborg/src
     restart: on-failure
     networks:
       - web

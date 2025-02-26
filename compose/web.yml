@@ -7,13 +7,13 @@
 
 services:
   big_picture:
-    build: ./web/big_picture/src
+    build: ../web/big_picture/src
     restart: on-failure
     networks:
       - web
 
   marketplace:
-    build: ./web/Evilcorp_marketplace/src
+    build: ../web/Evilcorp_marketplace/src
     restart: on-failure
     networks:
       - web
@@ -21,31 +21,31 @@ services:
       - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
 
   bleeding_heart:
-    build: ./web/bleeding_heart/
+    build: ../web/bleeding_heart/
     restart: on-failure
     networks:
       - web
 
   cross_eyed:
-    build: ./web/cross_eyed/
+    build: ../web/cross_eyed/
     restart: on-failure
     networks:
       - web
 
   dinosaur_tech:
-    build: ./irl/dinosaur_tech/src
+    build: ../irl/dinosaur_tech/src
     restart: on-failure
     networks:
       - web
 
   cyber_pirate_frontend:
-    build: ./web/cyber_pirate/src/frontend
+    build: ../web/cyber_pirate/src/frontend
     restart: on-failure
     networks:
       - web
 
   cyber_pirate_backend:
-    build: ./web/cyber_pirate/src/backend
+    build: ../web/cyber_pirate/src/backend
     restart: on-failure
     networks:
       - web
