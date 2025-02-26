@@ -7,11 +7,13 @@ services:
     restart: always
     volumes:
       - caddy_data:/data
+      - caddy_log:/var/log/caddy
       - ../infra/caddy_conf:/etc/caddy:ro
     ports:
       - 80:80
       - 443:443
       - 443:443/udp
+      - 3000:3000
       - 5005:5005
       - 8001:8001
       - 8002:8002
@@ -22,12 +24,16 @@ services:
     networks:
       - default
       - web
+      - log
 
 networks:
   default:
   web:
     external: true
+  log:
+    external: true
 
 volumes:
   caddy_data:
-  
+  caddy_log:
+    external: true

@@ -15,3 +15,4 @@ include:
   - ./compose/pwn.yml
   - ./compose/misc.yml
   - ./compose/rev.yml
+  - ./compose/log.yml

@@ -1,6 +1,18 @@
 {
 	email jkr070@uit.no
 	key_type rsa4096
+	metrics
+	admin :2019
+
+	log {
+		output file /var/log/caddy/caddy_main.log {
+			roll_size 100MiB
+			roll_keep 5
+			roll_keep_for 100d
+		}
+		format json
+		level INFO
+	}
 }
 
 (common) {
@@ -21,7 +33,32 @@
 	encode zstd gzip
 }
 
+uithack-2.td.org.uit.no:3000 {
+	import common
+
+	log {
+		output file /var/log/caddy/grafana.log {
+			roll_size 20MiB
+			roll_keep 5
+			roll_keep_for 1d
+		}
+		format json
+		level INFO
+	}
+
+	reverse_proxy http://grafana:3000
+}
+
 http://uithack-2.td.org.uit.no:5005 {
+	log {
+		output file /var/log/caddy/evasive_verify.log {
+			roll_size 20MiB
+			roll_keep 5
+			roll_keep_for 1d
+		}
+		format json
+		level INFO
+	}
 	@forbiddenPath path_regexp flag.*
 	respond @forbiddenPath "You think you can just waltz in here and grab the flag? Think again.\n" 403
 
@@ -88,6 +125,16 @@ uithack-2.td.org.uit.no:9003 {
 
 uithack-2.td.org.uit.no {
 	import common
+
+	log {
+		output file /var/log/caddy/uithack-2.td.org.uit.no.log {
+			roll_size 20MiB
+			roll_keep 5
+			roll_keep_for 1d
+		}
+		format json
+		level INFO
+	}
 
 	handle_path /hope-nobody-guesses-this/* {
 		reverse_proxy http://dinosaur_tech:3000
