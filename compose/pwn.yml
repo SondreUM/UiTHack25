@@ -1,0 +1,44 @@
+# pwn.yml
+# This compose file is for the pwn challenges
+# Port range: 9xxx
+
+services:
+  commlink:
+    build: ./pwn/commlink/src
+    ports:
+      - "9000:9000"
+    restart: on-failure
+
+  sc0:
+    build: ./pwn/sc0/src
+    ports:
+      - "9001:9001"
+    restart: on-failure
+
+  hexcore:
+    build: ./pwn/hexcore/src
+    ports:
+      - "9002:9002"
+    restart: on-failure
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    cap_add:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: "0.015"
+          memory: 50M
+
+  cyborg:
+    build: ./pwn/cyborg/src
+    restart: on-failure
+    networks:
+      - web
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  web:
+    external: true

@@ -1,0 +1,55 @@
+# web.yml
+# This compose file is for the web challenges
+# Proxied port range: 8000-8099
+# Proxied challenges must use the `web` network,
+# and provide a Caddy configuration in `infra/caddy_conf/Caddyfile`
+# Port range: 8100-8199
+
+services:
+  big_picture:
+    build: ./web/big_picture/src
+    restart: on-failure
+    networks:
+      - web
+
+  marketplace:
+    build: ./web/Evilcorp_marketplace/src
+    restart: on-failure
+    networks:
+      - web
+    environment:
+      - CTF_FLAG=UiTHack25{Pr0t0typ3_P0llut1on_Expl01t3d!}
+
+  bleeding_heart:
+    build: ./web/bleeding_heart/
+    restart: on-failure
+    networks:
+      - web
+
+  cross_eyed:
+    build: ./web/cross_eyed/
+    restart: on-failure
+    networks:
+      - web
+
+  dinosaur_tech:
+    build: ./irl/dinosaur_tech/src
+    restart: on-failure
+    networks:
+      - web
+
+  cyber_pirate_frontend:
+    build: ./web/cyber_pirate/src/frontend
+    restart: on-failure
+    networks:
+      - web
+
+  cyber_pirate_backend:
+    build: ./web/cyber_pirate/src/backend
+    restart: on-failure
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
