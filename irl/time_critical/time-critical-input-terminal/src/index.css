@@ -1,0 +1,33 @@
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: lime;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+#displayCode {
+    letter-spacing: 0.8rem;
+}
+
+.numericButton {
+    background-color: #000000;
+    border: 1px solid lime;
+    color: lime;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    width: 4em;
+}
+
+.invisible {
+    visibility: hidden;
+}
