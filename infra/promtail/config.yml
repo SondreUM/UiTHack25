@@ -29,6 +29,10 @@ scrape_configs:
                 path:
                 protocol:
                 status:
+                http_user_agent:
+            - timestamp:
+                source: timestamp
+                format: "2006/01/02 15:04:05"
 
   - job_name: system
     static_configs:
@@ -45,3 +49,22 @@ scrape_configs:
             time: time
       - labels:
           stream:
+
+  - job_name: docker
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: docker
+          __path__: /var/lib/docker/containers/*/*.log
+    pipeline_stages:
+      - docker: {}
+      - labels:
+          container_id:
+          container_name:
+          image_id:
+          image_name:
+          source:
+          log:
+          stream:
+          time:

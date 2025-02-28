@@ -1,4 +1,39 @@
 services:
+  # loki:
+  #   image: grafana/loki:latest
+  #   volumes:
+  #     - ../infra/loki/config.yaml:/etc/loki/config.yaml:ro
+  #     - loki_data:/loki
+  #   restart: unless-stopped
+  #   command: -config.file=/etc/loki/config.yaml -config.expand-env
+  #   networks:
+  #     - log
+
+  # promtail:
+  #   image: grafana/promtail:latest
+  #   volumes:
+  #     - ../infra/promtail/config.yml:/etc/promtail/config.yml:ro
+  #     - /var/log:/var/log/system:ro
+  #     - /var/lib/docker/containers:/var/lib/docker/containers:ro
+  #     - caddy_log:/var/log/caddy:ro
+  #   command: -config.file=/etc/promtail/config.yml
+  #   depends_on:
+  #     - loki
+  #   restart: unless-stopped
+  #   networks:
+  # - log
+
+  # node_exporter:
+  #   image: quay.io/prometheus/node-exporter:latest
+  #   container_name: node_exporter
+  #   command:
+  #     - "--path.rootfs=/host"
+  #   network_mode: host
+  #   pid: host
+  #   restart: unless-stopped
+  #   volumes:
+  #     - "/:/host:ro,rslave"
+
   prometheus:
     image: prom/prometheus:latest
     volumes:
@@ -10,30 +45,6 @@ services:
       - "--web.console.libraries=/etc/prometheus/console_libraries"
       - "--web.console.templates=/etc/prometheus/consoles"
       - "--web.enable-lifecycle"
-    restart: unless-stopped
-    networks:
-      - log
-
-  loki:
-    image: grafana/loki:latest
-    volumes:
-      - ../infra/loki/config.yaml:/etc/loki/config.yaml:ro
-      - loki_data:/loki
-    restart: unless-stopped
-    command: -config.file=/etc/loki/config.yaml -config.expand-env
-    networks:
-      - log
-
-  promtail:
-    image: grafana/promtail:latest
-    volumes:
-      - ../infra/promtail/config.yml:/etc/promtail/config.yml:ro
-      - /var/log:/var/log/system:ro
-      - /var/lib/docker/containers:/var/lib/docker/containers:ro
-      - caddy_log:/var/log/caddy:ro
-    command: -config.file=/etc/promtail/config.yml
-    depends_on:
-      - loki
     restart: unless-stopped
     networks:
       - log
@@ -56,17 +67,6 @@ services:
     restart: unless-stopped
     networks:
       - log
-
-  node_exporter:
-    image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter
-    command:
-      - "--path.rootfs=/host"
-    network_mode: host
-    pid: host
-    restart: unless-stopped
-    volumes:
-      - "/:/host:ro,rslave"
 
 volumes:
   prometheus_data:

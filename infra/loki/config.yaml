@@ -4,7 +4,7 @@ auth_enabled: false
 server:
   http_listen_port: 3100
   grpc_listen_port: 9096
-  log_level: info
+  log_level: warn
   grpc_server_max_concurrent_streams: 1000
 
 common:
