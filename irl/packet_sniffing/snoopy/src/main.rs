@@ -11,7 +11,7 @@ fn main() -> ! {
     println!("Broadcast: {:?}", socket.broadcast());
     println!("Timeout: {:?}", socket.read_timeout());
 
-    let flag = String::from("UiTHack{example_flag}");
+    let flag = String::from("UiTHack25{PacketsAreNotPrivate}");
 
     loop {
         socket
