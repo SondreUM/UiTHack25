@@ -1,0 +1,31 @@
+Feb 28 12:34:21 host kernel: [11234.567] USB device connected: ID 1a2b:3c4d
+Feb 28 12:34:23 host dhclient[3456]: DHCPREQUEST on eth0 to 192.168.1.1 port 67
+Feb 28 12:34:25 host wpa_supplicant[1234]: Connecting to SSID "Mainframe" with password "Sup3rS3cur3"
+Feb 28 12:34:30 host kernel: [11240.123] CPU0: Temperature above threshold, throttling
+Feb 28 12:34:35 host sshd[7890]: Failed password for invalid user admin from 203.0.113.42 port 4567 ssh2
+Feb 28 12:34:37 host systemd[1]: Starting Cleanup of Temporary Directories...
+Feb 28 12:34:40 host wpa_supplicant[1234]: Successfully connected to "Mainframe"
+Feb 28 12:34:45 host kernel: [11250.890] eth0: Link is Up - 1000 Mbps Full Duplex
+Feb 28 12:34:50 host ntpd[2345]: Synchronizing time to 192.168.1.100
+Feb 28 12:34:55 host sudo[6789]: user1 : TTY=pts/0 ; PWD=/home/user1 ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Feb 28 12:35:00 host crond[5555]: (root) CMD (/usr/bin/updatedb)
+Feb 28 12:35:05 host kernel: [11265.432] Bluetooth: hci0: connection terminated
+Feb 28 12:35:10 host wpa_supplicant[1234]: Re-authenticating to SSID "Mainframe" with password "Sup3rS3cur3"
+Feb 28 12:35:15 host systemd[1]: Finished Cleanup of Temporary Directories.
+Feb 28 12:35:20 host sshd[7890]: Accepted password for user2 from 192.168.1.50 port 2222 ssh2
+Feb 28 12:35:25 host kernel: [11275.678] USB device disconnected: ID 1a2b:3c4d
+Feb 28 12:35:30 host dhclient[3456]: DHCPACK from 192.168.1.1 (lease time 86400)
+Feb 28 12:35:35 host audit[9999]: ANOM_ABEND auid=1000 uid=1000 gid=1000 ses=1 pid=4321 comm="bash" exe="/bin/bash" sig=11
+Feb 28 12:35:40 host systemd[1]: Stopping Network Manager...
+Feb 28 12:35:45 host kernel: [11290.321] Firewall: IN=eth0 OUT= MAC= SRC=10.0.0.2 DST=10.0.0.3 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=54321 DF PROTO=TCP SPT=4444 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+Feb 28 12:35:50 host systemd[1]: Starting Network Manager...
+Feb 28 12:35:55 host kernel: [11295.876] CPU1: Temperature back to normal
+Feb 28 12:36:00 host wpa_supplicant[1234]: Connecting to SSID "GuestWiFi"
+Feb 28 12:36:05 host kernel: [11300.432] eth0: Link Down
+Feb 28 12:36:10 host kernel: [11305.678] eth0: Link is Up - 100 Mbps Half Duplex
+Feb 28 12:36:15 host sudo[6789]: user1 : TTY=pts/0 ; PWD=/home/user1 ; USER=root ; COMMAND=/usr/bin/id
+Feb 28 12:36:20 host kernel: [11310.567] Bluetooth: hci0: new connection established
+Feb 28 12:36:25 host wpa_supplicant[1234]: Authentication failed for "GuestWiFi"
+Feb 28 12:36:30 host systemd[1]: Stopping Bluetooth service...
+Feb 28 12:36:35 host systemd[1]: Starting Bluetooth service...
+Feb 28 12:36:40 host dhclient[3456]: No DHCPOFFERS received.
