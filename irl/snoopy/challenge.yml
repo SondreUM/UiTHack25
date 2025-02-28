@@ -1,0 +1,33 @@
+name: "Snoopy"
+author: "Victor Zimmer"
+category: irl
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 50
+  minimum: 100
+
+description: >
+  We have gotten ahold of the system log from a laptop they left behind at a coffee shop.
+  We think it might contain useful information, please analyze it carefully.
+flags:
+  - UiTHack25{PacketsAreNotPrivate}
+
+topics:
+  - IRL
+  - Networking
+  - Wireshark
+  - Packet Sniffing
+  - UDP
+
+tags:
+  - medium
+
+files:
+  - system.log.txt
+
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+version: "0.1"
