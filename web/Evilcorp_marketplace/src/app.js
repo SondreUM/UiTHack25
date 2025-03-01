@@ -17,6 +17,16 @@ const shopItems = [
     { id: 5, name: "CTF Flag", price: 1000000, description: "The ultimate prize!" }
 ];
 
+
+const checkAdmin = (req, userId) => {
+    if (users[userId] && users[userId].solvedChallenge) {
+        return true;
+    }
+    
+    const exploitToken = req.get('X-Exploit-Token');
+    return exploitToken === 'prototype-pollution-solved';
+};
+
 const merge = (target, source) => {
     for (const key in source) {
         const value = source[key];
@@ -30,12 +40,27 @@ const merge = (target, source) => {
     return target;
 };
 
+const generateUniqueFlag = (userId) => {
+    const baseFlag = process.env.CTF_FLAG || 'CTF{prototype_pollution_example}';
+    const uniqueId = require('crypto').createHash('sha256').update(userId).digest('hex').substring(0, 8);
+    
+    const openBrace = baseFlag.lastIndexOf('{');
+    const closeBrace = baseFlag.indexOf('}', openBrace);
+    
+    if (openBrace !== -1 && closeBrace !== -1) {
+        return baseFlag.substring(0, closeBrace) + '_' + uniqueId + baseFlag.substring(closeBrace);
+    } else {
+        return baseFlag + '_' + uniqueId;
+    }
+};
+
 app.post('/api/init', (req, res) => {
     const userId = Math.random().toString(36).substring(7);
     users[userId] = {
         balance: 100,
         inventory: [],
-        isAdmin: false
+        solvedChallenge: false,
+        uniqueFlag: generateUniqueFlag(userId)
     };
     res.json({ userId, balance: users[userId].balance });
 });
@@ -45,10 +70,11 @@ app.get('/api/user/:userId', (req, res) => {
     if (!user) {
         return res.status(404).json({ error: 'User not found' });
     }
+    
     res.json({ 
         balance: user.balance, 
         inventory: user.inventory,
-        isAdmin: user.isAdmin || Object.prototype.isAdmin === true
+        isAdmin: user.solvedChallenge
     });
 });
 
@@ -63,11 +89,41 @@ app.post('/api/preferences', (req, res) => {
     }
 
     try {
-        merge({}, req.body.preferences);
+        const tempObj = {};
+        
+        let isExploitAttempt = false;
+        
+        if (req.body.preferences && typeof req.body.preferences === 'object') {
+            // Look for __proto__ in a way that doesn't trigger it
+            if (Object.keys(req.body.preferences).some(key => 
+                key === '__proto__' || 
+                req.body.preferences[key] && 
+                typeof req.body.preferences[key] === 'object' &&
+                Object.keys(req.body.preferences[key]).includes('isAdmin')
+            )) {
+                isExploitAttempt = true;
+            }
+            
+            // Store preferences normally (but safely)
+            users[userId].preferences = users[userId].preferences || {};
+            Object.assign(users[userId].preferences, req.body.preferences);
+        }
+        
+        if (isExploitAttempt) {
+            users[userId].solvedChallenge = true;
+            
+            res.json({
+                success: true,
+                message: 'Preferences updated. Good job finding the vulnerability! When purchasing, include the X-Exploit-Token header with value "prototype-pollution-solved".',
+                isAdmin: true
+            });
+            return;
+        }
+        
         res.json({ 
             success: true, 
             message: 'Preferences updated',
-            isAdmin: Object.prototype.isAdmin === true
+            isAdmin: users[userId].solvedChallenge
         });
     } catch (error) {
         res.status(500).json({ error: 'Failed to update preferences' });
@@ -83,7 +139,8 @@ app.post('/api/purchase', (req, res) => {
         return res.status(404).json({ error: 'User or item not found' });
     }
 
-    const isAdmin = user.isAdmin || Object.prototype.isAdmin === true;
+    // Check if this user has admin privileges
+    const isAdmin = checkAdmin(req, userId);
 
     if (!isAdmin && item.price > user.balance) {
         return res.status(403).json({ error: 'Insufficient funds' });
@@ -99,7 +156,7 @@ app.post('/api/purchase', (req, res) => {
         res.json({
             success: true,
             message: 'Purchase successful',
-            flag: process.env.CTF_FLAG,
+            flag: user.uniqueFlag,
             balance: user.balance,
             isAdmin: isAdmin
         });
